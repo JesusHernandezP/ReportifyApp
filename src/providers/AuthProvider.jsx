@@ -11,6 +11,7 @@ const AuthProvider = ({ children }) => {
 
     localStorage.setItem('user', JSON.stringify(user))
     setCurrentUser(user)
+    // (user) es esto -> {"status":"ok","data":{"token":"eyJh....."}} que viene de POSTMAN
   }
 
   const logoutHandler = () => {
@@ -21,8 +22,8 @@ const AuthProvider = ({ children }) => {
   const authValues = useMemo(() => {
     return {
       user: currentUser?.user || null,
-      token: currentUser?.accessToken,
-      isAuthenticated: !!currentUser?.user?.id,
+      token: currentUser?.data?.token,
+      isAuthenticated: !!currentUser?.data?.token, //!!lo vuelve buleano pro doble cancelación
       setUser: setUserHandler,
       logout: logoutHandler
     }

@@ -1,25 +1,31 @@
-import { Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar'
+import { Navigate, Route, Routes} from 'react-router-dom'
 import { PrivateRoutes } from './components/PrivateRoutes'
+import useAuth from './hooks/useAuth'
 
-import Index from './views/index'
-import Login from './views/login'
-import Todos from './views/todos'
-import Notifications from './components/Notifications'
+import Navbar from './components/Navbar'
+import Login from './views/Login'
+import Main from './views/Main'
 
 function App() {
+
+  const { isAuthenticated } = useAuth()
 
   return (
     <>
       <Navbar />
-      <Notifications />
+      {JSON.stringify({ isAuthenticated })}
       <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Main />} />
+        {!isAuthenticated ? <Route path="/login" element={<Login />} /> : null}
+        {/* {isAuthenticated ? <Route path="/pruebaperfil" element={ <div>Prueba</div>} /> : null}  */}
+        {/* <Route path="/news" element={<News />} /> */}
+        {/* <Route path="/register" element={<Register />} /> */}
 
         <Route element={<PrivateRoutes />}>
-          <Route path="/todos" element={<Todos />} />
+          {/* <Route path="/profile" element={<Profile />} />  */}
         </Route>
+        <Route path="*" element={<Navigate to="/"/>}/>
+
       </Routes>
     </>
   )
