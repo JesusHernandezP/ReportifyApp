@@ -23,12 +23,11 @@ async function httpService({ url, method = 'GET', token = null, body = null }) {
     try {
     const response = await fetch(fullURL.href, config)
     const data = await response.json()
-      // if (!response.ok) throw new Error(data.error)
 
     return { data, loading: false, error: data.error || null }
 
     } catch (error) {
-    return { data: null, loading: false, error }
+      return { data: null, loading: false, error }
     }
 }
 
