@@ -1,0 +1,9 @@
+#root {
+    margin-top: 0;
+}
+
+.body {
+    display:grid;
+    grid-template-columns: 200px, 1fr;
+    top: 0;
+}

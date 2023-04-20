@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes} from 'react-router-dom'
-import { PrivateRoutes } from './components/PrivateRoutes'
+import { PrivateRoutes } from './component/PrivateRoutes'
 import useAuth from './hooks/useAuth'
 
-import Navbar from './components/Navbar'
+import Navbar from './component/Navbar'
 import Login from './views/Login'
 import Main from './views/Main'
 
@@ -15,16 +15,16 @@ function App() {
       <Navbar />
       {JSON.stringify({ isAuthenticated })}
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/main" element={<Main />} />
         {!isAuthenticated ? <Route path="/login" element={<Login />} /> : null}
         {/* {isAuthenticated ? <Route path="/pruebaperfil" element={ <div>Prueba</div>} /> : null}  */}
-        {/* <Route path="/news" element={<News />} /> */}
-        {/* <Route path="/register" element={<Register />} /> */}
+        {/* <Route path="/news" element={<News />} />
+        <Route path="/register" element={<Register />} /> */}
 
         <Route element={<PrivateRoutes />}>
           {/* <Route path="/profile" element={<Profile />} />  */}
         </Route>
-        <Route path="*" element={<Navigate to="/"/>}/>
+        <Route path="*" element={<Navigate to="/main"/>}/>
 
       </Routes>
     </>

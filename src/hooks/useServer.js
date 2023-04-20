@@ -16,7 +16,7 @@ function useServer() {
       setUser(data)
     }
     if (error && error.message === "Wrong email or password") {
-      toast.error('El usuario o contraseña incorrecto')
+      toast.error('El usuario o contraseña es incorrecto')
     } else {
       if (error) {
         toast.error(error.message)
