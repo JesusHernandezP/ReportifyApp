@@ -19,7 +19,7 @@ function Login() {
       <h1 className='tittle_login'>Iniciar Sesión</h1>
 
       <div className='item'>
-        <div>
+        {/* <div>
           <label htmlFor="name"></label>
           <input
             id="name"
@@ -29,7 +29,7 @@ function Login() {
             required
             placeholder="Nombre"
           />
-        </div>
+        </div> */}
 
         <div>
           <label htmlFor="email"></label>

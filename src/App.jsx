@@ -5,6 +5,8 @@ import useAuth from './hooks/useAuth'
 import Navbar from './component/Navbar'
 import Login from './views/Login'
 import Main from './views/Main'
+import Profile from './views/Profile'
+
 
 function App() {
 
@@ -16,15 +18,16 @@ function App() {
       {JSON.stringify({ isAuthenticated })}
       <Routes>
         <Route path="/main" element={<Main />} />
-        {!isAuthenticated ? <Route path="/login" element={<Login />} /> : null}
-        {/* {isAuthenticated ? <Route path="/pruebaperfil" element={ <div>Prueba</div>} /> : null}  */}
+        <Route path="/login" element={<Login />} />
+        {/* {!isAuthenticated ? <Route path="/login" element={<Login />} /> : null} */}
+        {/* {!isAuthenticated ? <Route path="/profile" element={ <Profile />} /> : null}  */}
         {/* <Route path="/news" element={<News />} />
         <Route path="/register" element={<Register />} /> */}
 
         <Route element={<PrivateRoutes />}>
-          {/* <Route path="/profile" element={<Profile />} />  */}
+          <Route path="/profile" element={<Profile />} />
         </Route>
-        <Route path="*" element={<Navigate to="/main"/>}/>
+        {/* <Route path="*" element={<Navigate to="/main"/>}/> */}
 
       </Routes>
     </>
