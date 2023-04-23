@@ -15,21 +15,11 @@ function Login() {
   }
 
   return (
+    <>
     <form onSubmit={handleSubmit} className='form_login'>
       <h1 className='tittle_login'>Iniciar Sesión</h1>
 
       <div className='item'>
-        {/* <div>
-          <label htmlFor="name"></label>
-          <input
-            id="name"
-            name="name"
-            type="name"
-            autoComplete="name"
-            required
-            placeholder="Nombre"
-          />
-        </div> */}
 
         <div>
           <label htmlFor="email"></label>
@@ -40,7 +30,7 @@ function Login() {
             autoComplete="email"
             required
             placeholder="Email"
-          />
+            />
         </div>
 
         <div>
@@ -52,7 +42,7 @@ function Login() {
             autoComplete="password"
             required
             placeholder="Contraseña"
-          />
+            />
         </div>
       </div>
 
@@ -60,6 +50,10 @@ function Login() {
         <button className='button_login' type="submit"> Ingresar </button>
       </div>
     </form>
+    <div>
+      <p>¿No tienes cuenta? Registrate</p>
+    </div>
+            </>
   )
 }
 

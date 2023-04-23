@@ -1,11 +1,15 @@
+import { Button } from 'antd'
 import Profile from './Profile'
 import './Main.css'
-import { Button } from 'antd'
 
 function Main() {
   return (
     <>
-    <h1>Pantalla de Inicio</h1>
+<Button type="primary" shape="round">Deportes</Button>
+<Button type="default" shape="round">Tecnología</Button>
+<Button type="default" shape="round">Finanzas</Button>
+<Button type="default" shape="round">Música</Button>
+<Button type="default" shape="round">Arte</Button>
     <div>
 
     <Button component={<Profile />}>

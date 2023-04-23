@@ -1,9 +1,16 @@
-#root {
-    margin-top: 0;
+.nav-container {
+    display: flex;
+    justify-content: space-between;
 }
 
-.body {
-    display:grid;
-    grid-template-columns: 200px, 1fr;
-    top: 0;
+.nav-container_division {
+    background-color: rgb(183, 183, 183);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav-container_division > * {
+    margin: 5px;
 }

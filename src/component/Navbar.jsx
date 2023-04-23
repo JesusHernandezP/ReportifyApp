@@ -1,49 +1,33 @@
-
-import { MailOutlined, SettingOutlined } from '@ant-design/icons'
-import { AppstoreOutlined } from '@ant-design/icons'
-import { Menu } from 'antd';
+import { PlusOutlined, UserOutlined, AntDesignOutlined } from '@ant-design/icons'
+import { useNavigate } from "react-router-dom"
+import { Button, Avatar } from 'antd'
 
 import './Navbar.css'
 
-function getItem(label, key, icon, children, type) {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  };
-}
-const items = [
-  getItem('Navigation One', 'sub1', <MailOutlined />, [
-    getItem('Item 1', 'g1', null, [getItem('Option 1', '1'), getItem('Option 2', '2')], 'group'),
-    getItem('Item 2', 'g2', null, [getItem('Option 3', '3'), getItem('Option 4', '4')], 'group'),
-  ]),
-  getItem('Navigation Two', 'sub2', <AppstoreOutlined />, [
-    getItem('Option 5', '5'),
-    getItem('Option 6', '6'),
-    getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
-  ]),
-  {
-    type: 'divider',
-  },
 
-];
 const Navbar = () => {
-  const onClick = (e) => {
-    console.log('click ', e);
-  };
+
+  const navigate = useNavigate()
+
+  function handleClick() {
+    navigate("/login");
+  }
+
   return (
-    <Menu
-      onClick={onClick}
-      style={{
-        width: 256,
-      }}
-      defaultSelectedKeys={['1']}
-      defaultOpenKeys={['sub1']}
-      mode="inline"
-      items={items}
-    />
-  );
-};
+    <>
+      <div className='nav-container'>
+        <div className='nav-container_division'>
+        <Avatar icon={<AntDesignOutlined />} />
+          <h3>ReportifyApp</h3>
+        </div>
+
+        <div className='nav-container_division'>
+          <Button type="primary" shape="circle" icon={<PlusOutlined />} />
+          <Button type="default" shape="circle" icon={<UserOutlined />} onClick={handleClick} />
+        </div>
+      </div>
+
+    </>
+  )
+}
 export default Navbar
