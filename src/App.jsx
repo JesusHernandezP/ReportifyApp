@@ -3,7 +3,7 @@ import { PrivateRoutes } from './component/PrivateRoutes'
 import useAuth from './hooks/useAuth'
 
 import Navbar from './component/Navbar'
-import ModalLogin from './component/ModalLogin'
+import Login from './views/Login'
 import Main from './views/Main'
 import Profile from './views/Profile'
 
@@ -15,10 +15,12 @@ function App() {
   return (
     <>
       <Navbar />
+      <div>
       {JSON.stringify({ isAuthenticated })}
+      </div>
       <Routes>
         <Route path="/main" element={<Main />} />
-        <Route path="/login" element={<ModalLogin />} />
+        <Route path="/login" element={<Login />} />
         {/* {!isAuthenticated ? <Route path="/login" element={<Login />} /> : null} */}
         {/* {!isAuthenticated ? <Route path="/profile" element={ <Profile />} /> : null}  */}
         {/* <Route path="/news" element={<News />} />

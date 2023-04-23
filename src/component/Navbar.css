@@ -4,7 +4,6 @@
 }
 
 .nav-container_division {
-    background-color: rgb(183, 183, 183);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,4 +12,14 @@
 
 .nav-container_division > * {
     margin: 5px;
+}
+
+.ant-input-search > .ant-input-group > .ant-input {
+    border-top-left-radius: 999px;
+    border-bottom-left-radius: 999px;
+}
+
+.ant-input-search >.ant-input-group >.ant-input-group-addon:last-child .ant-input-search-button {
+    border-start-end-radius: 999px;
+    border-end-end-radius: 999px;
 }
