@@ -1,18 +1,18 @@
 import CarouselComponet from '../component/Carousel'
 import ThemeButton from '../component/ThemeButton'
-import NavbarMain from '../component/NavbarMain'
 import CardsMain from '../component/CardsMain'
+import useAuth from '../hooks/useAuth'
 
 
 function Main() {
+  const { isAuthenticated } = useAuth()
+
   return (
     <>
-
-      <NavbarMain/>
-      <ThemeButton/>
+      {isAuthenticated && <p>Usuario Autenticado</p>}
+      {isAuthenticated ? <p>Usuario Autenticado</p> : <button>Iniciar sesion</button>}
       <CarouselComponet />
-      < CardsMain />
-
+      <CardsMain />
     </>
   )
 }

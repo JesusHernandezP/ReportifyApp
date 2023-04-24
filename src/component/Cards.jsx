@@ -1,7 +1,6 @@
 import { Card, Col, Row } from 'antd';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 import { Avatar} from 'antd';
-import ModalButtonComments from '../component/ModalButtonComments.jsx'
 
 
 const { Meta } = Card;

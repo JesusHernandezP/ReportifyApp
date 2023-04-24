@@ -8,8 +8,7 @@ import './Login.css'
 
 
 function Login() {
-
-  const { post } = useServer()
+  const { post, get } = useServer()
   const navigate = useNavigate()
 
   const handleSubmit = async e => {
@@ -17,7 +16,8 @@ function Login() {
     e.preventDefault()
     const credentials = Object.fromEntries(new FormData(e.target))
     const { data } = await post({ url: '/login', body: credentials })
-    if (data) return navigate('/main') //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
+    const usr = data && await get({ url: '/profile' }) //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
+    if (usr) return navigate('/') //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
   }
 
   const handleCancel = () => {

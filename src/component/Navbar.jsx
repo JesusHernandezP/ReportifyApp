@@ -1,15 +1,15 @@
 import { PlusOutlined, UserOutlined, AntDesignOutlined } from '@ant-design/icons'
 import { useNavigate } from "react-router-dom"
 import { Button, Avatar, Input } from 'antd'
-import ModalButton from '../component/ModalButton.jsx'
 import './Navbar.css'
+import useAuth from '../hooks/useAuth.js'
+import ModalButton from '../component/ModalButton.jsx'
 
 const { Search } = Input
 const onSearch = (value) => console.log(value)
 
-
-
 const Navbar = () => {
+  const { isAuthenticated, logout } = useAuth()
 
   const navigate = useNavigate()
 
@@ -34,7 +34,8 @@ const Navbar = () => {
         </div>
 
         <div className='nav-container_division'>
-          {/* <ModalButton /> */}
+          {isAuthenticated && <ModalButton />}
+          {isAuthenticated &&  <button onClick={logout}>Cerrar Sesión</button>}
           <Button type="default" shape="circle" icon={<UserOutlined />} onClick={handleClick} />
         </div>
       </div>

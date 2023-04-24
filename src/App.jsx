@@ -14,20 +14,16 @@ import Comments from './views/Comments'
 
 function App() {
 
-  const { isAuthenticated } = useAuth()
-
   return (
     <>
-      <Navbar />    
+      <Navbar />
       <ThemeButton/>
-      <CarouselComponet />
-      < Cards />
    
       <div>
       {/* {JSON.stringify({ isAuthenticated })} */}
       </div>
       <Routes>
-        <Route path="/main" element={<Main />} />
+        <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/post" element={<Post />} />
         <Route path="/comments" element={<Comments />} />
