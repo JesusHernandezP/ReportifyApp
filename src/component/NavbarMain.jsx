@@ -9,12 +9,12 @@ const onSearch = (value) => console.log(value)
 
 
 
-const Navbar = () => {
+const NavbarMain = () => {
 
   const navigate = useNavigate()
 
   function handleClick() {
-    navigate("/login");
+    navigate("/profile");
   }
 
   return (
@@ -34,7 +34,7 @@ const Navbar = () => {
         </div>
 
         <div className='nav-container_division'>
-          {/* <ModalButton /> */}
+          <ModalButton />
           <Button type="default" shape="circle" icon={<UserOutlined />} onClick={handleClick} />
         </div>
       </div>
@@ -42,4 +42,4 @@ const Navbar = () => {
     </>
   )
 }
-export default Navbar
+export default NavbarMain

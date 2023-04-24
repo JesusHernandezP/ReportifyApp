@@ -5,7 +5,8 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #db5959;
+  background-color: rgb(46, 44, 44);
+  opacity: .80;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,7 +17,7 @@
 
 
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -27,4 +28,4 @@
   button {
     background-color: #f9f9f9;
   }
-}
+} */

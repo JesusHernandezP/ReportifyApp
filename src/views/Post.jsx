@@ -3,11 +3,10 @@ import useServer from '../hooks/useServer.js'
 import { Modal, Input, Button } from 'antd'
 import { EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons'
 import React from 'react'
+import UploadPhoto from '../component/UploadPhoto.jsx'
 
-import './Login.css'
 
-
-function Login() {
+function Post() {
 
   const { post } = useServer()
   const navigate = useNavigate()
@@ -16,18 +15,18 @@ function Login() {
 
     e.preventDefault()
     const credentials = Object.fromEntries(new FormData(e.target))
-    const { data } = await post({ url: '/login', body: credentials })
+    const { data } = await post({ url: '/post', body: credentials })
     if (data) return navigate('/main') //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
   }
 
   const handleCancel = () => {
-    navigate("/")
+    navigate("/main")
   }
 
   return (
     <>
         <Modal
-          title="Iniciar sesión"
+          title={<UploadPhoto/>}
           centered
           open
           onCancel={handleCancel}
@@ -37,27 +36,27 @@ function Login() {
       <form onSubmit={handleSubmit} className='form-login'>
 
           <Input
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
+            id="titulo"
+            name="titulo"
+            type="titulo"
+            autoComplete="titulo"
             required
-            placeholder="Email"
+            placeholder="Titulo"
           />
 
-          <Input.Password
-            id="password"
-            name="password"
-            type="password"
-            autoComplete="password"
+          <Input.TextArea
+            id="comentario"
+            name="comentario"
+            type="comentario"
+            autoComplete="comentario"
             required
-            placeholder="Contraseña"
+            placeholder="Comentario"
             iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
           />
-            <p>¿No tienes cuenta? Registrate</p>
             <div className='ant-modal-footer'>
               <Button type="primary" htmlType="submit">
-                Ingresar
+   Publicar
+                
               </Button >
             </div>
       </form>
@@ -66,4 +65,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Post
