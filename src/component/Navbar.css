@@ -27,3 +27,11 @@
     border-start-end-radius: 999px;
     border-end-end-radius: 999px;
 }
+
+.ant-btn {
+    border-start-end-radius: 999px;
+    border-end-end-radius: 999px;
+    border-top-left-radius: 999px;
+    border-bottom-left-radius: 999px;
+    text-align: center;
+}

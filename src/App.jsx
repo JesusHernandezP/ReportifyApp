@@ -1,4 +1,4 @@
-import { Route, Routes} from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import { PrivateRoutes } from './component/PrivateRoutes'
 import Navbar from './component/Navbar'
 import Login from './views/Login'
@@ -8,27 +8,22 @@ import Comments from './views/Comments'
 import Profile from './views/Profile'
 import Register from './views/Register'
 
-
-
-
 function App() {
 
   return (
     <>
       <Navbar />
 
-      {/* <ThemeButton/> */}
-   
       <div>
-      {/* {JSON.stringify({ isAuthenticated })} */}
+        {/* {JSON.stringify({ isAuthenticated })} */}
       </div>
       <Routes>
-        
+        <Route path="/" element={<Main />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/post" element={<Post />} />
         <Route path="/comments" element={<Comments />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/register" element={<Register />} />
 
 
         {/* {!isAuthenticated ? <Route path="/login" element={<Login />} /> : null} */}
@@ -37,9 +32,8 @@ function App() {
         <Route path="/register" element={<Register />} /> */}
 
         <Route element={<PrivateRoutes />}>
-        <Route path="/main" element={<Main />} />
         </Route>
-        {/* <Route path="*" element={<Navigate to="/main"/>}/> */}
+        <Route path="*" element={<Navigate to="/" />} />
 
       </Routes>
     </>

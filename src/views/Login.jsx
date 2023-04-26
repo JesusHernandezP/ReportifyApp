@@ -1,6 +1,6 @@
-import { useNavigate, Link} from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import useServer from '../hooks/useServer.js'
-import { Modal, Input, Button} from 'antd'
+import { Modal, Input, Button } from 'antd'
 import { EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons'
 import React from 'react'
 import './Login.css'
@@ -11,22 +11,22 @@ function Login() {
     e.preventDefault()
     const credentials = Object.fromEntries(new FormData(e.target))
     const { data } = await post({ url: '/login', body: credentials })
-    if (data) return navigate('/main') //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
+    if (data) return navigate('/') //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
   }
   const handleCancel = () => {
     navigate("/")
   }
   return (
     <>
-        <Modal
-          title="Iniciar sesión"
-          centered
-          open
-          onCancel={handleCancel}
-          // Ocultar botones del modal sobreescribiendolos con un html vacio: fragment
-          footer={<></>}
-        >
-      <form onSubmit={handleSubmit} className='form-login'>
+      <Modal
+        title="Iniciar sesión"
+        centered
+        open
+        onCancel={handleCancel}
+        // Ocultar botones del modal sobreescribiendolos con un html vacio: fragment
+        footer={<></>}
+      >
+        <form onSubmit={handleSubmit} className='form-login'>
           <Input
             id="email"
             name="email"
@@ -44,20 +44,20 @@ function Login() {
             placeholder="Contraseña"
             iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
           />
-           <p> ¿No tienes cuenta?
-          <Link to="/register">
-          <Button type="link">
-              Registrate
-            </Button>
-           </Link>
-              </p>
-            <div className='ant-modal-footer'>
-              <Button type="primary" htmlType="submit">
-                Ingresar
-              </Button >
-            </div>
-      </form>
-        </Modal>
+          <p> ¿No tienes cuenta?
+            <Link to="/register">
+              <Button type="link">
+                Registrate
+              </Button>
+            </Link>
+          </p>
+          <div className='ant-modal-footer'>
+            <Button type="primary" htmlType="submit">
+              Ingresar
+            </Button >
+          </div>
+        </form>
+      </Modal>
     </>
   )
 }
