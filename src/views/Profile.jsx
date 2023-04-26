@@ -4,9 +4,11 @@ import { Modal, Input, Button } from 'antd'
 import { EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons'
 import React from 'react'
 import CardComments from '../component/CardComments.jsx'
+import useAuth from '../hooks/useAuth.js'
 
 
 function Perfil() {
+  const { isAuthenticated, logout } = useAuth()
 
   const { post } = useServer()
   const navigate = useNavigate()
@@ -54,10 +56,8 @@ function Perfil() {
             iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
           />
             <div className='ant-modal-footer'>
-              <Button type="primary" htmlType="submit">
-  Guardar
+          {isAuthenticated &&  <Button type="primary" htmlType="submit" onClick={logout}>Cerrar Sesión</Button>}
                 
-              </Button >
             </div>
       </form>
         </Modal>

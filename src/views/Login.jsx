@@ -1,29 +1,21 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link} from 'react-router-dom'
 import useServer from '../hooks/useServer.js'
-import { Modal, Input, Button } from 'antd'
+import { Modal, Input, Button} from 'antd'
 import { EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons'
 import React from 'react'
-
 import './Login.css'
-
-
 function Login() {
-  const { post, get } = useServer()
+  const { post } = useServer()
   const navigate = useNavigate()
-
   const handleSubmit = async e => {
-
     e.preventDefault()
     const credentials = Object.fromEntries(new FormData(e.target))
     const { data } = await post({ url: '/login', body: credentials })
-    const usr = data && await get({ url: '/profile' }) //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
-    if (usr) return navigate('/') //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
+    if (data) return navigate('/main') //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
   }
-
   const handleCancel = () => {
     navigate("/")
   }
-
   return (
     <>
         <Modal
@@ -35,7 +27,6 @@ function Login() {
           footer={<></>}
         >
       <form onSubmit={handleSubmit} className='form-login'>
-
           <Input
             id="email"
             name="email"
@@ -44,7 +35,6 @@ function Login() {
             required
             placeholder="Email"
           />
-
           <Input.Password
             id="password"
             name="password"
@@ -54,7 +44,13 @@ function Login() {
             placeholder="Contraseña"
             iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
           />
-            <p>¿No tienes cuenta? Registrate</p>
+           <p> ¿No tienes cuenta?
+          <Link to="/register">
+          <Button type="link">
+              Registrate
+            </Button>
+           </Link>
+              </p>
             <div className='ant-modal-footer'>
               <Button type="primary" htmlType="submit">
                 Ingresar
@@ -65,5 +61,4 @@ function Login() {
     </>
   )
 }
-
 export default Login

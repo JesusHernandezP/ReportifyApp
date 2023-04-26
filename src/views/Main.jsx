@@ -5,12 +5,13 @@ import useAuth from '../hooks/useAuth'
 
 
 function Main() {
+
   const { isAuthenticated } = useAuth()
 
   return (
     <>
       {isAuthenticated && <p>Usuario Autenticado</p>}
-      {isAuthenticated ? <p>Usuario Autenticado</p> : <button>Iniciar sesion</button>}
+      {/* {isAuthenticated ? <p>Usuario Autenticado</p> : <button>Iniciar sesion</button>} */}
       <CarouselComponet />
       <CardsMain />
     </>

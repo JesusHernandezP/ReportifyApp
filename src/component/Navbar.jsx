@@ -14,8 +14,15 @@ const Navbar = () => {
   const navigate = useNavigate()
 
   function handleClick() {
-    navigate("/login");
+    navigate("/login");  
+
   }
+  function handleClickProfile() {
+    navigate("/profile");  
+
+  }
+
+
 
   return (
     <>
@@ -35,8 +42,11 @@ const Navbar = () => {
 
         <div className='nav-container_division'>
           {isAuthenticated && <ModalButton />}
-          {isAuthenticated &&  <button onClick={logout}>Cerrar Sesión</button>}
+          {/* {isAuthenticated &&  <button onClick={logout}><Route path="/profile" element={<Profile />} /></button>} */}
           <Button type="default" shape="circle" icon={<UserOutlined />} onClick={handleClick} />
+          {isAuthenticated && <Button type="default" shape="circle" icon={<UserOutlined />} onClick={handleClickProfile}  /> 
+}
+
         </div>
       </div>
 

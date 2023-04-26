@@ -7,9 +7,12 @@ import CarouselComponet from './component/Carousel'
 import Cards from './component/Cards'
 import Login from './views/Login'
 import Main from './views/Main'
-import Profile from './views/Profile'
 import Post from './views/Post'
 import Comments from './views/Comments'
+import Profile from './views/Profile'
+import Register from './views/Register'
+
+
 
 
 function App() {
@@ -17,7 +20,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <ThemeButton/>
+      {/* <ThemeButton/> */}
    
       <div>
       {/* {JSON.stringify({ isAuthenticated })} */}
@@ -28,6 +31,8 @@ function App() {
         <Route path="/post" element={<Post />} />
         <Route path="/comments" element={<Comments />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/register" element={<Register />} />
+
 
         {/* {!isAuthenticated ? <Route path="/login" element={<Login />} /> : null} */}
         {/* {!isAuthenticated ? <Route path="/profile" element={ <Profile />} /> : null}  */}
