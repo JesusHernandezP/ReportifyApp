@@ -10,6 +10,8 @@ function Main() {
 
   return (
     <>
+      <ThemeButton />
+
       {isAuthenticated && <p>Usuario Autenticado</p>}
       {/* {isAuthenticated ? <p>Usuario Autenticado</p> : <button>Iniciar sesion</button>} */}
       <CarouselComponet />

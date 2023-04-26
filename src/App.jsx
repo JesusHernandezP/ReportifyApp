@@ -1,10 +1,6 @@
-import { Navigate, Route, Routes} from 'react-router-dom'
+import { Route, Routes} from 'react-router-dom'
 import { PrivateRoutes } from './component/PrivateRoutes'
-import useAuth from './hooks/useAuth'
 import Navbar from './component/Navbar'
-import ThemeButton from './component/ThemeButton'
-import CarouselComponet from './component/Carousel'
-import Cards from './component/Cards'
 import Login from './views/Login'
 import Main from './views/Main'
 import Post from './views/Post'
@@ -20,13 +16,14 @@ function App() {
   return (
     <>
       <Navbar />
+
       {/* <ThemeButton/> */}
    
       <div>
       {/* {JSON.stringify({ isAuthenticated })} */}
       </div>
       <Routes>
-        <Route path="/" element={<Main />} />
+        
         <Route path="/login" element={<Login />} />
         <Route path="/post" element={<Post />} />
         <Route path="/comments" element={<Comments />} />
@@ -40,7 +37,7 @@ function App() {
         <Route path="/register" element={<Register />} /> */}
 
         <Route element={<PrivateRoutes />}>
-          <Route path="/profile" element={<Profile />} />
+        <Route path="/main" element={<Main />} />
         </Route>
         {/* <Route path="*" element={<Navigate to="/main"/>}/> */}
 
