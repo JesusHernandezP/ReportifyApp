@@ -15,11 +15,7 @@ const PostMain = ({ title, content }) => {
   return (
     <Col span={8}>
       <Card
-        style={{
-          width: 400,
-          margin: 10,
 
-        }}
         cover={
           <img
             alt="example"

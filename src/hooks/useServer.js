@@ -11,10 +11,16 @@ function useServer() {
     // "status":"ok",
     // "data":
     //   {"token":"eyJh....."}
-    // }
+    // }^
+
     if (data?.status && data?.data?.token) { //aqui comprobamos si data tiene status ok y un token dentro de data del data
-      setUser(data)
+      setUser({ token: data.data.token})
     }
+
+    if (data?.data?.email) {
+      setUser({ user: data.data })
+    }
+
     if (error && error.message === "Wrong email or password") {
       toast.error('El usuario o contraseña es incorrecto')
     } else {
@@ -27,8 +33,8 @@ function useServer() {
   }
 
   return {
-    get: ({ url }) => httpService({ method: 'GET', url, token }),
-    post: ({ url, body }) => httpService({ method: 'POST', url, token, body }).then(handleResponse),
+    get: ({ url }) => httpService({ method: 'GET', url, token }).then(handleResponse),
+    post: ({ url, body, hasImage }) => httpService({ method: 'POST', url, token, body, hasImage }).then(handleResponse),
     put: ({ url, body }) => httpService({ method: 'PUT', url, token, body }).then(handleResponse),
     delete: ({ url }) => httpService({ method: 'DELETE', url, token })
   }

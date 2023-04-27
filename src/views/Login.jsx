@@ -5,13 +5,14 @@ import { EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons'
 import React from 'react'
 import './Login.css'
 function Login() {
-  const { post } = useServer()
+  const { post, get } = useServer()
   const navigate = useNavigate()
   const handleSubmit = async e => {
     e.preventDefault()
     const credentials = Object.fromEntries(new FormData(e.target))
     const { data } = await post({ url: '/login', body: credentials })
-    if (data) return navigate('/') //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
+    const usr = data && await get({ url: '/profile' })
+    if (usr) return navigate('/') //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
   }
   const handleCancel = () => {
     navigate("/")

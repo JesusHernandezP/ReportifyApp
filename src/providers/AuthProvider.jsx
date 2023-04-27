@@ -9,8 +9,13 @@ const AuthProvider = ({ children }) => {
   const setUserHandler = (user = {}) => {
     if (isEmpty(user)) return
 
-    localStorage.setItem('user', JSON.stringify(user))
-    setCurrentUser(user)
+    const newUser = {
+      ...currentUser,
+      ...user
+    }
+
+    localStorage.setItem('user', JSON.stringify(newUser))
+    setCurrentUser(newUser)
     // (user) es esto -> {"status":"ok","data":{"token":"eyJh....."}} que viene de POSTMAN
   }
 

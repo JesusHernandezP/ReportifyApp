@@ -1,5 +1,6 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
 import { PrivateRoutes } from './component/PrivateRoutes'
+
 import Navbar from './component/Navbar'
 import Login from './views/Login'
 import Main from './views/Main'
@@ -8,10 +9,12 @@ import Comments from './views/Comments'
 import Profile from './views/Profile'
 import Register from './views/Register'
 
+import styles from './App.module.css'
+
 function App() {
 
   return (
-    <>
+    <div className={styles.container}>
       <Navbar />
 
       <div>
@@ -36,7 +39,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} />
 
       </Routes>
-    </>
+    </div>
   )
 }
 
