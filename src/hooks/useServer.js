@@ -6,12 +6,6 @@ function useServer() {
   const { token, setUser } = useAuth()
 
   const handleResponse = ({ data, loading, error }) => {
-    // data es 
-    // {
-    // "status":"ok",
-    // "data":
-    //   {"token":"eyJh....."}
-    // }^
 
     if (data?.status && data?.data?.token) { //aqui comprobamos si data tiene status ok y un token dentro de data del data
       setUser({ token: data.data.token})

@@ -1,22 +1,35 @@
 import { useNavigate, Link } from 'react-router-dom'
-import useServer from '../hooks/useServer.js'
 import { Modal, Input, Button } from 'antd'
 import { EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons'
-import React from 'react'
+import React, { useEffect } from 'react'
+
 import './Login.css'
+import useServer from '../hooks/useServer.js'
+import useAuth from '../hooks/useAuth'
+
 function Login() {
   const { post, get } = useServer()
+  const { token } = useAuth()
   const navigate = useNavigate()
+
   const handleSubmit = async e => {
     e.preventDefault()
+
     const credentials = Object.fromEntries(new FormData(e.target))
-    const { data } = await post({ url: '/login', body: credentials })
-    const usr = data && await get({ url: '/profile' })
-    if (usr) return navigate('/') //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
+    await post({ url: '/login', body: credentials })
   }
+  
+  useEffect(() => {
+    if (!token) return
+
+    const usr = get({ url: '/profile' })
+    if (usr) return navigate('/') //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
+  }, [token])
+
   const handleCancel = () => {
     navigate("/")
   }
+
   return (
     <>
       <Modal

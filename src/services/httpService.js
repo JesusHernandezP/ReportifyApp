@@ -11,8 +11,6 @@ async function httpService({ url, method = 'GET', token = null, body = null, has
       }
     }
 
-    console.log({token})
-
     if (token) {
       config.headers.Authorization = `Bearer ${token}`
     }

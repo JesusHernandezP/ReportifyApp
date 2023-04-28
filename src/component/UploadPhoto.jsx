@@ -27,8 +27,8 @@ const UploadPhoto = () => (
     </p>
     <p className="ant-upload-text">Sube tu foto</p>
     <p className="ant-upload-hint">
-       Jpg, Svg, Png, mp4
-    </p>
+      Jpg, Svg, Png, mp4
+    </p>-
   </Dragger>
 );
 export default UploadPhoto;

@@ -1,6 +1,6 @@
 import CarouselComponet from '../component/Carousel'
-import ThemeButton from '../component/ThemeButton'
-import CardsMain from '../component/PostsMain'
+import Themes from '../component/Themes'
+import PostsMain from '../component/PostsMain'
 import useAuth from '../hooks/useAuth'
 
 
@@ -10,10 +10,10 @@ function Main() {
 
   return (
     <>
-      <ThemeButton />
       {isAuthenticated && <p>Usuario Autenticado</p>}
       <CarouselComponet />
-      <CardsMain />
+      <Themes />
+      <PostsMain />
     </>
   )
 }

@@ -27,12 +27,12 @@ const AuthProvider = ({ children }) => {
   const authValues = useMemo(() => {
     return {
       user: currentUser?.user || null,
-      token: currentUser?.data?.token,
-      isAuthenticated: !!currentUser?.data?.token, //!!lo vuelve buleano pro doble cancelación
+      token: currentUser?.token,
+      isAuthenticated: !!currentUser?.token, //!!lo vuelve buleano pro doble cancelación
       setUser: setUserHandler,
       logout: logoutHandler
     }
-  })
+  }, [currentUser])
 
   return <AuthContext.Provider value={authValues}>
     { children }

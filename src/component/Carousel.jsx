@@ -1,35 +1,47 @@
-import { Carousel } from 'antd';
+import Carousel from 'react-bootstrap/Carousel';
 
-
-const contentStyle = {
-  margin: 0,
-  height: '50vh',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  backgroundImage: 'url("https://placeimg.com/1200/760/tech/grayscale")',
-
-};
-
-const CarouselComponet = () => {
-  const onChange = (currentSlide) => {
-    console.log(currentSlide);
-  };
+function CarouselComponet() {
   return (
-    <Carousel afterChange={onChange}>
-      <div>
-        <h3 style={contentStyle}>Ultimas Noticias</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>Ultimas Noticias</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>Ultimas Noticias</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>Ultimas Noticias</h3>
-      </div>
+    <Carousel>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://placeimg.com/450/275/people"
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://placeimg.com/450/275/people"
+          alt="Second slide"
+        />
+
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://placeimg.com/450/275/people"
+          alt="Third slide"
+        />
+
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
     </Carousel>
   );
-};
+}
+
 export default CarouselComponet;
