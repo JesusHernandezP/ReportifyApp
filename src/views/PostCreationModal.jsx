@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import useServer from '../hooks/useServer.js'
-import { Modal, Input, Button } from 'antd'
+import { Modal, Input, Button, Upload } from 'antd'
+import { UploadOutlined } from '@ant-design/icons'
 import React from 'react'
 import UploadPhoto from '../component/UploadPhoto.jsx'
 
@@ -13,7 +14,7 @@ function PostCreationModal() {
   const handleSubmit = async e => {
     e.preventDefault()
     const formData = new FormData(e.target)
-    await post({ url:'/news', body: formData, hasImage:true})
+    await post({ url: '/news', body: formData, hasImage: true })
   }
 
   const handleCancel = () => {
@@ -31,7 +32,7 @@ function PostCreationModal() {
         footer={<></>}
       >
         <form onSubmit={handleSubmit} className='form-login'>
-          <UploadPhoto />
+          {/* <UploadPhoto /> */}
           <Input
             name="title"
             required
@@ -42,16 +43,22 @@ function PostCreationModal() {
             required
             placeholder="Categoría"
           />
-          {/* <input
-            type="file"
-            name="photo"
-            accept="image/png, image/jpeg"
-          /> */}
           <Input.TextArea
             name="content"
             required
             placeholder="Comentario"
           />
+          <input type="file"
+            name="photo"
+            accept="image/*"
+            />
+            {/* <Upload>
+          <Input
+            name="theme"
+            placeholder="Añadir una imagen"
+            icon={<UploadOutlined />}
+          />
+          </Upload> */}
           <div className='ant-modal-footer'>
             <Button type="primary" htmlType="submit">
               Publicar

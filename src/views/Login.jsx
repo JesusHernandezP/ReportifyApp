@@ -18,12 +18,15 @@ function Login() {
     const credentials = Object.fromEntries(new FormData(e.target))
     await post({ url: '/login', body: credentials })
   }
-  
-  useEffect(() => {
-    if (!token) return
 
-    const usr = get({ url: '/profile' })
-    if (usr) return navigate('/') //cuando le das iniciar sesión me lleva a main que es / que es la vista principal
+  useEffect(() => { 
+    const refreshProfile = async () => {
+      if (!token) return
+  
+      const usr = await get({ url: '/profile' })
+      if (usr) return navigate('/')
+    } 
+    refreshProfile()
   }, [token])
 
   const handleCancel = () => {

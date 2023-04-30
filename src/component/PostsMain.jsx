@@ -3,18 +3,23 @@ import useServer from '../hooks/useServer.js'
 import ModalButtonComments from './ModalButtonComments.jsx'
 import { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
-import { apiURL } from "../config";
+import { apiURL } from "../config"
+
+import './PostsMain.css'
 
 const PostMain = ({ photo, title, content }) => {
 
   const { isAuthenticated } = useAuth()
 
+  const hasImage =  typeof photo === 'string'
+
   return (
-    <Card>
-      <Card.Img variant="top" src={`${apiURL}/photos/${photo}`} alt="" />
-      {console.log(photo)}
+    <Card className='postmain'>
+      {hasImage && <Card.Img className='postmain-img' variant="top"  src={ `${apiURL}/photos/${photo}`} alt={title} />}
       <Card.Body>
-        {title}
+      <Card.Title>
+          {title}
+        </Card.Title>
         <Card.Text>
           {content}
         </Card.Text>
@@ -46,7 +51,7 @@ const PostsMain = () => {
       {
         news.map((new_) => {
           return (
-            <PostMain key={new_.id} title={new_.title} content={new_.content} photo={new_.photo} /> //por ahora solo hemos mapeado tittle y content, falta el resto
+            <PostMain key={new_.id} title={new_.title} content={new_.content} photo={new_.photo} />
           )
         }
         )

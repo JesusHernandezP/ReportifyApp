@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import React from 'react'
 import useAuth from '../hooks/useAuth.js'
 import { apiURL } from '../config.js'
-import { Modal, Descriptions, Button, Avatar } from 'antd'
+import { Modal, Button, Avatar } from 'antd'
 
 import './Profile.css'
 

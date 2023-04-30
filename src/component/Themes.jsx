@@ -1,24 +1,34 @@
-import React from 'react'
-import Buttons from './Buttons/Index'
+import React, { useState } from 'react'
+import { Tag } from 'antd'
 
-const themes = ['Deportes', 'Tecnología', 'Música']
+import './Themes.css'
 
-const renderButtons = onClickTheme => {
+const { CheckableTag } = Tag
 
-  const renderButton = theme => (
-      <Buttons
-          key={theme}
-          text={theme.toString()}
-          clickHandler={onClickTheme} />
+const themes = ['sports', 'politics', 'economy', 'education', 'society', 'technology', 'culture', 'science', 'gaming', 'medicine']
+
+const Themes = ({ onClickTheme }) => {
+  
+  const [selectedTags, setSelectedTags] = useState([]);
+
+  const handleChange = (tag, checked) => {
+    const nextSelectedTags = checked
+      ? [...selectedTags, tag]
+      : selectedTags.filter((t) => t !== tag);
+    setSelectedTags(nextSelectedTags);
+  }
+  return (
+      <div className="themes">
+      {themes.map((tag) => (
+        <CheckableTag
+          key={tag}
+          checked={selectedTags.includes(tag)}
+          onChange={(checked) => handleChange(tag, checked)}
+        >
+          {tag}
+        </CheckableTag>
+      ))}
+      </div>
   )
-  return themes.map(renderButton)
 }
-
-const Themes = ({ onClickTheme }) => (
-  <section className="themes">
-      {
-          renderButtons(onClickTheme)
-      }
-  </section>
-)
 export default Themes

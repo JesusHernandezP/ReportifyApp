@@ -1,0 +1,8 @@
+.postmain {
+    margin-top: 20px;
+}
+.postmain-img {
+    width: auto;
+    height: 300px;
+    object-fit: cover;
+}
