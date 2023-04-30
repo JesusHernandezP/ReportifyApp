@@ -7,7 +7,7 @@ function useServer() {
 
   const handleResponse = ({ data, loading, error }) => {
 
-    if (data?.status && data?.data?.token) { //aqui comprobamos si data tiene status ok y un token dentro de data del data
+    if (data?.status && data?.data?.token) {
       setUser({ token: data.data.token})
     }
 
@@ -29,8 +29,8 @@ function useServer() {
   return {
     get: ({ url }) => httpService({ method: 'GET', url, token }).then(handleResponse),
     post: ({ url, body, hasImage }) => httpService({ method: 'POST', url, token, body, hasImage }).then(handleResponse),
-    put: ({ url, body }) => httpService({ method: 'PUT', url, token, body }).then(handleResponse),
-    delete: ({ url }) => httpService({ method: 'DELETE', url, token })
+    patch: ({ url, body, hasImage }) => httpService({ method: 'PATCH', url, token, body, hasImage }).then(handleResponse),
+    delete: ({ url }) => httpService({ method: 'DELETE', url, token }).then(handleResponse),
   }
 }
 

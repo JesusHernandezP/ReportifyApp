@@ -1,5 +1,5 @@
 import React from 'react'
-import Buttons from './Buttons/index'
+import Buttons from './Buttons/Index'
 
 const themes = ['Deportes', 'Tecnología', 'Música']
 
@@ -21,7 +21,4 @@ const Themes = ({ onClickTheme }) => (
       }
   </section>
 )
-
-
-
 export default Themes

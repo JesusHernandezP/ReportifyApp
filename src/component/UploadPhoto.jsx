@@ -1,10 +1,10 @@
 import { InboxOutlined } from '@ant-design/icons';
 import { message, Upload } from 'antd';
-const { Dragger } = Upload;
+const { Dragger } = Upload
 const props = {
-  name: 'file',
-  multiple: true,
-  action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+  name: "photo",
+  // multiple: true,
+  // action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
   onChange(info) {
     const { status } = info.file;
     if (status !== 'uploading') {
@@ -21,14 +21,16 @@ const props = {
   },
 };
 const UploadPhoto = () => (
+  <div>
   <Dragger {...props}>
     <p className="ant-upload-drag-icon">
       <InboxOutlined />
     </p>
     <p className="ant-upload-text">Sube tu foto</p>
     <p className="ant-upload-hint">
-      Jpg, Svg, Png, mp4
-    </p>-
+      Jpg, Png
+    </p>
   </Dragger>
-);
+  </div>
+)
 export default UploadPhoto;

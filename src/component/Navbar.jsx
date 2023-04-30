@@ -31,12 +31,16 @@ const Navbar = () => {
             <path d="M11.5 3a17 17 0 0 0 0 18"></path>
             <path d="M12.5 3a17 17 0 0 1 0 18"></path>
           </svg>
-          <Search placeholder="input search text" onSearch={onSearch} enterButton />
+          <Search placeholder="Buscar..." onSearch={onSearch} enterButton />
         </div>
 
         <div className='nav-container_division'>
           {isAuthenticated && <ModalButton />}
-          {!isAuthenticated &&<Button type="default" shape="circle" icon={<UserOutlined />} onClick={handleClick}/>}
+          {!isAuthenticated && <Button type="default" shape="round" icon={<UserOutlined />}onClick={handleClick}> 
+            Iniciar sesión
+          </Button>}
+          {/* linea de abajo botón solo muñequito sin "Iniciar sesión" */}
+          {/* {!isAuthenticated &&<Button type="default" shape="circle" icon={<UserOutlined />} onClick={handleClick}/>} */} 
           {isAuthenticated && <Avatar className='cursor-pointer' src={`${apiURL}/avatars/${user?.avatar}`} onClick={handleClick}/>}
         </div>
       </div>

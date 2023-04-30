@@ -1,13 +1,22 @@
 import { useNavigate } from 'react-router-dom'
-import { Modal, Descriptions, Button } from 'antd'
 import React from 'react'
-import ProfilePhoto from '../component/ProfilePhoto.jsx'
 import useAuth from '../hooks/useAuth.js'
+import { apiURL } from '../config.js'
+import { Modal, Descriptions, Button, Avatar } from 'antd'
 
+import './Profile.css'
+
+const DescriptionItem = ({label, children}) => {
+  return (
+    <div>
+      <span className='profile-description-title'>{label}: </span>
+      <span className='profile-description-content'>{children}</span>
+    </div>
+  )
+}
 
 function Perfil() {
   const { isAuthenticated, logout, user } = useAuth()
-
 
   const navigate = useNavigate()
 
@@ -22,23 +31,25 @@ function Perfil() {
   return (
     <>
       <Modal
-        title={<ProfilePhoto img={user?.avatar} />}
+        title='Perfil'
         centered
         open
         onCancel={handleClick}
         // Ocultar botones del modal sobreescribiendolos con un html vacio: fragment
         footer={<></>}
       >
-        <Descriptions title="Perfil">
-          <Descriptions.Item label="Usuario">{user?.username}</Descriptions.Item>
-          <Descriptions.Item label="E-mail">{user?.email}</Descriptions.Item>
-          <Descriptions.Item label="Registro">{user?.createdAt}</Descriptions.Item>
-        </Descriptions>
-        <div className='ant-modal-footer'>
-          {isAuthenticated && <Button type="primary" htmlType="submit" onClick={handleLogout}>Cerrar sesión</Button>}
-
+        <div className='profile-body'>
+        <Avatar src={`${apiURL}/avatars/${user?.avatar}`} size={200}/>
+        <div>
+          <DescriptionItem label="Usuario">{user?.username}</DescriptionItem>
+          <DescriptionItem label="E-mail">{user?.email}</DescriptionItem>
+          <DescriptionItem label="Registro">{user?.createdAt}</DescriptionItem>
         </div>
 
+        </div>
+        <div className='ant-modal-footer'>
+          {isAuthenticated && <Button type="primary" htmlType="submit" onClick={handleLogout}>Cerrar sesión</Button>}
+        </div>
       </Modal>
     </>
   )

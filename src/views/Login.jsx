@@ -37,22 +37,17 @@ function Login() {
         centered
         open
         onCancel={handleCancel}
-        // Ocultar botones del modal sobreescribiendolos con un html vacio: fragment
         footer={<></>}
       >
         <form onSubmit={handleSubmit} className='form-login'>
           <Input
-            id="email"
             name="email"
-            type="email"
             autoComplete="email"
             required
             placeholder="Email"
           />
           <Input.Password
-            id="password"
             name="password"
-            type="password"
             autoComplete="password"
             required
             placeholder="Contraseña"
@@ -61,7 +56,7 @@ function Login() {
           <p> ¿No tienes cuenta?
             <Link to="/register">
               <Button type="link">
-                Registrate
+                Regístrate
               </Button>
             </Link>
           </p>

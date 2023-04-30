@@ -1,0 +1,27 @@
+.profile-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-body>.ant-avatar {
+    margin: 20px;
+}
+
+.profile-description-title {
+    color: rgba(0, 0, 0, 0.45);
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.5714285714285714;
+    text-align: start;
+    padding-right: 5px;
+}
+
+.profile-description-content {
+    color: rgba(0, 0, 0, 0.88);
+    font-size: 14px;
+    line-height: 1.5714285714285714;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}

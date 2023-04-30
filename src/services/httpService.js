@@ -3,6 +3,7 @@ import { apiURL } from "../config"
 async function httpService({ url, method = 'GET', token = null, body = null, hasImage = false }) {
     if (!url.startsWith('/')) throw new Error('URL Must Start With a Slash (/)')
 
+    console.log({hasImage})
     const fullURL = new URL(apiURL + url)
     const config = {
       method,
@@ -14,7 +15,7 @@ async function httpService({ url, method = 'GET', token = null, body = null, has
     if (token) {
       config.headers.Authorization = `Bearer ${token}`
     }
-
+    
     if (!hasImage) {
       config.headers['Content-Type'] = 'application/json'
     }
@@ -28,6 +29,7 @@ async function httpService({ url, method = 'GET', token = null, body = null, has
     }
 
     try {
+      console.log(config);
       const response = await fetch(fullURL.href, config)
       const data = await response.json()
 

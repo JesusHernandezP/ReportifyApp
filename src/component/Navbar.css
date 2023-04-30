@@ -35,3 +35,8 @@
     border-bottom-left-radius: 999px;
     text-align: center;
 }
+
+.ant-btn > .anticon {
+    vertical-align: 0%;
+    transform: translateY(-1px);
+}

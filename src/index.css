@@ -18,3 +18,25 @@
 .cursor-pointer {
 cursor: pointer;
 }
+
+.ant-avatar {
+  border: 1px solid #d9d9d9;
+}
+
+.ant-input {
+  border-start-end-radius: 999px;
+  border-end-end-radius: 999px;
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+
+.ant-input-password {
+  border-start-end-radius: 999px;
+  border-end-end-radius: 999px;
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+
+.ant-form > * {
+  margin: 5px;
+  }
