@@ -7,12 +7,12 @@ function useServer() {
 
   const handleResponse = ({ data, loading, error }) => {
 
-    if (data?.status && data?.data?.token) {
-      setUser({ token: data.data.token})
+    if (data?.data?.id) {
+      setUser({ user: data.data})
     }
 
-    if (data?.data?.email) {
-      setUser({ user: data.data })
+    if (data?.data?.token) {
+      setUser({ token: data.data.token})
     }
 
     if (error && error.message === "Wrong email or password") {
