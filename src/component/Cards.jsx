@@ -1,12 +1,10 @@
-import { Card, Col, Row } from 'antd';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-import { Avatar} from 'antd';
+import { Card, Col, Row } from 'antd'
+import { EditOutlined, EllipsisOutlined } from '@ant-design/icons'
+import { Avatar} from 'antd'
 
-
-const { Meta } = Card;
+const { Meta } = Card
 
 const Cards = () => (
-  
   <Row gutter={16}>
     <Col span={8}>
     <Card
@@ -87,6 +85,6 @@ const Cards = () => (
     </Col>
     
   </Row>
-);
-export default Cards;
+)
+export default Cards
 

@@ -1,14 +1,9 @@
-// import { Card, Col, Row } from 'antd'
-import { EditOutlined, EllipsisOutlined } from '@ant-design/icons'
 import useAuth from '../hooks/useAuth.js'
 import useServer from '../hooks/useServer.js'
-import { Avatar } from 'antd'
 import ModalButtonComments from './ModalButtonComments.jsx'
 import { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
 import { apiURL } from "../config";
-
-// const { Meta } = Card
 
 const PostMain = ({ photo, title, content }) => {
 
@@ -25,13 +20,7 @@ const PostMain = ({ photo, title, content }) => {
         </Card.Text>
         <div>
           {isAuthenticated && <ModalButtonComments key="setting" />}
-
         </div>
-
-
-
-
-
       </Card.Body>
     </Card>
   )
@@ -66,5 +55,5 @@ const PostsMain = () => {
     </>
   )
 }
-export default PostsMain;
+export default PostsMain
 

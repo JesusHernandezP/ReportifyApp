@@ -2,9 +2,6 @@ import { Button, Form, Input, Modal } from 'antd'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-
-
-
 const MyFormItemContext = React.createContext([])
 
 function toArr(str) {
@@ -41,7 +38,7 @@ const Register = () => {
         open
         onCancel={handleCancel} // Ocultar botones del modal sobreescribiendolos con un html vacio: fragment
         footer={<></>}  
-         >
+        >
     <Form name="form_item_path" layout="vertical" onFinish={onFinish}>
       <MyFormItemGroup prefix={['user']}>
         <MyFormItemGroup prefix={['name']}>

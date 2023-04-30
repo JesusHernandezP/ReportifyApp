@@ -1,15 +1,17 @@
 import { UserOutlined } from '@ant-design/icons'
 import { useNavigate } from "react-router-dom"
-import { Button, Input } from 'antd'
+import { Button, Input, Avatar } from 'antd'
 import useAuth from '../hooks/useAuth.js'
 import ModalButton from '../component/ModalButton.jsx'
+import { apiURL } from '../config.js'
+
 import './Navbar.css'
 
 const { Search } = Input
 const onSearch = (value) => console.log(value)
 
 const Navbar = () => {
-  const { isAuthenticated } = useAuth()
+  const { isAuthenticated, user } = useAuth()
 
   const navigate = useNavigate()
 
@@ -34,7 +36,8 @@ const Navbar = () => {
 
         <div className='nav-container_division'>
           {isAuthenticated && <ModalButton />}
-          <Button type="default" shape="circle" icon={<UserOutlined />} onClick={handleClick} />
+          {!isAuthenticated &&<Button type="default" shape="circle" icon={<UserOutlined />} onClick={handleClick}/>}
+          {isAuthenticated && <Avatar className='cursor-pointer' src={`${apiURL}/avatars/${user?.avatar}`} onClick={handleClick}/>}
         </div>
       </div>
     </>

@@ -20,7 +20,6 @@ function CarouselComponet() {
           src="https://placeimg.com/450/275/people"
           alt="Second slide"
         />
-
         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -32,7 +31,6 @@ function CarouselComponet() {
           src="https://placeimg.com/450/275/people"
           alt="Third slide"
         />
-
         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>
@@ -41,7 +39,7 @@ function CarouselComponet() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-  );
+  )
 }
 
-export default CarouselComponet;
+export default CarouselComponet

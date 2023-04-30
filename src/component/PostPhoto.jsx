@@ -1,7 +1,7 @@
-import { Image } from 'antd';
+import { Image } from 'antd'
 import { apiURL } from '../config.js'
 
-function ProfilePhoto({ img }) {
+function PostPhoto({ img }) {
   return <Image
     width={200}
     height={200}
@@ -11,4 +11,4 @@ function ProfilePhoto({ img }) {
 }
 
 
-export default ProfilePhoto;
+export default PostPhoto

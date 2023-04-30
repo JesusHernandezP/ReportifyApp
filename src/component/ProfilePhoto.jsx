@@ -1,4 +1,4 @@
-import { Image } from 'antd';
+import { Image } from 'antd'
 import { apiURL } from '../config.js'
 
 function ProfilePhoto({ img }) {
@@ -6,9 +6,6 @@ function ProfilePhoto({ img }) {
     width={200}
     height={200}
     src={`${apiURL}/avatars/${img}`}
-  
   />
 }
-
-
-export default ProfilePhoto;
+export default ProfilePhoto

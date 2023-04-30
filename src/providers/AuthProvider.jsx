@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
     return {
       user: currentUser?.user || null,
       token: currentUser?.token,
-      isAuthenticated: !!currentUser?.token, //!!lo vuelve buleano pro doble cancelación
+      isAuthenticated: !!currentUser?.token, //!!lo vuelve buleano por doble cancelación
       setUser: setUserHandler,
       logout: logoutHandler
     }
