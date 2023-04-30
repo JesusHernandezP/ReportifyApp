@@ -15,6 +15,7 @@ function PostCreationModal() {
     e.preventDefault()
     const formData = new FormData(e.target)
     await post({ url: '/news', body: formData, hasImage: true })
+    navigate("/")
   }
 
   const handleCancel = () => {
