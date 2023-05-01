@@ -4,6 +4,7 @@ import { Modal, Input, Button, Upload } from 'antd'
 import { UploadOutlined } from '@ant-design/icons'
 import React from 'react'
 import UploadPhoto from '../component/UploadPhoto.jsx'
+import Form from 'react-bootstrap/Form';
 
 
 function PostCreationModal() {
@@ -49,10 +50,15 @@ function PostCreationModal() {
             required
             placeholder="Comentario"
           />
-          <input type="file"
+          <Form.Group controlId="formFilesm" className="mb-3">
+          <Form.Label></Form.Label>
+          <Form.Control type="file" name="photo"
+            accept="image/*" size="sm"/>
+         </Form.Group>
+          {/* <input type="file"
             name="photo"
             accept="image/*"
-            />
+            /> */}
             {/* <Upload>
           <Input
             name="theme"

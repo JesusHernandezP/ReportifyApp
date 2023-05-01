@@ -4,29 +4,41 @@ import ModalButtonComments from './ModalButtonComments.jsx'
 import { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
 import { apiURL } from "../config"
+import Button from 'react-bootstrap/Button'
+import './Navbar.css'
 
 import './PostsMain.css'
 
 const PostMain = ({ photo, title, content }) => {
-
+  
   const { isAuthenticated } = useAuth()
-
+  
   const hasImage =  typeof photo === 'string'
+  
+  const [contador, setContador] = useState(0)
 
   return (
     <Card className='postmain modal-shadow'>
       {hasImage && <Card.Img className='postmain-img' variant="top"  src={ `${apiURL}/photos/${photo}`} alt={title} />}
       <Card.Body >
-      <Card.Title >
-          {title}
+        
+        <Card.Title >
+            {title}
         </Card.Title>
-      
+        
         <Card.Text >
-          {content}
+            {content}
         </Card.Text>
-        <div>
-          {isAuthenticated && <ModalButtonComments key="setting" />}
-        </div>
+
+          <div className='nav-container_division'>
+            <div>
+              {isAuthenticated && <ModalButtonComments key="setting" />}
+            </div>
+            <div>
+              <Button  onClick={() => { setContador ( contador + 1)}} i className="bi bi-hand-thumbs-up-fill" variant="light"> likes {contador}</Button>
+            </div> 
+          </div>
+
       </Card.Body>
     </Card>
   )

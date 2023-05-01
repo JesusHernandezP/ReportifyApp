@@ -7,37 +7,36 @@ function CarouselComponet() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://placeimg.com/450/275/people"
+          src="https://i.ytimg.com/vi/2BjCIs2fKWU/maxresdefault.jpg"
+          
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <p></p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://placeimg.com/450/275/people"
+          src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2022/04/06/16492201547832.jpg"
           alt="Second slide"
         />
         <Carousel.Caption>
           <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur odit voluptas quam voluptatem, alias, veniam eligendi cumque quia deleniti maxime cupiditate similique dolor quod quae voluptatum nemo earum molestiae saepe.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://placeimg.com/450/275/people"
-          alt="Third slide"
-        />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur odit voluptas quam voluptatem, alias, veniam eligendi cumque quia deleniti maxime cupiditate similique dolor quod quae voluptatum nemo earum molestiae saepe.
           </p>
         </Carousel.Caption>
+        <img
+          className="d-block w-100"
+          src="https://i.ytimg.com/vi/keHXFb9Ikxo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAeCF40o-HCVKdIlP13SzvzL8-Y9w"
+          alt="Third slide"
+        />
       </Carousel.Item>
     </Carousel>
   )

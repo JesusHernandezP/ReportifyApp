@@ -2,9 +2,9 @@ import { Image } from 'antd';
 
 const CardComments = () => (
   <Image
-    width={200}
-    height={200}
-    src="https://placeimg.com/450/275/people"
+    width={400}
+    height={300}
+    src='http://loremflickr.com/320/240/'
   />
 )
 export default CardComments;

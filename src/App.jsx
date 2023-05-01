@@ -10,7 +10,7 @@ import Comments from './views/Comments'
 import Profile from './views/Profile'
 import Register from './views/Register'
 
-import Switch from "react-switch"
+import Toggle from 'react-styled-toggle';
 import styles from './App.module.css'
 
 export const ThemeContext = createContext(null);
@@ -19,18 +19,26 @@ export const ThemeContext = createContext(null);
 function App() {
 
   const[theme, setTheme] = useState ('dark');
+
   const toogleTheme = () => {
     setTheme((curr) => (curr === 'light' ? 'dark' : 'light' ))
   }
+  
   return (
   <ThemeContext.Provider value={{ theme, toogleTheme}}>
     <div id={theme}>
 
     <div className={styles.container}>
       <Navbar />
+
     <div className='switch' >
-      <label> {theme === 'light' ? 'Light Mode' : 'Dark Mode'} </label>
-    <Switch  onChange={toogleTheme} checked={theme === 'dark'}/>
+      <label> {theme === 'dark' ? '' : ''} </label>
+    <Toggle width={40}
+            height={20}
+            sliderWidth={12}
+            sliderHeight={12}
+            translate={19} 
+            onChange={toogleTheme} checked={theme === 'light'}/>
     </div>
       
 
