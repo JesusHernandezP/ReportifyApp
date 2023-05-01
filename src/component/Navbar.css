@@ -12,11 +12,17 @@
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+
 }
 
 .nav-container_division > * {
     margin: 5px;
 }
+
+
+
 
 .ant-input-search > .ant-input-group > .ant-input {
     border-top-left-radius: 999px;
@@ -40,3 +46,4 @@
     vertical-align: 0%;
     transform: translateY(-1px);
 }
+

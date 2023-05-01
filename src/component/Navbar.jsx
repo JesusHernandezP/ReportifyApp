@@ -4,7 +4,7 @@ import { Button, Input, Avatar } from 'antd'
 import useAuth from '../hooks/useAuth.js'
 import ModalButton from '../component/ModalButton.jsx'
 import { apiURL } from '../config.js'
-
+// import CambiarTema from './index.js'
 import './Navbar.css'
 
 const { Search } = Input
@@ -42,6 +42,7 @@ const Navbar = () => {
           {/* linea de abajo botón solo muñequito sin "Iniciar sesión" */}
           {/* {!isAuthenticated &&<Button type="default" shape="circle" icon={<UserOutlined />} onClick={handleClick}/>} */} 
           {isAuthenticated && <Avatar className='cursor-pointer' src={`${apiURL}/avatars/${user?.avatar}`} onClick={handleClick}/>}
+          
         </div>
       </div>
     </>

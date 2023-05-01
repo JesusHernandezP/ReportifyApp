@@ -30,7 +30,7 @@ function Perfil() {
 
   return (
     <>
-      <Modal
+      <Modal 
         title='Perfil'
         centered
         open

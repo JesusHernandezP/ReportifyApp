@@ -3,7 +3,7 @@ import './Carousel.css'
 
 function CarouselComponet() {
   return (
-    <Carousel>
+    <Carousel >
       <Carousel.Item>
         <img
           className="d-block w-100"

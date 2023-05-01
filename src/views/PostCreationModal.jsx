@@ -24,7 +24,7 @@ function PostCreationModal() {
 
   return (
     <>
-      <Modal
+      <Modal 
         title='Crear post'
         centered
         open

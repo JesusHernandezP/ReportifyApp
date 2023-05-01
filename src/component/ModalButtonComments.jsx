@@ -1,7 +1,5 @@
-import { PlusOutlined, UserOutlined, AntDesignOutlined } from '@ant-design/icons'
 import { useNavigate } from "react-router-dom"
-import { Button, Avatar, Input } from 'antd'
-
+import Button from 'react-bootstrap/Button'
 import './Navbar.css'
 
 const ModalButtonComments = () => {
@@ -17,7 +15,19 @@ const ModalButtonComments = () => {
 
        <div className='nav-container_division'>
           {/* <Button type="primary" shape="circle" icon={<PlusOutlined />} /> */}
-          <Button type="default" shape="circle" icon={<PlusOutlined />} onClick={handleClick} />
+          <Button i  className="bi bi-chat-text-fill"  onClick={handleClick} />
+        
+
+        <div>
+        <Button i className="bi bi-heart"/>
+        </div>
+
+        <div>
+        <Button i className="bi bi-trash3-fill"/>
+        </div>
+        <div>
+        <Button i className="bi bi-heart-fill"/>
+        </div>
         </div>
 
     </>

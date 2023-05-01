@@ -1,5 +1,6 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
 import { PrivateRoutes } from './component/PrivateRoutes'
+import { createContext, useState } from 'react'
 
 import Navbar from './component/Navbar'
 import Login from './views/Login'
@@ -9,13 +10,29 @@ import Comments from './views/Comments'
 import Profile from './views/Profile'
 import Register from './views/Register'
 
+import Switch from "react-switch"
 import styles from './App.module.css'
+
+export const ThemeContext = createContext(null);
+
 
 function App() {
 
+  const[theme, setTheme] = useState ('dark');
+  const toogleTheme = () => {
+    setTheme((curr) => (curr === 'light' ? 'dark' : 'light' ))
+  }
   return (
+  <ThemeContext.Provider value={{ theme, toogleTheme}}>
+    <div id={theme}>
+
     <div className={styles.container}>
       <Navbar />
+    <div className='switch' >
+      <label> {theme === 'light' ? 'Light Mode' : 'Dark Mode'} </label>
+    <Switch  onChange={toogleTheme} checked={theme === 'dark'}/>
+    </div>
+      
 
       <div>
         {/* {JSON.stringify({ isAuthenticated })} */}
@@ -40,6 +57,8 @@ function App() {
 
       </Routes>
     </div>
+    </div>
+      </ThemeContext.Provider>
   )
 }
 

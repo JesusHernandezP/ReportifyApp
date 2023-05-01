@@ -14,13 +14,14 @@ const PostMain = ({ photo, title, content }) => {
   const hasImage =  typeof photo === 'string'
 
   return (
-    <Card className='postmain'>
+    <Card className='postmain modal-shadow'>
       {hasImage && <Card.Img className='postmain-img' variant="top"  src={ `${apiURL}/photos/${photo}`} alt={title} />}
-      <Card.Body>
-      <Card.Title>
+      <Card.Body >
+      <Card.Title >
           {title}
         </Card.Title>
-        <Card.Text>
+      
+        <Card.Text >
           {content}
         </Card.Text>
         <div>

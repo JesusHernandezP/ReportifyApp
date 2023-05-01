@@ -18,9 +18,9 @@ const Themes = ({ onClickTheme }) => {
     setSelectedTags(nextSelectedTags);
   }
   return (
-      <div className="themes">
+      <div className="themes"  >
       {themes.map((tag) => (
-        <CheckableTag
+        <CheckableTag 
           key={tag}
           checked={selectedTags.includes(tag)}
           onChange={(checked) => handleChange(tag, checked)}
