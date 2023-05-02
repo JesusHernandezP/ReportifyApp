@@ -1,5 +1,5 @@
 :root{
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif, 'DM Serif Text';
   line-height: 1.5;
   font-weight: 400;
 
@@ -16,7 +16,6 @@
   
 }
 
-
 #light{
   background-color: rgb(206, 206, 212);
 }
@@ -24,8 +23,6 @@
 #dark{
   background-color: rgb(62, 62, 63);
 }
-
-
 
 .switch{
   display: flex;
@@ -36,7 +33,6 @@
 
   
 }
-
 
 .cursor-pointer {
 cursor: pointer;
@@ -57,3 +53,10 @@ cursor: pointer;
 .ant-form > * {
   margin: 5px;
   }
+
+.card-title {
+  font-family: 'DM Serif Text', serif;
+  font-size: 2rem;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
