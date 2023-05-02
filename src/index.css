@@ -1,5 +1,7 @@
 :root{
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif, 'DM Serif Text';
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, 'DM Serif Text', 'Outfit', sans-serif;
+  font-family: 'Outfit', sans-serif;
+  font-family: 'Sansita', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -52,6 +54,10 @@ cursor: pointer;
 
 .ant-form > * {
   margin: 5px;
+  }
+
+  .card {
+    font-family: 'Outfit', sans-serif;
   }
 
 .card-title {

@@ -1,15 +1,16 @@
 .postmain {
     margin-top: 20px;
 }
+
 .postmain-img {
     width: auto;
     height: 300px;
     object-fit: cover;
 }
 
-.modal-shadow{
+.modal-shadow {
     padding: 20px;
     box-shadow:
-         inset 0 -3em 3em rgba(0,0,0,0.1),
-               0 0  0 2px rgb(255,255,255),
+        inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+        0 0 0 2px rgb(255, 255, 255),
 }
