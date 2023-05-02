@@ -1,14 +1,10 @@
 import { useNavigate } from 'react-router-dom'
-import useServer from '../hooks/useServer.js'
 import { Modal, Input, Button } from 'antd'
 import { EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons'
+
+import useServer from '../hooks/useServer.js'
 import React from 'react'
-// import UploadPhoto from '../component/UploadPhoto.jsx'
-// import Cards from '../component/Cards.jsx'
 import CardComments from '../component/CardComments.jsx'
-
-
-// import './Login.css'
 
 
 function Comments() {
@@ -30,16 +26,14 @@ function Comments() {
 
   return (
     <>
-        <Modal
-          title={<CardComments />}
-          centered
-          open
-          onCancel={handleCancel}
-          // Ocultar botones del modal sobreescribiendolos con un html vacio: fragment
-          footer={<></>}
-        >
-      <form onSubmit={handleSubmit} className='form-login'>
-
+      <Modal
+        title={<CardComments />}
+        centered
+        open
+        onCancel={handleCancel}
+        footer={<></>}
+      >
+        <form onSubmit={handleSubmit} className='form-login'>
           <Input.TextArea
             id="comentario"
             name="comentario"
@@ -49,14 +43,13 @@ function Comments() {
             placeholder="Comentario"
             iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
           />
-            <div className='ant-modal-footer'>
-              <Button type="primary" htmlType="submit">
-   Publicar
-                
-              </Button >
-            </div>
-      </form>
-        </Modal>
+          <div className='ant-modal-footer'>
+            <Button type="primary" htmlType="submit">
+              Publicar
+            </Button >
+          </div>
+        </form>
+      </Modal>
     </>
   )
 }

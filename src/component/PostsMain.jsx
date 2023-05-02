@@ -1,13 +1,14 @@
+import { useState, useEffect } from 'react'
+import { apiURL } from "../config"
+
 import useAuth from '../hooks/useAuth.js'
 import useServer from '../hooks/useServer.js'
 import ModalButtonComments from './ModalButtonComments.jsx'
-import { useState, useEffect } from 'react'
-import Card from 'react-bootstrap/Card'
-import { apiURL } from "../config"
 import Button from 'react-bootstrap/Button'
-import './Navbar.css'
 
+import Card from 'react-bootstrap/Card'
 import './PostsMain.css'
+import './Navbar.css'
 
 const PostMain = ({ photo, title, content }) => {
 
@@ -21,22 +22,18 @@ const PostMain = ({ photo, title, content }) => {
     <Card className='postmain modal-shadow'>
       {hasImage && <Card.Img className='postmain-img' variant="top" src={`${apiURL}/photos/${photo}`} alt={title} />}
       <Card.Body >
-
         <Card.Title >
           {title}
         </Card.Title>
-
         <Card.Text >
           {content}
         </Card.Text>
-
-          <div className='nav-container_division'>
-            <div>
-              {isAuthenticated && <ModalButtonComments key="setting" />}
-            </div>
-            <div>
-              <Button  onClick={() => { setContador ( contador + 1)}} i className="bi bi-hand-thumbs-up-fill" variant="light"> likes {contador}</Button>
-            </div> 
+        <div className='nav-container_division'>
+          <div>
+            {isAuthenticated && <ModalButtonComments key="setting" />}
+          </div>
+          <div>
+            <Button onClick={() => { setContador(contador + 1) }} i className="bi bi-hand-thumbs-up-fill" variant="light"> likes {contador}</Button>
           </div>
         </div>
       </Card.Body>
@@ -69,7 +66,7 @@ const PostsMain = () => {
           )
         }
         )
-          
+
       }
     </>
   )

@@ -5,9 +5,6 @@ import './Navbar.css'
 
 const ModalButtonComments = () => {
 
-
-  
-
   const navigate = useNavigate()
 
   function handleClick() {
@@ -16,19 +13,12 @@ const ModalButtonComments = () => {
 
   return (
     <>
-
-       <div className='nav-container_division'>
-
+      <div className='nav-container_division'>
         <div>
-      <Button i  className="bi bi-trash3" variant="light" onClick={handleClick} />
-      <Button i className="bi bi-pencil-square" variant="light"/>
+          <Button i className="bi bi-trash3" variant="light" />
+          <Button i className="bi bi-pencil-square" variant="light" onClick={handleClick} />
         </div>
-
-        
-
-        
-        </div>
-
+      </div>
     </>
   )
 }

@@ -3,6 +3,7 @@ import React from 'react'
 import useAuth from '../hooks/useAuth.js'
 import { apiURL } from '../config.js'
 import { Modal, Button, Avatar } from 'antd'
+import Form from 'react-bootstrap/Form';
 
 import './Profile.css'
 
@@ -40,9 +41,11 @@ function Perfil() {
       >
         <div className='profile-body'>
         <Avatar src={`${apiURL}/avatars/${user?.avatar}`} size={200}/>
-        <div>
+        <div >
           <DescriptionItem label="Usuario">{user?.username}</DescriptionItem>
+          <br />
           <DescriptionItem label="E-mail">{user?.email}</DescriptionItem>
+          <br />
           <DescriptionItem label="Registro">{user?.createdAt}</DescriptionItem>
         </div>
 

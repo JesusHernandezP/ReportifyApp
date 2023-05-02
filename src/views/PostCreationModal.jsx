@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
+import { Modal, Input, Button } from 'antd'
+
 import useServer from '../hooks/useServer.js'
-import { Modal, Input, Button  } from 'antd'
 import React from 'react'
 import Form from 'react-bootstrap/Form';
 
@@ -23,7 +24,7 @@ function PostCreationModal() {
 
   return (
     <>
-      <Modal 
+      <Modal
         title='Crear post'
         centered
         open
@@ -32,7 +33,6 @@ function PostCreationModal() {
         footer={<></>}
       >
         <form onSubmit={handleSubmit} className='form-login'>
-          {/* <UploadPhoto /> */}
           <Input
             name="title"
             required
@@ -49,10 +49,10 @@ function PostCreationModal() {
             placeholder="Comentario"
           />
           <Form.Group controlId="formFilesm" className="mb-3">
-          <Form.Label></Form.Label>
-          <Form.Control type="file" name="photo"
-            accept="image/*" size="sm"/>
-         </Form.Group>
+            <Form.Label></Form.Label>
+            <Form.Control type="file" name="photo"
+              accept="image/*" size="sm" />
+          </Form.Group>
           <div className='ant-modal-footer'>
             <Button type="primary" htmlType="submit">
               Publicar

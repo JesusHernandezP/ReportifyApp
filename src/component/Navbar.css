@@ -3,8 +3,7 @@
     justify-content: space-between;
     position: sticky;
     z-index: 999;
-    width: 100%;
-    
+    width: 100%;  
 }
 
 .nav-container_division {
@@ -15,9 +14,7 @@
     font-size: 1.5em;
     cursor: pointer;
     color: #b57482;
-
 }
-
 
 .nav-container_division > * {
     margin: 5px;
@@ -28,23 +25,16 @@
     font-size: 50px;
 }
 
-
-
 .ant-input-search > .ant-input-group > .ant-input {
-    border-top-left-radius: 999px;
-    border-bottom-left-radius: 999px;
+    border-radius: 150px;
 }
 
 .ant-input-search >.ant-input-group >.ant-input-group-addon:last-child .ant-input-search-button {
-    border-start-end-radius: 999px;
-    border-end-end-radius: 999px;
+    border-radius: 150px;
 }
 
 .ant-btn {
-    border-start-end-radius: 999px;
-    border-end-end-radius: 999px;
-    border-top-left-radius: 999px;
-    border-bottom-left-radius: 999px;
+    border-radius: 150px;
     text-align: center;
 }
 
@@ -54,10 +44,7 @@
 }
 
 .nav-post{
-    border-start-end-radius: 999px;
-    border-end-end-radius: 999px;
-    border-top-left-radius: 999px;
-    border-bottom-left-radius: 999px;
+    border-radius: 150px;
     text-align: center;
     color: rgb(181, 116, 130);
     font-size: bold;

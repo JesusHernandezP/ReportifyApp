@@ -1,5 +1,5 @@
 import CarouselComponet from '../component/Carousel'
-import Themes from '../component/Themes'
+// import Themes from '../component/Themes'
 import PostsMain from '../component/PostsMain'
 
 function Main() {
