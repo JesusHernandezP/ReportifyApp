@@ -4,7 +4,7 @@ import { Button } from 'antd'
 
 import './Navbar.css'
 
-const ModalButton = () => {
+const CreatePostButton = () => {
 
   const navigate = useNavigate()
 
@@ -22,4 +22,4 @@ const ModalButton = () => {
     </>
   )
 }
-export default ModalButton
+export default CreatePostButton

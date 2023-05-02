@@ -2,7 +2,7 @@ import { UserOutlined } from '@ant-design/icons'
 import { useNavigate } from "react-router-dom"
 import { Button, Input, Avatar } from 'antd'
 import useAuth from '../hooks/useAuth.js'
-import ModalButton from '../component/ModalButton.jsx'
+import CreatePostButton from './CreatePostButton.jsx'
 import { apiURL } from '../config.js'
 // import CambiarTema from './index.js'
 import './Navbar.css'
@@ -27,7 +27,7 @@ const Navbar = () => {
         </div>
 
         <div className='nav-container_division'>
-          {isAuthenticated && <ModalButton />}
+          {isAuthenticated && <CreatePostButton />}
           {!isAuthenticated && <Button type="default" shape="round" icon={<UserOutlined />}onClick={handleClick}> 
             Iniciar sesión
           </Button>}

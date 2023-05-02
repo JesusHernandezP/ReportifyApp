@@ -3,7 +3,6 @@ import { apiURL } from "../config"
 async function httpService({ url, method = 'GET', token = null, body = null, hasImage = false }) {
     if (!url.startsWith('/')) throw new Error('URL Must Start With a Slash (/)')
 
-    console.log({hasImage})
     const fullURL = new URL(apiURL + url)
     const config = {
       method,
