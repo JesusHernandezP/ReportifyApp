@@ -23,16 +23,6 @@ function Register() {
     navigate("/login")
   }
 
-  // useEffect(() => { 
-  //   const refreshProfile = async () => {
-  //     if (!token) return
-  
-  //     const usr = await get({ url: '/register' })
-  //     if (usr) return navigate('/')
-  //   } 
-  //   refreshProfile()
-  // }, [token])
-
   const handleCancel = () => {
     navigate("/")
   }
@@ -40,43 +30,43 @@ function Register() {
 
   return (
     <Modal
-        title="Crear Cuenta"
-        centered
-        open
-        onCancel={handleCancel}
-        footer={<></>}  
-        >
-    <form onSubmit={handleSubmit} className='form-login'>
-    <Input
-            name="username"
-            required
-            placeholder="Usuario"
-          />
-    <Input
-            name="email"
-            required
-            placeholder="Email"
-          />
-          <Input.Password
-            name="password"
-            required
-            placeholder="Contraseña"
-            iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-          />
-          <Form.Group controlId="formFilesm" className="mb-3">
+      title="Crear Cuenta"
+      centered
+      open
+      onCancel={handleCancel}
+      footer={<></>}
+    >
+      <form onSubmit={handleSubmit} className='form-login'>
+        <Input
+          name="username"
+          required
+          placeholder="Usuario"
+        />
+        <Input
+          name="email"
+          required
+          placeholder="Email"
+        />
+        <Input.Password
+          name="password"
+          required
+          placeholder="Contraseña"
+          iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+        />
+        <Form.Group controlId="formFilesm" className="mb-3">
           <Form.Label></Form.Label>
           <Form.Control type="file" name="photo"
-            accept="image/*" size="sm"/>
-         </Form.Group>
-      <div className='ant-modal-footer'>
-        
-      <Button type="primary" htmlType="submit">
-      Registrar
-      </Button>
-      </div>
-    </form>
+            accept="image/*" size="sm" />
+        </Form.Group>
+        <div className='ant-modal-footer'>
+
+          <Button type="primary" htmlType="submit">
+            Registrar
+          </Button>
+        </div>
+      </form>
     </Modal>
 
   )
-  }
+}
 export default Register

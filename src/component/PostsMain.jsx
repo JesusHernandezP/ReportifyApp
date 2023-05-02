@@ -22,9 +22,11 @@ const PostMain = ({ photo, title, content }) => {
     <Card className='postmain modal-shadow'>
       {hasImage && <Card.Img className='postmain-img' variant="top" src={`${apiURL}/photos/${photo}`} alt={title} />}
       <Card.Body >
-        <Card.Title >
+
+        <h1 className='card-title' >
           {title}
-        </Card.Title>
+        </h1>
+
         <Card.Text >
           {content}
         </Card.Text>
