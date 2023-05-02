@@ -6,7 +6,7 @@ function Main() {
   return (
     <>
       <CarouselComponet />
-      <Themes />
+      {/* <Themes /> */}
       <PostsMain />
     </>
   )

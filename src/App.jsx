@@ -18,55 +18,44 @@ export const ThemeContext = createContext(null);
 
 function App() {
 
-  const[theme, setTheme] = useState ('dark');
+  const [theme, setTheme] = useState('dark');
 
   const toogleTheme = () => {
-    setTheme((curr) => (curr === 'light' ? 'dark' : 'light' ))
+    setTheme((curr) => (curr === 'light' ? 'dark' : 'light'))
   }
-  
+
   return (
-  <ThemeContext.Provider value={{ theme, toogleTheme}}>
-    <div id={theme}>
+    <ThemeContext.Provider value={{ theme, toogleTheme }}>
+      <div id={theme}>
 
-    <div className={styles.container}>
-      <Navbar />
+        <div className={styles.container}>
+          <Navbar />
 
-    <div className='switch' >
-      <label> {theme === 'dark' ? '' : ''} </label>
-    <Toggle width={40}
-            height={20}
-            sliderWidth={12}
-            sliderHeight={12}
-            translate={19} 
-            onChange={toogleTheme} checked={theme === 'light'}/>
-    </div>
-      
+          <div className='switch' >
+            <label> {theme === 'dark' ? '' : ''} </label>
+            <Toggle width={40}
+              backgroundColorChecked={'#b57482'}
+              height={20}
+              sliderWidth={12}
+              sliderHeight={12}
+              translate={19}
+              onChange={toogleTheme} checked={theme === 'light'} />
+          </div>
 
-      <div>
-        {/* {JSON.stringify({ isAuthenticated })} */}
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/post" element={<PostCreationModal />} />
+            <Route path="/comments" element={<Comments />} />
+            <Route element={<PrivateRoutes />}>
+            </Route>
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </div>
       </div>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/post" element={<PostCreationModal />} />
-        <Route path="/comments" element={<Comments />} />
-
-
-        {/* {!isAuthenticated ? <Route path="/login" element={<Login />} /> : null} */}
-        {/* {!isAuthenticated ? <Route path="/profile" element={ <Profile />} /> : null}  */}
-        {/* <Route path="/news" element={<News />} />
-        <Route path="/register" element={<Register />} /> */}
-
-        <Route element={<PrivateRoutes />}>
-        </Route>
-        <Route path="*" element={<Navigate to="/" />} />
-
-      </Routes>
-    </div>
-    </div>
-      </ThemeContext.Provider>
+    </ThemeContext.Provider>
   )
 }
 

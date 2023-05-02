@@ -36,6 +36,7 @@ const PostMain = ({ photo, title, content }) => {
             </div>
             <div>
               <Button  onClick={() => { setContador ( contador + 1)}} i className="bi bi-hand-thumbs-up-fill" variant="light"> likes {contador}</Button>
+              <i class="bi bi-hand-thumbs-down-fill"></i>
             </div> 
           </div>
 

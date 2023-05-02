@@ -14,13 +14,19 @@
     padding: 5px;
     font-size: 1.5em;
     cursor: pointer;
+    color: #b57482;
 
 }
+
 
 .nav-container_division > * {
     margin: 5px;
 }
 
+.bi-spotify{
+    color: rgb(181, 116, 130);
+    font-size: 50px;
+}
 
 
 
@@ -47,3 +53,12 @@
     transform: translateY(-1px);
 }
 
+.nav-post{
+    border-start-end-radius: 999px;
+    border-end-end-radius: 999px;
+    border-top-left-radius: 999px;
+    border-bottom-left-radius: 999px;
+    text-align: center;
+    color: rgb(181, 116, 130);
+    font-size: bold;
+}
