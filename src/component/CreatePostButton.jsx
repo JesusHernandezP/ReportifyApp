@@ -14,7 +14,7 @@ const CreatePostButton = () => {
   return (
     <>
       <div className='nav-container_division'>
-        <Button type="default" shape="round" icon={<PlusOutlined />}onClick={handleClick}> 
+        <Button className='nav-post' type="default" shape="round" icon={<PlusOutlined />}onClick={handleClick}> 
             Crear post
           </Button>
         {/* <Button type="default" shape="circle" icon={<PlusOutlined />} onClick={handleClick} /> */}

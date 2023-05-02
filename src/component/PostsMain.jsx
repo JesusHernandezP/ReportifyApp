@@ -29,12 +29,14 @@ const PostMain = ({ photo, title, content }) => {
         <Card.Text >
           {content}
         </Card.Text>
-        <div className='nav-container_division'>
-          <div>
-            {isAuthenticated && <ModalButtonComments key="setting" />}
-          </div>
-          <div>
-            <Button onClick={() => { setContador(contador + 1) }} i className="bi bi-hand-thumbs-up-fill" variant="light"> likes {contador}</Button>
+
+          <div className='nav-container_division'>
+            <div>
+              {isAuthenticated && <ModalButtonComments key="setting" />}
+            </div>
+            <div>
+              <Button  onClick={() => { setContador ( contador + 1)}} i className="bi bi-hand-thumbs-up-fill" variant="light"> likes {contador}</Button>
+            </div> 
           </div>
         </div>
       </Card.Body>

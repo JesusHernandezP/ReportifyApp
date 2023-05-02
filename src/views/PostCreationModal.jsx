@@ -1,9 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import useServer from '../hooks/useServer.js'
-import { Modal, Input, Button, Upload } from 'antd'
-import { UploadOutlined } from '@ant-design/icons'
+import { Modal, Input, Button  } from 'antd'
 import React from 'react'
-import UploadPhoto from '../component/UploadPhoto.jsx'
 import Form from 'react-bootstrap/Form';
 
 
@@ -55,17 +53,6 @@ function PostCreationModal() {
           <Form.Control type="file" name="photo"
             accept="image/*" size="sm"/>
          </Form.Group>
-          {/* <input type="file"
-            name="photo"
-            accept="image/*"
-            /> */}
-            {/* <Upload>
-          <Input
-            name="theme"
-            placeholder="Añadir una imagen"
-            icon={<UploadOutlined />}
-          />
-          </Upload> */}
           <div className='ant-modal-footer'>
             <Button type="primary" htmlType="submit">
               Publicar

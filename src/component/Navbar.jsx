@@ -23,8 +23,7 @@ const Navbar = () => {
     <>
       <div className='nav-container'>
         <div className='nav-container_division'>
-        <i class="bi bi-spotify">RPF</i><p></p>
-          <Search placeholder="Buscar..." onSearch={onSearch} enterButton />
+        <i className="bi bi-spotify"></i><p>REPORTIFY</p>
         </div>
 
         <div className='nav-container_division'>
