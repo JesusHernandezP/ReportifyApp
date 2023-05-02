@@ -29,7 +29,6 @@ const PostMain = ({ photo, title, content }) => {
         <Card.Text >
           {content}
         </Card.Text>
-
         <div className='nav-container_division'>
           <div>
             {isAuthenticated && <ModalButtonComments key="setting" />}
@@ -38,7 +37,6 @@ const PostMain = ({ photo, title, content }) => {
             <Button onClick={() => { setContador(contador + 1) }} i className="bi bi-hand-thumbs-up-fill" variant="light"> likes {contador}</Button>
           </div>
         </div>
-
       </Card.Body>
     </Card>
   )
@@ -59,7 +57,6 @@ const PostsMain = () => {
   }, [])
 
   const orderedNews = news.sort((new_a, new_b) => -new_a.createdAt.localeCompare(new_b.createdAt))
-  console.log(orderedNews)
 
   return (
     <>
