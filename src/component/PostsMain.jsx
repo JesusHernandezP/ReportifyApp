@@ -10,34 +10,34 @@ import './Navbar.css'
 import './PostsMain.css'
 
 const PostMain = ({ photo, title, content }) => {
-  
+
   const { isAuthenticated } = useAuth()
-  
-  const hasImage =  typeof photo === 'string'
-  
+
+  const hasImage = typeof photo === 'string'
+
   const [contador, setContador] = useState(0)
 
   return (
     <Card className='postmain modal-shadow'>
-      {hasImage && <Card.Img className='postmain-img' variant="top"  src={ `${apiURL}/photos/${photo}`} alt={title} />}
+      {hasImage && <Card.Img className='postmain-img' variant="top" src={`${apiURL}/photos/${photo}`} alt={title} />}
       <Card.Body >
-        
+
         <Card.Title >
-            {title}
+          {title}
         </Card.Title>
-        
+
         <Card.Text >
-            {content}
+          {content}
         </Card.Text>
 
-          <div className='nav-container_division'>
-            <div>
-              {isAuthenticated && <ModalButtonComments key="setting" />}
-            </div>
-            <div>
-              <Button  onClick={() => { setContador ( contador + 1)}} i className="bi bi-hand-thumbs-up-fill" variant="light"> likes {contador}</Button>
-            </div> 
+        <div className='nav-container_division'>
+          <div>
+            {isAuthenticated && <ModalButtonComments key="setting" />}
           </div>
+          <div>
+            <Button onClick={() => { setContador(contador + 1) }} i className="bi bi-hand-thumbs-up-fill" variant="light"> likes {contador}</Button>
+          </div>
+        </div>
 
       </Card.Body>
     </Card>
@@ -45,9 +45,9 @@ const PostMain = ({ photo, title, content }) => {
 }
 
 const PostsMain = () => {
-  const [news, setNews] = useState([]) //Array de news
+  const [news, setNews] = useState([])
 
-  const { get } = useServer() //obtenemos get del useSrver
+  const { get } = useServer()
 
   const getNews = async () => {
     const { data } = await get({ url: '/news' })
@@ -56,20 +56,22 @@ const PostsMain = () => {
 
   useEffect(() => {
     getNews()
-  }, []) //con este array vacío de useEffect, le pedimos que nos ejecute getNews una sola vez
+  }, [])
+
+  const orderedNews = news.sort((new_a, new_b) => -new_a.createdAt.localeCompare(new_b.createdAt))
+  console.log(orderedNews)
 
   return (
     <>
-      {/* <Row gutter={16}> */}
       {
-        news.map((new_) => {
+        orderedNews.map((new_) => {
           return (
             <PostMain key={new_.id} title={new_.title} content={new_.content} photo={new_.photo} />
           )
         }
         )
+          
       }
-      {/* </Row> */}
     </>
   )
 }
