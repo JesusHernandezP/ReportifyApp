@@ -44,12 +44,11 @@ const PostMain = ({ photo, title, content, like, dislike, news, deletes }) => {
         </Card.Text>
         <div className='nav-container_division'>
           <div>
-            {isAuthenticated && <ModalButtonComments key="setting" />}
+            {isAuthenticated && <Button i className="bi bi-trash3" variant="light" onClick={handleDeleteClick}/>}
           </div>
           <div>
-            <Button onClick={handleLikeClick} >Like {news.likes}</Button>
-            <Button onClick={handleDislikeClick} >Dislike {news.dislikes}</Button>
-            <Button onClick={handleDeleteClick}>Borrar</Button>
+          <Button i className="bi bi-hand-thumbs-down" variant="light" onClick={handleDislikeClick} >{news.dislikes}</Button>
+          <Button i className="bi bi-hand-thumbs-up" variant="light" onClick={handleLikeClick} > {news.likes} </Button>
           </div>
         </div>
       </Card.Body>
