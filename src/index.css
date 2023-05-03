@@ -6,7 +6,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(255, 255, 255, 0.984);
   
 
   font-synthesis: none;
@@ -19,11 +19,11 @@
 }
 
 #light{
-  background-color: rgb(206, 206, 212);
+  background-color: rgba(206, 206, 212, 0.984);
 }
 
 #dark{
-  background-color: rgb(62, 62, 63);
+  background-color: rgb(45, 45, 46);
 }
 
 .switch{
