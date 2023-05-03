@@ -31,6 +31,7 @@ const PostMain = ({ photo, title, content, like, dislike, news, deletes }) => {
   // const [contador, setContador] = useState(0)
 
   return (
+    <>
     <Card className='postmain modal-shadow'>
       {hasImage && <Card.Img className='postmain-img' variant="top" src={`${apiURL}/photos/${photo}`} alt={title} />}
       <Card.Body >
@@ -54,6 +55,7 @@ const PostMain = ({ photo, title, content, like, dislike, news, deletes }) => {
         </div>
       </Card.Body>
     </Card>
+    </>
   )
 }
 
