@@ -25,37 +25,43 @@ function App() {
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, toogleTheme }}>
-      <div id={theme}>
+    <>
+      <ThemeContext.Provider value={{ theme, toogleTheme }}>
+        <div>
+          <div id={theme}>
 
-        <div className={styles.container}>
-          <Navbar />
 
-          <div className='switch' >
-            <label> {theme === 'dark' ? '' : ''} </label>
-            <Toggle width={40}
-              backgroundColorChecked={'#b57482'}
-              height={20}
-              sliderWidth={12}
-              sliderHeight={12}
-              translate={19}
-              onChange={toogleTheme} checked={theme === 'light'} />
+            <div className={styles.container}>
+              <Navbar />
+              {/* <div className='themes-switch-bar'> */}
+                <div className='switch' >
+                  <label> {theme === 'dark' ? '' : ''} </label>
+                  <Toggle width={40}
+                    backgroundColorChecked={'#b57482'}
+                    height={20}
+                    sliderWidth={12}
+                    sliderHeight={12}
+                    translate={19}
+                    onChange={toogleTheme} checked={theme === 'light'} />
+                </div>
+              {/* </div> */}
+
+              <Routes>
+                <Route path="/" element={<Main />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/post" element={<PostCreationModal />} />
+                <Route path="/comments" element={<Comments />} />
+                <Route element={<PrivateRoutes />}>
+                </Route>
+                <Route path="*" element={<Navigate to="/" />} />
+              </Routes>
+            </div>
           </div>
-
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/post" element={<PostCreationModal />} />
-            <Route path="/comments" element={<Comments />} />
-            <Route element={<PrivateRoutes />}>
-            </Route>
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
         </div>
-      </div>
-    </ThemeContext.Provider>
+      </ThemeContext.Provider>
+    </>
   )
 }
 
