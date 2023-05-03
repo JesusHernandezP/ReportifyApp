@@ -22,7 +22,8 @@ const Navbar = () => {
     <>
       <div className='nav-container'>
         <div className='nav-container_division'>
-          <i className="bi bi-spotify"></i><p className='text-logo' >Reportify</p>
+          {/* <i className="bi bi-spotify"></i><p className='text-logo' >Reportify</p> */}
+          <img src={'./logo-reportify.svg'} className='logo-reportify'/><p className='text-logo' >Reportify</p>
         </div>
 
         <div className='nav-container_division'>

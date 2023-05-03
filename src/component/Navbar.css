@@ -32,7 +32,8 @@
     padding: 5px;
     font-size: 1.5em;
     cursor: pointer;
-    color: #b57482;
+    /* color: #b57482; */
+    color: #EC6165;
 }
 
 .nav-container_division>* {
@@ -40,7 +41,7 @@
 }
 
 .bi-spotify {
-    color: rgb(181, 116, 130);
+    color: #EC6165;;
     font-size: 50px;
 }
 
@@ -77,4 +78,8 @@
 
 .bi {
     font-size: 25px;
+}
+
+.logo-reportify {
+    height: 1.5rem;
 }

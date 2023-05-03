@@ -13,9 +13,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ConfigProvider
       theme={{
         // algorithm: theme.darkAlgorithm,
+        // colorPrimary: '#b57482',
         token: {
-          colorPrimary: '#b57482',
-          colorLink: '#b57482',
+          colorPrimary: '#EC6165',
+          colorLink: '#EC6165',
         }
       }}
     >
