@@ -1,7 +1,8 @@
-import React from "react";
-import Carousel from "react-elastic-carousel";
-import "./Carousel.css";
-import CarouselItem from "./CarouselItem";
+import React, { useEffect, useState } from "react"
+import { apiURL } from "../config"
+import Carousel from "react-elastic-carousel"
+import "./Carousel.css"
+import CarouselItem from "./CarouselItem"
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -10,24 +11,13 @@ const breakPoints = [
   { width: 1200, itemsToShow: 4 },
 ];
 
-function CarouselComponent() {
-  const images = [
-    { src: "http://loremflickr.com/320/240/", alt: "Image 1" },
-    { src: "http://loremflickr.com/240/240/", alt: "Image 2" },
-    { src: "http://loremflickr.com/320/320/", alt: "Image 3" },
-    { src: "http://loremflickr.com/240/240/", alt: "Image 4" },
-    { src: "http://loremflickr.com/320/240/", alt: "Image 5" },
-    { src: "http://loremflickr.com/420/420/", alt: "Image 6" },
-    { src: "http://loremflickr.com/420/240/", alt: "Image 7" },
-    { src: "http://loremflickr.com/420/320/", alt: "Image 8" },
-  ];
-
+function CarouselComponent({ filteredPosts }) {
   return (
     <>
       <div className="carouselcomponent">
         <Carousel breakPoints={breakPoints}>
-          {images.map((image, index) => (
-            <CarouselItem key={index} src={image.src} alt={image.alt} />
+          {filteredPosts.map((post) => (
+            <CarouselItem key={post.id} src={`${apiURL}/photos/${post.photo}`} alt={post.title} />
           ))}
         </Carousel>
       </div>

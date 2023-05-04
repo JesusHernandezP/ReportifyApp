@@ -7,7 +7,6 @@ const { Paragraph } = Typography;
 const ParagraphPost = ({content}) => {
 
   const [ellipsis, setEllipsis] = useState(true);
-  console.log({content});
   return (
     <>
       <Paragraph

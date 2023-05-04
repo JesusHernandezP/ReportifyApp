@@ -1,122 +1,43 @@
-import { useState, useEffect } from 'react'
-import { apiURL } from "../config"
-import { useNavigate } from 'react-router-dom'
-import useAuth from '../hooks/useAuth.js'
 import useServer from '../hooks/useServer.js'
-import ParagraphPost from './ParagraphPost'
 
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
 import './PostsMain.css'
 import './Navbar.css'
 
-const PostMain = ({ photo, title, like, dislike, news, content, deletes }) => {
+import PostMain from './PostMain'
 
-  const navigate = useNavigate()
-
-  const handleLikeClick = () => {
-    like(news.id)
-    navigate("/")
-  }
-
-  const handleDislikeClick = () => {
-    dislike(news.id)
-    navigate("/")
-  }
-
-  const handleDeleteClick = () => {
-    deletes(news.id)
-  }
-
-  const { isAuthenticated } = useAuth()
-
-  const hasImage = typeof photo === 'string'
-
-  // const [contador, setContador] = useState(0)
-
-  return (
-    <>
-    <Card className='postmain modal-shadow'>
-      {hasImage && <Card.Img className='postmain-img' variant="top" src={`${apiURL}/photos/${photo}`} alt={title} />}
-      <Card.Body >
-
-        <h1 className='card-title' >
-          {title}
-        </h1>
-        <Card.Text >
-        <ParagraphPost content={content} />
-        </Card.Text>
-        <div className='nav-container_division'>
-          <div>
-            {isAuthenticated && <Button i className="bi bi-trash3" variant="light" onClick={handleDeleteClick}/>}
-          </div>
-          <div>
-          <Button i className="bi bi-hand-thumbs-down" variant="light" onClick={handleDislikeClick} >{news.dislikes}</Button>
-          <Button i className="bi bi-hand-thumbs-up" variant="light" onClick={handleLikeClick} > {news.likes} </Button>
-          </div>
-        </div>
-      </Card.Body>
-    </Card>
-    </>
-  )
-}
-
-const PostsMain = () => {
-  const [news, setNews] = useState([])
-
-  const { get, post, delete: destroy } = useServer()
-
-  const getNews = async () => {
-    const { data } = await get({ url: '/news' })
-    setNews(data.data)
-  }
-
-  const likePost = async (id) => {
-    return await post ({url: `/news/like/${id}`})
-  }
+const PostsMain = ({ posts, getPosts }) => {
+  const { post, delete: destroy } = useServer()
+  // const [news, setNews] = useState(posts) //este era uno de los problema!!
 
   const likePostHandler = async (id) => {
-    const {data: {data}} = await likePost(id)
-    const postIndex = orderedNews.findIndex(post => post.id === id)
-    orderedNews[postIndex] = data
+    await post ({url: `/news/like/${id}`})
+    getPosts()
   }
-
-  const dislikePost = async (id) => {
-    return await post ({url: `/news/dislike/${id}`})
-  }
-
+  
   const dislikePostHandler = async (id) => {
-    const {data: {data}} = await dislikePost(id)
-    const postIndex = orderedNews.findIndex(post => post.id === id)
-    orderedNews[postIndex] = data
-  }
-
-  const deleteNews = async (id) => {
-    return await destroy({url: `/news/${id}`})
+    await post ({url: `/news/dislike/${id}`})
+    getPosts()
   }
 
   const deleteNewsHandler = async (id) => {
-    const {data} = await deleteNews(id)
-    if (data.status === 'ok') {
-      const newList = orderedNews.filter((post) => post.id !== id)
-      setNews(newList)
-    }
+    await destroy({url: `/news/${id}`})
+    getPosts()
   }
-
-  useEffect(() => {
-    getNews()
-  }, [])
-
-  const orderedNews = news.sort((new_a, new_b) => -new_a.createdAt.localeCompare(new_b.createdAt))
 
   return (
     <>
       {
-        orderedNews.map((new_) => {
-          return (
-            <PostMain key={new_.id} news={new_} like={likePostHandler} dislike={dislikePostHandler} deletes={deleteNewsHandler} title={new_.title} content={new_.content} photo={new_.photo} />
-          )
-        }
+        posts.map((new_) => //aquí cambiamos de news.(anterior codigo) a el renombrado posts
+          <PostMain
+            key={new_.id}
+            news={new_}
+            like={likePostHandler}
+            dislike={dislikePostHandler}
+            deletes={deleteNewsHandler}
+            title={new_.title}
+            content={new_.content}
+            photo={new_.photo}
+          />
         )
       }
     </>

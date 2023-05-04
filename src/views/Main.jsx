@@ -7,33 +7,35 @@ import Themes from '../component/Themes'
 import './Main.css'
 
 function Main() {
-  const { post, get } = useServer()
-  const [posts, setPosts] = useState()
+  const { get } = useServer()
+  const [trendings, setTrendings] = useState([])
+  const [posts, setPosts] = useState([])
 
   const getPosts = async () => {
     const { data } = await get({ url: "/news" })
-    setPosts(data.data)
+    const sortedPosts = data.data.sort((new_a, new_b) => -new_a.createdAt.localeCompare(new_b.createdAt))
+    
+    const sortedTrendings = sortedPosts.slice(0, 6)
+    const restOfPosts = sortedPosts.slice(6)
+    setTrendings(sortedTrendings)
+    setPosts(restOfPosts)
   }
 
   useEffect(() => {
     getPosts()
   }, [])
 
-  const postLike = async (id) => {
-    return await post({ url: `/news/like/${id}` })
-  }
-
-  const postDislike = async (id) => {
-    return await post({ url: `/news/dislike/${id}` })
-  }
-
   return (
     <>
       <Themes />
       <h1 className='title-sections-posts'>Tendencias</h1>
-      <CarouselComponet />
+      {posts && <CarouselComponet filteredPosts={trendings} />}
       <h1 className='title-sections-posts'>Las noticias del día</h1>
-      <PostsMain post={post} likePost={postLike} dislikePost={postDislike} />
+      {posts && 
+      <PostsMain 
+      posts={posts} 
+      getPosts={getPosts}
+      />}
     </>
   )
 }
