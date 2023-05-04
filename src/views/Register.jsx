@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import React, { useEffect } from 'react'
 
 import './Login.css'
+import '../index.css'
 import Form from 'react-bootstrap/Form';
 
 import useServer from '../hooks/useServer.js'
@@ -55,11 +56,10 @@ function Register() {
         />
         <Form.Group controlId="formFilesm" className="mb-3">
           <Form.Label></Form.Label>
-          <Form.Control type="file" name="photo"
+          <Form.Control className='upload-file' type="file" name="photo"
             accept="image/*" size="sm" />
         </Form.Group>
         <div className='ant-modal-footer'>
-
           <Button type="primary" htmlType="submit">
             Registrar
           </Button>

@@ -1,23 +1,27 @@
 import { useState, useEffect } from 'react'
 import { apiURL } from "../config"
-
+import { useNavigate } from 'react-router-dom'
 import useAuth from '../hooks/useAuth.js'
 import useServer from '../hooks/useServer.js'
-import ModalButtonComments from './ModalButtonComments.jsx'
-import Button from 'react-bootstrap/Button'
+import ParagraphPost from './ParagraphPost'
 
+import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import './PostsMain.css'
 import './Navbar.css'
 
-const PostMain = ({ photo, title, content, like, dislike, news, deletes }) => {
+const PostMain = ({ photo, title, like, dislike, news, content, deletes }) => {
+
+  const navigate = useNavigate()
 
   const handleLikeClick = () => {
     like(news.id)
+    navigate("/")
   }
 
   const handleDislikeClick = () => {
     dislike(news.id)
+    navigate("/")
   }
 
   const handleDeleteClick = () => {
@@ -39,9 +43,8 @@ const PostMain = ({ photo, title, content, like, dislike, news, deletes }) => {
         <h1 className='card-title' >
           {title}
         </h1>
-
         <Card.Text >
-          {content}
+        <ParagraphPost content={content} />
         </Card.Text>
         <div className='nav-container_division'>
           <div>

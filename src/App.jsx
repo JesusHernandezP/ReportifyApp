@@ -18,7 +18,7 @@ export const ThemeContext = createContext(null);
 
 function App() {
 
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
   const toogleTheme = () => {
     setTheme((curr) => (curr === 'light' ? 'dark' : 'light'))
@@ -34,7 +34,7 @@ function App() {
             <div className={styles.container}>
               <Navbar />
               {/* <div className='themes-switch-bar'> */}
-                <div className='switch' >
+                {/* <div className='switch' >
                   <label> {theme === 'dark' ? '' : ''} </label>
                   <Toggle width={40}
                     backgroundColorChecked={'#b57482'}
@@ -43,9 +43,8 @@ function App() {
                     sliderHeight={12}
                     translate={19}
                     onChange={toogleTheme} checked={theme === 'light'} />
-                </div>
+                </div> */}
               {/* </div> */}
-
               <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/register" element={<Register />} />
