@@ -31,6 +31,7 @@ function Perfil() {
 
   return (
     <>
+    <div className='darktheme'>
       <Modal 
         title='Perfil'
         centered
@@ -54,6 +55,7 @@ function Perfil() {
           {isAuthenticated && <Button type="primary" htmlType="submit" onClick={handleLogout}>Cerrar sesión</Button>}
         </div>
       </Modal>
+      </div>
     </>
   )
 }

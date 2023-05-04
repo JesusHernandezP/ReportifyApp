@@ -1,4 +1,4 @@
-:root{
+:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, 'DM Serif Text', 'Outfit', sans-serif;
   font-family: 'Outfit', sans-serif;
   font-family: 'Sansita', sans-serif;
@@ -6,39 +6,35 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.984);
-  
+  color: 766f6f;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
 }
 
-
-
-#light{
-  background-color: rgba(255, 255, 255, 0.984);
+#light {
+  background-color: #f0eaea;
+  color: #766f6f;
 }
 
-#dark{
-  background-color: rgb(45, 45, 46);
+#dark {
+  background-color: #2d2d2e;
+  color: #766f6f;
 }
 
-.switch{
+.switch {
   display: flex;
   height: 10px;
   justify-content: end;
   align-items: end;
   margin: 10px;
-
-  
 }
 
 .cursor-pointer {
-cursor: pointer;
+  cursor: pointer;
 }
 
 .ant-avatar {
@@ -53,13 +49,13 @@ cursor: pointer;
   border-radius: 150px;
 }
 
-.ant-form > * {
+.ant-form>* {
   margin: 5px;
-  }
+}
 
-  .card {
-    font-family: 'Outfit', sans-serif;
-  }
+.card {
+  font-family: 'Outfit', sans-serif;
+}
 
 .card-title {
   font-family: 'DM Serif Text', serif;

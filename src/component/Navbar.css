@@ -8,19 +8,19 @@
 }
     
 
-@media (min-width: 450px) {
+@media (min-width: 420px) {
     .nav-container {
-        max-width: 300px;
+        width: 100%;
     }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
     .nav-container {
-        max-width: 600px;
+        width: 100%;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
     .nav-container {
         max-width: 900px;
     }
@@ -32,12 +32,11 @@
     padding: 5px;
     font-size: 1.5em;
     cursor: pointer;
-    /* color: #b57482; */
-    color: #EC6165;
 }
 
 .nav-container_division>* {
     margin: 5px;
+    color: #EC6165;
 }
 
 .bi-spotify {
@@ -56,17 +55,21 @@
 .ant-btn {
     border-radius: 150px;
     text-align: center;
+    background-color: #f0eaea;
+    color:#EC6165 ;
+    font-weight: bold;
+    border-color: #EC6165;
 }
 
 .ant-btn>.anticon {
     vertical-align: 0%;
     transform: translateY(-1px);
+    
 }
 
 .nav-post {
     border-radius: 150px;
     text-align: center;
-    color: rgb(181, 116, 130);
     font-size: bold;
 }
 
@@ -78,6 +81,7 @@
 
 .bi {
     font-size: 25px;
+    
 }
 
 .logo-reportify {

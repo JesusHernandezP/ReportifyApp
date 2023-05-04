@@ -7,9 +7,13 @@ const { Paragraph } = Typography;
 const ParagraphPost = ({content}) => {
 
   const [ellipsis, setEllipsis] = useState(true);
+  const paragraphStyle = {
+    color: '#766f6f'
+  };
   return (
     <>
       <Paragraph
+      style={paragraphStyle}
         ellipsis={
           ellipsis
             ? {
