@@ -8,7 +8,6 @@ import CreatePostButton from './CreatePostButton.jsx'
 
 import './Navbar.css'
 
-
 const Navbar = () => {
   const { isAuthenticated, user } = useAuth()
 
@@ -25,7 +24,6 @@ const Navbar = () => {
           {/* <i className="bi bi-spotify"></i><p className='text-logo' >Reportify</p> */}
           <img src={'./logo-reportify.svg'} className='logo-reportify'/><p className='text-logo' >Reportify</p>
         </div>
-
         <div className='nav-container_division'>
           {isAuthenticated && <CreatePostButton />}
           {!isAuthenticated && <Button type="default" shape="round" icon={<UserOutlined />} onClick={handleClick}>
@@ -37,5 +35,4 @@ const Navbar = () => {
     </>
   )
 }
-
 export default Navbar

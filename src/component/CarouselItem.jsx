@@ -7,14 +7,13 @@ const Image = styled.img`
   object-fit: cover;
   border-radius: 10px;
   `;
-  
-  const Container = styled.div`
+
+const Container = styled.div`
   height: 250px;
   display: flex;
   justify-content: center;
   padding: 10px;
   align-items: center;
-  
 `;
 
 const CarouselItem = ({ src, alt }) => {
@@ -22,7 +21,7 @@ const CarouselItem = ({ src, alt }) => {
     <Container>
       <Image src={src} alt={alt} />
     </Container>
-  );
-};
+  )
+}
 
 export default CarouselItem;

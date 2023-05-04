@@ -2,7 +2,7 @@ import { Button, Input, Modal } from 'antd'
 import { EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons'
 
 import { useNavigate } from 'react-router-dom'
-import {React,  useEffect } from 'react'
+import { React } from 'react'
 
 import './Login.css'
 import '../index.css'
@@ -12,7 +12,7 @@ import useServer from '../hooks/useServer.js'
 import useAuth from '../hooks/useAuth'
 
 function Register() {
-  const { post, get } = useServer()
+  const { post } = useServer()
   const { token } = useAuth()
   const navigate = useNavigate()
 

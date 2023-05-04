@@ -16,7 +16,6 @@ const AuthProvider = ({ children }) => {
 
     localStorage.setItem('user', JSON.stringify(newUser))
     setCurrentUser(newUser)
-    // (user) es esto -> {"status":"ok","data":{"token":"eyJh....."}} que viene de POSTMAN
   }
 
   const logoutHandler = () => {
@@ -28,8 +27,7 @@ const AuthProvider = ({ children }) => {
     return {
       user: currentUser?.user || null,
       token: currentUser?.token,
-      isAuthenticated: !!currentUser?.token, //!!lo vuelve buleano por doble cancelación
-      setUser: setUserHandler,
+      isAuthenticated: !!currentUser?.token,
       logout: logoutHandler
     }
   }, [currentUser])

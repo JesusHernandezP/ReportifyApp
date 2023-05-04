@@ -1,6 +1,6 @@
-import {AppstoreOutlined} from '@ant-design/icons';
-import { Menu } from 'antd';
-import { useState } from 'react';
+import {AppstoreOutlined} from '@ant-design/icons'
+import { Menu } from 'antd'
+import { useState } from 'react'
 import './Themes.css'
 function getItem(label, key, icon, children, type) {
   return {
@@ -9,7 +9,7 @@ function getItem(label, key, icon, children, type) {
     children,
     label,
     type,
-  };
+  }
 }
 const items = [
     getItem('Temas', 'sub2', <AppstoreOutlined />, [
@@ -26,9 +26,8 @@ const items = [
     ]),
 ]
 
-// submenu keys of first level
 const rootSubmenuKeys = ['sub1'];
-const App = () => {
+const Themes = () => {
   const [openKeys, setOpenKeys] = useState(['sub1']);
   const onOpenChange = (keys) => {
     const latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
@@ -37,7 +36,7 @@ const App = () => {
     } else {
       setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
     }
-  };
+  }
   return (
     <div className='switch'>
       <Menu
@@ -51,7 +50,7 @@ const App = () => {
         items={items}
       />
     </div>
-  );
+  )
   
-};
-export default App;
+}
+export default Themes

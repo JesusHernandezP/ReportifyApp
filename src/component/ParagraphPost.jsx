@@ -1,15 +1,15 @@
-import React from 'react';
-import '../index.css';
-import { Typography } from 'antd';
-import { useState } from 'react';
-const { Paragraph } = Typography;
+import React from 'react'
+import '../index.css'
+import { Typography } from 'antd'
+import { useState } from 'react'
+const { Paragraph } = Typography
 
 const ParagraphPost = ({content}) => {
 
   const [ellipsis, setEllipsis] = useState(true);
   const paragraphStyle = {
     color: '#766f6f'
-  };
+  }
   return (
     <>
       <Paragraph
@@ -29,4 +29,4 @@ const ParagraphPost = ({content}) => {
       </>
   )
 }
-export default ParagraphPost;
+export default ParagraphPost

@@ -5,8 +5,7 @@
     z-index: 999;
     width: 100%;
     margin: 0 auto;
-}
-    
+}   
 
 @media (min-width: 420px) {
     .nav-container {
@@ -25,6 +24,7 @@
         max-width: 900px;
     }
 }
+
 .nav-container_division {
     display: flex;
     justify-content: space-between;
