@@ -1,10 +1,5 @@
 import { useEffect, useState } from 'react'
-<<<<<<< HEAD
-import CarouselComponent from '../component/Carousel'
-// import Themes from '../component/Themes'
-=======
 import CarouselComponet from '../component/Carousel'
->>>>>>> 4548bbce8b4fc0e8abf86ccf31cd764ec8020a5c
 import PostsMain from '../component/PostsMain'
 import useServer from '../hooks/useServer'
 import Themes from '../component/Themes'
@@ -34,17 +29,11 @@ function Main() {
 
   return (
     <>
-<<<<<<< HEAD
-      <CarouselComponent />
-      {/* <Themes /> */}
-      <PostsMain post={post} likePost={postLike} dislikePost={postDislike}/>
-=======
       <Themes />
       <h1 className='title-sections-posts'>Tendencias</h1>
       <CarouselComponet />
       <h1 className='title-sections-posts'>Las noticias del día</h1>
       <PostsMain post={post} likePost={postLike} dislikePost={postDislike} />
->>>>>>> 4548bbce8b4fc0e8abf86ccf31cd764ec8020a5c
     </>
   )
 }

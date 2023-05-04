@@ -33,8 +33,8 @@ function App() {
 
             <div className={styles.container}>
               <Navbar />
-              {/* <div className='themes-switch-bar'> */}
-                {/* <div className='switch' >
+              <div className='themes-switch-bar'>
+                <div className='switch' >
                   <label> {theme === 'dark' ? '' : ''} </label>
                   <Toggle width={40}
                     backgroundColorChecked={'#b57482'}
@@ -43,8 +43,8 @@ function App() {
                     sliderHeight={12}
                     translate={19}
                     onChange={toogleTheme} checked={theme === 'light'} />
-                </div> */}
-              {/* </div> */}
+                </div>
+              </div>
               <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/register" element={<Register />} />
