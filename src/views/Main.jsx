@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import CarouselComponet from '../component/Carousel'
+import CarouselComponent from '../component/Carousel'
 // import Themes from '../component/Themes'
 import PostsMain from '../component/PostsMain'
 import useServer from '../hooks/useServer'
@@ -27,7 +27,7 @@ function Main() {
 
   return (
     <>
-      <CarouselComponet />
+      <CarouselComponent />
       {/* <Themes /> */}
       <PostsMain post={post} likePost={postLike} dislikePost={postDislike}/>
     </>

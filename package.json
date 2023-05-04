@@ -16,7 +16,9 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
+    "react-elastic-carousel": "^0.11.5",
     "react-router-dom": "^6.10.0",
+    "react-slick": "^0.29.0",
     "react-styled-toggle": "^1.0.18",
     "react-switch": "^7.0.0",
     "sonner": "^0.3.1"

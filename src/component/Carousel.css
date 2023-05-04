@@ -1,10 +1,7 @@
-.carousel-inner {
-    border-radius: 10px;
-}
-
-.card-carousel{
+.carouselcomponent {
+    font-family: sans-serif;
     display: flex;
-    justify-content: space-between;
-    padding: 5px;
-}
-
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+  }

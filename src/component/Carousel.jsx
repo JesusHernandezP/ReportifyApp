@@ -1,72 +1,38 @@
-import Carousel from 'react-bootstrap/Carousel'
-import { Card } from 'antd'
-import './Carousel.css'
+import React from "react";
+import Carousel from "react-elastic-carousel";
+import "./Carousel.css";
+import CarouselItem from "./CarouselItem";
 
-const { Meta } = Card;
+const breakPoints = [
+  { width: 1, itemsToShow: 1 },
+  { width: 550, itemsToShow: 2 },
+  { width: 768, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 4 },
+];
 
-function CarouselComponet() {
+function CarouselComponent() {
+  const images = [
+    { src: "http://loremflickr.com/320/240/", alt: "Image 1" },
+    { src: "http://loremflickr.com/240/240/", alt: "Image 2" },
+    { src: "http://loremflickr.com/320/320/", alt: "Image 3" },
+    { src: "http://loremflickr.com/240/240/", alt: "Image 4" },
+    { src: "http://loremflickr.com/320/240/", alt: "Image 5" },
+    { src: "http://loremflickr.com/420/420/", alt: "Image 6" },
+    { src: "http://loremflickr.com/420/240/", alt: "Image 7" },
+    { src: "http://loremflickr.com/420/320/", alt: "Image 8" },
+  ];
+
   return (
     <>
-    <div className='card-carousel'>
-<Card 
-hoverable
-style={{
-  width: 240,
-}}
-cover={<img alt="example" src="https://i.ytimg.com/vi/2BjCIs2fKWU/maxresdefault.jpg" />}
->
-<Meta title="Europe Street beat" description="www.instagram.com" />
-</Card>
-<Card 
-hoverable
-style={{
-  width: 240,
-}}
-cover={<img alt="example" src="https://www.designerinaction.de/wp-content/uploads/2023/01/graphic-design-trends-2023.jpg" />}
->
-<Meta title="Europe Street beat" description="www.instagram.com" />
-</Card>
-
-<Card 
-hoverable
-style={{
-  width: 240,
-}}
-cover={<img alt="example" src="https://bluekaktus.com/wp-content/uploads/2022/04/FASHION-TRENDS.png" />}
->
-<Meta title="Europe Street beat" description="www.instagram.com" />
-</Card>
-    </div>
+      <div className="carouselcomponent">
+        <Carousel breakPoints={breakPoints}>
+          {images.map((image, index) => (
+            <CarouselItem key={index} src={image.src} alt={image.alt} />
+          ))}
+        </Carousel>
+      </div>
     </>
-
-    // <Carousel >
-    //   <Carousel.Item>
-    //     <img
-    //       className="d-block w-100"
-    //       src="https://i.ytimg.com/vi/2BjCIs2fKWU/maxresdefault.jpg"
-    //       alt="First slide"
-    //     />
-    //     <Carousel.Caption>
-    //       <p></p>
-    //     </Carousel.Caption>
-    //   </Carousel.Item>
-    //   <Carousel.Item>
-    //     <img
-    //       className="d-block w-100"
-    //       src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2022/04/06/16492201547832.jpg"
-    //       alt="Second slide"
-    //     />
-    //   </Carousel.Item>
-    //   <Carousel.Item>
-    //     <img
-    //       className="d-block w-100"
-    //       src="https://i.ytimg.com/vi/keHXFb9Ikxo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAeCF40o-HCVKdIlP13SzvzL8-Y9w"
-    //       alt="Third slide"
-    //     />
-    //   </Carousel.Item>
-    // </Carousel>
-  )
+  );
 }
 
-
-export default CarouselComponet
+export default CarouselComponent;
