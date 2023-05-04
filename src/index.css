@@ -19,7 +19,7 @@
 }
 
 #light{
-  background-color: rgba(206, 206, 212, 0.984);
+  background-color: rgba(255, 255, 255, 0.984);
 }
 
 #dark{
@@ -62,7 +62,15 @@ cursor: pointer;
 
 .card-title {
   font-family: 'DM Serif Text', serif;
+  /* font-family: 'Outfit', sans-serif;
+  font-weight: bold; */
   font-size: 2rem;
   padding-top: 30px;
   padding-bottom: 20px;
+}
+
+.upload-file {
+  border-radius: 150px;
+  color: blueviolet;
+  background-color: blueviolet;
 }

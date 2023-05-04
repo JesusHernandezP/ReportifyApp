@@ -3,7 +3,9 @@ import { Modal, Input, Button } from 'antd'
 
 import useServer from '../hooks/useServer.js'
 import React from 'react'
-import Form from 'react-bootstrap/Form';
+import Form from 'react-bootstrap/Form'
+import '../index.css'
+
 
 
 function PostCreationModal() {
@@ -46,11 +48,11 @@ function PostCreationModal() {
           <Input.TextArea
             name="content"
             required
-            placeholder="Comentario"
+            placeholder="¿Sobre qué quieres hablar?"
           />
           <Form.Group controlId="formFilesm" className="mb-3">
             <Form.Label></Form.Label>
-            <Form.Control type="file" name="photo"
+            <Form.Control className='upload-file' type="file" name="photo"
               accept="image/*" size="sm" />
           </Form.Group>
           <div className='ant-modal-footer'>
