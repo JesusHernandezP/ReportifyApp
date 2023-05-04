@@ -59,9 +59,7 @@ function Login() {
           <span> ¿No tienes cuenta?</span>
           <span>
             <Link to="/register">
-              <Link type="link">
                 Regístrate
-              </Link>
             </Link>
             </span>
           <div className='ant-modal-footer'>
