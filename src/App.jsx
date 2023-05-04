@@ -35,14 +35,14 @@ function App() {
               <Navbar />
               <div className='themes-switch-bar'>
                 <div className='switch' >
-                  <label> {theme === 'dark' ? '' : ''} </label>
+                  <label> {theme === 'light' ? '' : ''} </label>
                   <Toggle width={40}
-                    backgroundColorChecked={'#b57482'}
+                    backgroundColorChecked={'#EC6165'}
                     height={20}
                     sliderWidth={12}
                     sliderHeight={12}
                     translate={19}
-                    onChange={toogleTheme} checked={theme === 'light'} />
+                    onChange={toogleTheme} checked={theme === 'dark'} />
                 </div>
               </div>
               <Routes>

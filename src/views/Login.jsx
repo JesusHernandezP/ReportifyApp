@@ -56,13 +56,14 @@ function Login() {
             placeholder="Contraseña"
             iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
           />
-          <p> ¿No tienes cuenta?
+          <span> ¿No tienes cuenta?</span>
+          <span>
             <Link to="/register">
-              <Button type="link">
+              <Link type="link">
                 Regístrate
-              </Button>
+              </Link>
             </Link>
-          </p>
+            </span>
           <div className='ant-modal-footer'>
             <Button type="primary" htmlType="submit">
               Ingresar

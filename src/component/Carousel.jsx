@@ -12,14 +12,14 @@ const breakPoints = [
 
 function CarouselComponent() {
   const images = [
-    { src: "http://loremflickr.com/320/240/", alt: "Image 1" },
-    { src: "http://loremflickr.com/240/240/", alt: "Image 2" },
-    { src: "http://loremflickr.com/320/320/", alt: "Image 3" },
-    { src: "http://loremflickr.com/240/240/", alt: "Image 4" },
-    { src: "http://loremflickr.com/320/240/", alt: "Image 5" },
-    { src: "http://loremflickr.com/420/420/", alt: "Image 6" },
-    { src: "http://loremflickr.com/420/240/", alt: "Image 7" },
-    { src: "http://loremflickr.com/420/320/", alt: "Image 8" },
+    { src: "https://loremflickr.com/320/240/dog", alt: "Image 1" },
+    { src: "https://loremflickr.com/320/240/paris", alt: "Image 2" },
+    { src: "https://loremflickr.com/320/240/all", alt: "Image 3" },
+    { src: "https://loremflickr.com/320/240/girl", alt: "Image 4" },
+    { src: "https://loremflickr.com/320/240/rio", alt: "Image 5" },
+    { src: "https://loremflickr.com/320/240/man", alt: "Image 6" },
+    { src: "https://loremflickr.com/320/240/all", alt: "Image 7" },
+    { src: "https://loremflickr.com/320/240/girl", alt: "Image 8" },
   ];
 
   return (

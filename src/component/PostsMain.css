@@ -14,3 +14,39 @@
         inset 0 -3em 3em rgba(0, 0, 0, 0.1),
         0 0 0 2px rgb(255, 255, 255),
 }
+
+#light .modal-shadow {
+    background-color: #f0eaea;
+    color: #766f6f;
+  }
+  
+  #dark .modal-shadow  {
+    background-color: #2d2d2e;
+    color: #766f6f;
+  }
+
+
+  #light  span {
+    
+    color: #766f6f;
+  }
+  
+  #dark  span {
+    
+    color: #766f6f;
+  }
+
+  .nav-container_division .bi{
+    background-color: #f0eaea;
+
+  }
+
+  #light .nav-container_division .bi {
+    background-color: #EC6165;
+    color: #f0eaea;
+  }
+  
+  #dark .nav-container_division .bi  {
+    background-color: #EC6165;
+    color: #f0eaea;
+  }

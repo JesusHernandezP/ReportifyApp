@@ -8,9 +8,14 @@ const ParagraphPost = ({content}) => {
 
   const [ellipsis, setEllipsis] = useState(true);
   console.log({content});
+
+  const paragraphStyle = {
+    color: '#766f6f'
+  };
   return (
     <>
       <Paragraph
+      style={paragraphStyle}
         ellipsis={
           ellipsis
             ? {
