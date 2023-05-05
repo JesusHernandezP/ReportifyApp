@@ -5,6 +5,7 @@ import useServer from '../hooks/useServer.js'
 import React from 'react'
 import Form from 'react-bootstrap/Form'
 import '../index.css'
+import { Placeholder } from 'react-bootstrap'
 
 function PostCreationModal() {
 
@@ -23,10 +24,6 @@ function PostCreationModal() {
   }
 
   const themes = ['sports', 'politics', 'economy', 'education', 'society', 'techonology', 'culture', 'sciencie', 'gaming', 'medicine']
-  
-  const selectOptions = themes.map((theme) => {
-    return {value:theme, label:theme}
-  })
 
   return (
     <>
@@ -39,41 +36,42 @@ function PostCreationModal() {
         footer={<></>}
       >
         <form onSubmit={handleSubmit} className='form-login'>
-        <label>Título</label>
+          <label>Título</label>
           <Input
             name="title"
             required
             placeholder="Título"
           />
           <label>Categoría</label>
-          <Select
-          name="theme"
+          <select className='ant-input css-dev-only-do-not-override-5j1afj'
+            name="theme"
+            defaultValue={null}
             placeholder="Elige categoría"
             style={{
               width: '100%',
             }}
-            allowClear
-            options= {selectOptions}
-          />
+          >
+            <option value="" disabled selected hidden>Elige categoría</option>
+            {
+              themes.map((theme) => <option value={theme}>{theme}</option>)
+            }
+          </select>
           <label>Contenido</label>
-        <Input.TextArea
-          name="content"
-          required
-          placeholder="¿Sobre qué quieres hablar?"
-        />
-        <label>Imagen</label>
-        <Form.Group controlId="formFilesm" className="mb-3">
-          <Form.Label></Form.Label>
+          <Input.TextArea
+            name="content"
+            required
+            placeholder="¿Sobre qué quieres hablar?"
+          />
+          <label>Imagen</label>
           <Form.Control className='upload-file' type="file" name="photo"
             accept="image/*" size="sm" />
-        </Form.Group>
-        <div className='ant-modal-footer'>
-          <Button type="primary" htmlType="submit">
-            Publicar
-          </Button >
-        </div>
-      </form>
-    </Modal >
+          <div className='ant-modal-footer'>
+            <Button type="primary" htmlType="submit">
+              Publicar
+            </Button >
+          </div>
+        </form>
+      </Modal >
     </>
   )
 }

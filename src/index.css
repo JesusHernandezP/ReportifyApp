@@ -1,5 +1,4 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, 'DM Serif Text', 'Outfit', sans-serif;
   font-family: 'Outfit', sans-serif;
   font-family: 'Sansita', sans-serif;
   line-height: 1.5;
@@ -53,7 +52,7 @@
   margin: 5px;
 }
 
-.card {
+* {
   font-family: 'Outfit', sans-serif;
 }
 
