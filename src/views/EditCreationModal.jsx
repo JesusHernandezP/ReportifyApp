@@ -5,15 +5,19 @@ import React from 'react'
 import '../index.css'
 import ModalPostForm from '../component/ModalPostForm.jsx'
 
-function PostCreationModal() {
+function EditCreationModal({id}) {
+  // Ir a buscar el post con ese id y lo guardaremos en la constante post
+  // llamar al Modal con el atributo= news={post}
+  // editar el método handleSubmit para permitir el cambio en el contenido
 
-  const { post } = useServer()
+
+  const { put } = useServer()
   const navigate = useNavigate()
 
   const handleSubmit = async e => {
     e.preventDefault()
     const formData = new FormData(e.target)
-    await post({ url: '/news', body: formData, hasImage: true })
+    await put({ url: `/news/${id}`, body: formData, hasImage: true })
     navigate("/")
   }
 
@@ -24,8 +28,9 @@ function PostCreationModal() {
   return (
     <>
       <ModalPostForm handleSubmit={handleSubmit} handleCancel={handleCancel} />
+      {/* <ModalPostForm news={post} handleSubmit={handleSubmit} handleCancel={handleCancel} /> */}
     </>
   )
 }
 
-export default PostCreationModal
+export default EditCreationModal
