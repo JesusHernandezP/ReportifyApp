@@ -23,7 +23,7 @@ function PostCreationModal() {
     navigate("/")
   }
 
-  const themes = ['sports', 'politics', 'economy', 'education', 'society', 'techonology', 'culture', 'sciencie', 'gaming', 'medicine']
+  const themes = ['sports', 'politics', 'economy', 'education', 'society', 'technology', 'culture', 'science', 'gaming', 'medicine']
 
   return (
     <>
