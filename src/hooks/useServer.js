@@ -9,13 +9,10 @@ function useServer() {
   const handleResponse = ({ data, loading, error }) => {
 
     if (data?.data?.id && data?.data?.email) {
-      console.log('data?.data?.id /// guardando user como:', data.data);
       setUser({ user: data.data })
     }
 
     if (data?.data?.token) {
-
-      console.log('data?.data?.token /// guardando user como:', data.data.token);
       setUser({ token: data.data.token })
     }
 
@@ -37,5 +34,4 @@ function useServer() {
     delete: ({ url }) => httpService({ method: 'DELETE', url, token }).then(handleResponse),
   }
 }
-
 export default useServer

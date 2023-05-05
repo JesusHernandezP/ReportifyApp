@@ -28,6 +28,7 @@ const AuthProvider = ({ children }) => {
       user: currentUser?.user || null,
       token: currentUser?.token,
       isAuthenticated: !!currentUser?.token,
+      setUser:setUserHandler,
       logout: logoutHandler
     }
   }, [currentUser])
