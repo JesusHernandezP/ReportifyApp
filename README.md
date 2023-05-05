@@ -12,8 +12,8 @@ Adriana Buitriago
 Dulce Gonzales
 Jesús Hernández
 
-Instalación
-Clona este repositorio.
+\## Instalación
+\## Clona este repositorio.
 $ cd ReportifyApp-develop
 $ npm install
 $ npm run dev
