@@ -21,7 +21,7 @@ const Navbar = () => {
     <>
       <div className='nav-container'>
         <div className='nav-container_division'>
-          {/* <i className="bi bi-spotify"></i><p className='text-logo' >Reportify</p> */}
+          {/* <className="bi bi-spotify"></i><p className='text-logo' >Reportify</p> */}
           <img src={'./logo-reportify.svg'} alt='logo' className='logo-reportify' /><p className='text-logo' >Reportify</p>
         </div>
         <div className='nav-container_division'>

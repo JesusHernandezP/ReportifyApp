@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
+import Button from 'react-bootstrap/Button'
+import useAuth from '../hooks/useAuth.js'
+import './PostsMain.css'
+import './Navbar.css'
 const CardContainer = styled.div`
+
   width: 250px;
   height: 300px;
   border: 1px solid #ccc;
@@ -92,7 +96,16 @@ const ModalCloseButton = styled.button`
   padding: 0;
 `;
 
-const CarouselItem = ({ src, alt, title, content }) => {
+const CarouselItem = ({ src, alt, title, content, like, dislike, news, deletes }) => {
+  const { isAuthenticated } = useAuth()
+
+  const handleDeleteClick = () => {
+    const isConfirmed = window.confirm("¿Estás seguro de eliminar este post?");
+    if (isConfirmed) {
+      deletes(news.id)
+    }
+  }
+
   const [showModal, setShowModal] = useState(false);
 
   const toggleShowModal = () => {
@@ -116,7 +129,18 @@ const CarouselItem = ({ src, alt, title, content }) => {
           <ModalTitle>{title}</ModalTitle>
           <ModalImage src={src} alt={alt} />
           <ModalText>{content}</ModalText>
-          <ModalCloseButton onClick={toggleShowModal}><i class="bi bi-x-circle"></i></ModalCloseButton>
+          <ModalCloseButton onClick={toggleShowModal}><i className="bi bi-x-circle"></i></ModalCloseButton>
+          <div className='nav-container_division'>
+            <div>
+              {isAuthenticated && <Button className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
+            </div>
+            <div>
+              <Button className="bi bi-hand-thumbs-down" variant="light"></Button>
+              <Button className="bi bi-hand-thumbs-up" variant="light"> </Button>
+            </div>
+
+          </div>
+
         </ModalContainer>
       )}
     </>
