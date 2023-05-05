@@ -6,9 +6,9 @@
     width: 100%;
     margin: 0 auto;
 }
-    
 
-@media (min-width: 420px) {
+
+@media (min-width: 360px) {
     .nav-container {
         width: 100%;
     }
@@ -25,6 +25,7 @@
         max-width: 900px;
     }
 }
+
 .nav-container_division {
     display: flex;
     justify-content: space-between;
@@ -40,7 +41,8 @@
 }
 
 .bi-spotify {
-    color: #EC6165;;
+    color: #EC6165;
+    ;
     font-size: 50px;
 }
 
@@ -56,7 +58,7 @@
     border-radius: 150px;
     text-align: center;
     background-color: #f0eaea;
-    color:#EC6165 ;
+    color: #EC6165;
     font-weight: bold;
     border-color: #EC6165;
 }
@@ -64,11 +66,11 @@
 .ant-btn>.anticon {
     vertical-align: 0%;
     transform: translateY(-1px);
-    
+
 }
 
 .nav-post {
-    border-radius: 150px;
+    border-radius: 10px;
     text-align: center;
     font-size: bold;
 }
@@ -81,7 +83,7 @@
 
 .bi {
     font-size: 25px;
-    
+
 }
 
 .logo-reportify {

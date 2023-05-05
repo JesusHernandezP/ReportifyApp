@@ -4,7 +4,7 @@ import { Typography } from 'antd';
 import { useState } from 'react';
 const { Paragraph } = Typography;
 
-const ParagraphPost = ({content}) => {
+const ParagraphPost = ({ content }) => {
 
   const [ellipsis, setEllipsis] = useState(true);
   const paragraphStyle = {
@@ -13,7 +13,7 @@ const ParagraphPost = ({content}) => {
   return (
     <>
       <Paragraph
-      style={paragraphStyle}
+        style={paragraphStyle}
         ellipsis={
           ellipsis
             ? {
@@ -26,7 +26,7 @@ const ParagraphPost = ({content}) => {
       >
         {content}
       </Paragraph>
-      </>
+    </>
   )
 }
 export default ParagraphPost;

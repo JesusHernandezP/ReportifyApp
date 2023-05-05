@@ -6,7 +6,6 @@ import Navbar from './component/Navbar'
 import Login from './views/Login'
 import Main from './views/Main'
 import PostCreationModal from './views/PostCreationModal'
-import Comments from './views/Comments'
 import Profile from './views/Profile'
 import Register from './views/Register'
 
@@ -51,7 +50,6 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/post" element={<PostCreationModal />} />
-                <Route path="/comments" element={<Comments />} />
                 <Route element={<PrivateRoutes />}>
                 </Route>
                 <Route path="*" element={<Navigate to="/" />} />

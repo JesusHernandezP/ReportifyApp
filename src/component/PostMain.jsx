@@ -20,34 +20,37 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes }) => {
   }
 
   const handleDeleteClick = () => {
-    deletes(news.id)
+    const isConfirmed = window.confirm("¿Estás seguro de eliminar este post?");
+    if (isConfirmed) {
+      deletes(news.id)
+    }
   }
 
   return (
     <>
-    <Card className='postmain modal-shadow'>
-      {hasImage && <Card.Img className='postmain-img' variant="top" src={`${apiURL}/photos/${photo}`} alt={title} />}
-      <Card.Body >
+      <Card className='postmain modal-shadow'>
+        {hasImage && <Card.Img className='postmain-img' variant="top" src={`${apiURL}/photos/${photo}`} alt={title} />}
+        <Card.Body >
 
-        <h1 className='card-title' >
-          {title}
-        </h1>
-        <Card.Text >
-        <ParagraphPost content={content} />
-        </Card.Text>
-        <div className='nav-container_division'>
-          <div>
-            {isAuthenticated && <Button i className="bi bi-trash3" variant="light" onClick={handleDeleteClick}/>}
+          <h1 className='card-title' >
+            {title}
+          </h1>
+          <Card.Text >
+            <ParagraphPost content={content} />
+          </Card.Text>
+          <div className='nav-container_division'>
+            <div>
+              {isAuthenticated && <Button i className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
+            </div>
+            <div>
+              <Button i className="bi bi-hand-thumbs-down" variant="light" onClick={handleDislikeClick} >{news.dislikes}</Button>
+              <Button i className="bi bi-hand-thumbs-up" variant="light" onClick={handleLikeClick} > {news.likes} </Button>
+            </div>
           </div>
-          <div>
-          <Button i className="bi bi-hand-thumbs-down" variant="light" onClick={handleDislikeClick} >{news.dislikes}</Button>
-          <Button i className="bi bi-hand-thumbs-up" variant="light" onClick={handleLikeClick} > {news.likes} </Button>
-          </div>
-        </div>
-      </Card.Body>
-    </Card>
+        </Card.Body>
+      </Card>
     </>
   )
-}
+};
 
 export default PostMain

@@ -20,11 +20,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         }
       }}
     >
-    <AuthProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </AuthProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </AuthProvider>
     </ConfigProvider>
   </React.StrictMode>,
 )

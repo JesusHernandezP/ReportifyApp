@@ -1,7 +1,10 @@
 .title-sections-posts {
   /* font-family: 'DM Serif Text', serif; */
   font-family: 'Outfit', sans-serif;
-  font-weight: 700;
+  font-weight: bold;
+  margin: 40px;
+  margin-left: 10px;
+  
 }
 
 #light .title-sections-posts {

@@ -1,4 +1,4 @@
-import {AppstoreOutlined} from '@ant-design/icons';
+import { AppstoreOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import { useState } from 'react';
 import './Themes.css'
@@ -12,18 +12,18 @@ function getItem(label, key, icon, children, type) {
   };
 }
 const items = [
-    getItem('Temas', 'sub2', <AppstoreOutlined />, [
-      getItem('Sports', '1'),
-      getItem('Politics ', '2'),
-      getItem('Economy', '3'),
-      getItem('Education', '4'),
-      getItem('Society', '5'),
-      getItem('Techonology', '6'),
-      getItem('Culture', '7'),
-      getItem('Sciencie', '8'),
-      getItem('Gaming', '9'),
-      getItem('Medicine', '10'),
-    ]),
+  getItem('Temas', 'sub2', <AppstoreOutlined />, [
+    getItem('Sports', '1'),
+    getItem('Politics ', '2'),
+    getItem('Economy', '3'),
+    getItem('Education', '4'),
+    getItem('Society', '5'),
+    getItem('Techonology', '6'),
+    getItem('Culture', '7'),
+    getItem('Sciencie', '8'),
+    getItem('Gaming', '9'),
+    getItem('Medicine', '10'),
+  ]),
 ]
 
 // submenu keys of first level
@@ -52,6 +52,6 @@ const App = () => {
       />
     </div>
   );
-  
+
 };
 export default App;

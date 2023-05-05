@@ -19,13 +19,13 @@ function Login() {
     await post({ url: '/login', body: credentials })
   }
 
-  useEffect(() => { 
+  useEffect(() => {
     const refreshProfile = async () => {
       if (!token) return
-  
+
       const usr = await get({ url: '/profile' })
       if (usr) return navigate('/')
-    } 
+    }
     refreshProfile()
   }, [token])
 
@@ -59,9 +59,9 @@ function Login() {
           <span> ¿No tienes cuenta?</span>
           <span>
             <Link to="/register">
-                Regístrate
+              Regístrate
             </Link>
-            </span>
+          </span>
           <div className='ant-modal-footer'>
             <Button type="primary" htmlType="submit">
               Ingresar

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { apiURL } from "../config"
 import Carousel from "react-elastic-carousel"
 import "./Carousel.css"
@@ -17,7 +17,13 @@ function CarouselComponent({ filteredPosts }) {
       <div className="carouselcomponent">
         <Carousel breakPoints={breakPoints}>
           {filteredPosts.map((post) => (
-            <CarouselItem key={post.id} src={`${apiURL}/photos/${post.photo}`} alt={post.title} />
+            <CarouselItem
+              key={post.id}
+              src={`${apiURL}/photos/${post.photo}`}
+              alt={post.title}
+              title={post.title}
+              content={post.content}
+            />
           ))}
         </Carousel>
       </div>
@@ -26,3 +32,4 @@ function CarouselComponent({ filteredPosts }) {
 }
 
 export default CarouselComponent;
+

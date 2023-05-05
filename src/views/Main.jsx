@@ -14,7 +14,7 @@ function Main() {
   const getPosts = async () => {
     const { data } = await get({ url: "/news" })
     const sortedPosts = data.data.sort((new_a, new_b) => -new_a.createdAt.localeCompare(new_b.createdAt))
-    
+
     const sortedTrendings = sortedPosts.slice(0, 6)
     const restOfPosts = sortedPosts.slice(6)
     setTrendings(sortedTrendings)
@@ -31,11 +31,11 @@ function Main() {
       <h1 className='title-sections-posts'>Tendencias</h1>
       {posts && <CarouselComponet filteredPosts={trendings} />}
       <h1 className='title-sections-posts'>Las noticias del día</h1>
-      {posts && 
-      <PostsMain 
-      posts={posts} 
-      getPosts={getPosts}
-      />}
+      {posts &&
+        <PostsMain
+          posts={posts}
+          getPosts={getPosts}
+        />}
     </>
   )
 }

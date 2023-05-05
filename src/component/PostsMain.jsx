@@ -10,17 +10,17 @@ const PostsMain = ({ posts, getPosts }) => {
   // const [news, setNews] = useState(posts) //este era uno de los problema!!
 
   const likePostHandler = async (id) => {
-    await post ({url: `/news/like/${id}`})
+    await post({ url: `/news/like/${id}` })
     getPosts()
   }
-  
+
   const dislikePostHandler = async (id) => {
-    await post ({url: `/news/dislike/${id}`})
+    await post({ url: `/news/dislike/${id}` })
     getPosts()
   }
 
   const deleteNewsHandler = async (id) => {
-    await destroy({url: `/news/${id}`})
+    await destroy({ url: `/news/${id}` })
     getPosts()
   }
 

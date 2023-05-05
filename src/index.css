@@ -42,11 +42,11 @@
 }
 
 .ant-input {
-  border-radius: 150px;
+  border-radius: 10px;
 }
 
 .ant-input-password {
-  border-radius: 150px;
+  border-radius: 10px;
 }
 
 .ant-form>* {
