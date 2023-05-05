@@ -14,7 +14,6 @@ import styles from './App.module.css'
 
 export const ThemeContext = createContext(null);
 
-
 function App() {
 
   const [theme, setTheme] = useState('light');
@@ -28,8 +27,6 @@ function App() {
       <ThemeContext.Provider value={{ theme, toogleTheme }}>
         <div>
           <div id={theme}>
-
-
             <div className={styles.container}>
               <Navbar />
               <div className='themes-switch-bar'>

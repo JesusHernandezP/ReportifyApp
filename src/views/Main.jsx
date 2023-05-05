@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import CarouselComponet from '../component/Carousel'
 import PostsMain from '../component/PostsMain'
 import useServer from '../hooks/useServer'
-import Themes from '../component/Themes'
 
 import './Main.css'
 

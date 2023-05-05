@@ -1,9 +1,9 @@
 import useServer from '../hooks/useServer.js'
+import PostMain from './PostMain'
 
 import './PostsMain.css'
 import './Navbar.css'
 
-import PostMain from './PostMain'
 
 const PostsMain = ({ posts, getPosts }) => {
   const { post, delete: destroy } = useServer()

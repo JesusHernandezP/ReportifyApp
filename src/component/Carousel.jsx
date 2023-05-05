@@ -9,7 +9,7 @@ const breakPoints = [
   { width: 550, itemsToShow: 2 },
   { width: 768, itemsToShow: 3 },
   { width: 1200, itemsToShow: 4 },
-];
+]
 
 function CarouselComponent({ filteredPosts }) {
   return (
@@ -28,7 +28,7 @@ function CarouselComponent({ filteredPosts }) {
         </Carousel>
       </div>
     </>
-  );
+  )
 }
 
 export default CarouselComponent;

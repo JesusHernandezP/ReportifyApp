@@ -15,7 +15,9 @@ const Image = styled.img`
   width: 100%;
   height: 70%;
   object-fit: cover;
-`;
+  border-radius: 10px;
+  `;
+
 
 const TitleContainer = styled.div`
   height: 30%;
