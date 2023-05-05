@@ -35,16 +35,16 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes }) => {
           <h1 className='card-title' >
             {title}
           </h1>
-          <Card.Text >
+          <div className="card-text" >
             <ParagraphPost content={content} />
-          </Card.Text>
+          </div>
           <div className='nav-container_division'>
             <div>
-              {isAuthenticated && <Button i className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
+              {isAuthenticated && <Button className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
             </div>
             <div>
-              <Button i className="bi bi-hand-thumbs-down" variant="light" onClick={handleDislikeClick} >{news.dislikes}</Button>
-              <Button i className="bi bi-hand-thumbs-up" variant="light" onClick={handleLikeClick} > {news.likes} </Button>
+              <Button className="bi bi-hand-thumbs-down" variant="light" onClick={handleDislikeClick} >{news.dislikes}</Button>
+              <Button className="bi bi-hand-thumbs-up" variant="light" onClick={handleLikeClick} > {news.likes} </Button>
             </div>
           </div>
         </Card.Body>

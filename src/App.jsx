@@ -32,13 +32,16 @@ function App() {
               <div className='themes-switch-bar'>
                 <div className='switch' >
                   <label> {theme === 'light' ? '' : ''} </label>
-                  <Toggle width={40}
+                  <Toggle
+                    width={40}
                     backgroundColorChecked={'#EC6165'}
                     height={20}
                     sliderWidth={12}
                     sliderHeight={12}
                     translate={19}
-                    onChange={toogleTheme} checked={theme === 'dark'} />
+                    onChange={toogleTheme}
+                    value={theme === 'dark'}
+                  />
                 </div>
               </div>
               <Routes>
