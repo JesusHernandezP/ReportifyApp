@@ -19,7 +19,7 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes, edit })
   }
 
   const handleDeleteClick = () => {
-    const isConfirmed = window.confirm("¿Estás seguro de eliminar este post?");
+    const isConfirmed = window.confirm("¿Estás seguro de eliminar este post?")
     if (isConfirmed) {
       deletes(news.id)
     }
@@ -56,6 +56,6 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes, edit })
       </Card>
     </>
   )
-};
+}
 
 export default PostMain;

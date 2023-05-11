@@ -5,7 +5,7 @@ import './Navbar.css';
 import useServer from '../hooks/useServer.js';
 
 const PostsMain = ({ posts, getPosts }) => {
-  const { post, delete: destroy, patch } = useServer();
+  const { post, delete: destroy } = useServer()
 
   const likePostHandler = async (id) => {
     await post({ url: `/news/like/${id}` });
