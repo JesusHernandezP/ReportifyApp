@@ -38,6 +38,7 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes, edit })
           <h1 className='card-title' >
             {title}
           </h1>
+          
           <div className="card-text" >
             <ParagraphPost content={content} />
           </div>
