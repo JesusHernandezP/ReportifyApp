@@ -1,14 +1,13 @@
 import { apiURL } from "../config"
 import useAuth from '../hooks/useAuth.js'
 import ParagraphPost from './ParagraphPost'
-
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import './PostsMain.css'
 import './Navbar.css'
 
-const PostMain = ({ photo, title, like, dislike, news, content, deletes }) => {
-  const { isAuthenticated } = useAuth()
+const PostMain = ({ photo, title, like, dislike, news, content, deletes, edit }) => {
+  const { isAuthenticated, user } = useAuth()
   const hasImage = typeof photo === 'string'
 
   const handleLikeClick = () => {
@@ -26,6 +25,10 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes }) => {
     }
   }
 
+  const handleEditClick = () => {
+    edit(news.id)
+  }
+
   return (
     <>
       <Card className='postmain modal-shadow'>
@@ -40,7 +43,8 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes }) => {
           </div>
           <div className='nav-container_division'>
             <div>
-              {isAuthenticated && <Button className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
+              {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
+              {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-pencil" variant="light" onClick={handleEditClick}>Editar</Button>}
             </div>
             <div>
               <Button className="bi bi-hand-thumbs-down" variant="light" onClick={handleDislikeClick} >{news.dislikes}</Button>
@@ -53,4 +57,4 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes }) => {
   )
 };
 
-export default PostMain
+export default PostMain;
