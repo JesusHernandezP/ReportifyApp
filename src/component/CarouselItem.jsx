@@ -134,10 +134,10 @@ const CarouselItem = ({ src, alt, title, content, like, dislike, news, deletes }
             <div>
               {isAuthenticated && <Button className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
             </div>
-            <div>
+            {/* <div>
               <Button className="bi bi-hand-thumbs-down" variant="light"></Button>
               <Button className="bi bi-hand-thumbs-up" variant="light"> </Button>
-            </div>
+            </div> */}
 
           </div>
 
