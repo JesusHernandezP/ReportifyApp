@@ -17,10 +17,10 @@ const PostsMain = ({ posts, getPosts }) => {
     getPosts();
   };
 
-  const editNewsHandler = async (id) => {
-    await patch ({ url: `/news/${id}`});
-    getPosts();
-  };
+  // const editNewsHandler = async (id) => {
+  //   await patch ({ url: `/news/${id}`});
+  //   getPosts();
+  // };
 
   const deleteNewsHandler = async (id) => {
     await destroy({ url: `/news/${id}` });
@@ -40,7 +40,7 @@ const PostsMain = ({ posts, getPosts }) => {
             like={likePostHandler}
             dislike={dislikePostHandler}
             deletes={deleteNewsHandler}
-            edit={editNewsHandler}
+            // edit={editNewsHandler}
             title={new_.title}
             content={new_.content}
             photo={new_.photo}

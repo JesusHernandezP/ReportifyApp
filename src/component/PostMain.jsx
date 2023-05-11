@@ -25,9 +25,9 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes, edit })
     }
   }
 
-  const handleEditClick = () => {
-    edit(news.id)
-  }
+  // const handleEditClick = () => {
+  //   edit(news.id)
+  // }
 
   return (
     <>
@@ -44,7 +44,7 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes, edit })
           <div className='nav-container_division'>
             <div>
               {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
-              {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-pencil" variant="light" onClick={handleEditClick}>Editar</Button>}
+              {/* {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-pencil" variant="light" onClick={handleEditClick}>Editar</Button>} */}
             </div>
             <div>
               <Button className="bi bi-hand-thumbs-down" variant="light" onClick={handleDislikeClick} >{news.dislikes}</Button>
