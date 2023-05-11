@@ -1,0 +1,43 @@
+.carouselcomponent {
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+}
+
+button.rec.rec-arrow-left:hover:enabled,
+button.rec.rec-arrow-right:hover:enabled {
+  background-color: #EC6165 ;
+  
+}
+
+button.rec.rec-arrow-left,
+button.rec.rec-arrow-right {
+  background-color: #EC6165;
+  font-size: 1.1rem ;
+    color: white ;
+    width: 1.7rem ;
+    height: 1.7rem ;
+    min-width: 1.7rem ;
+    line-height: 1.7rem ;
+}
+
+button.rec-arrow:hover:not(:disabled) {
+  transform: scale(1.2);
+  background-color: #EC6165;
+}
+
+.rec-dot {
+  display: none;
+}
+
+button.rec.rec-arrow:disabled {
+  visibility: hidden;
+background-color: #EC6165;
+}
+
+button.rec.rec-arrow:focus,
+button.rec.rec-arrow:active {
+  background-color: #EC6165;
+}

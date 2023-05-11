@@ -1,0 +1,18 @@
+.title-sections-posts {
+  /* font-family: 'DM Serif Text', serif; */
+  font-family: 'Outfit', sans-serif;
+  font-weight: bold;
+  margin: 40px;
+  margin-left: 10px;
+  
+}
+
+#light .title-sections-posts {
+  background-color: #f0eaea;
+  color: #766f6f;
+}
+
+#dark .title-sections-posts {
+  background-color: #2d2d2e;
+  color: #766f6f;
+}

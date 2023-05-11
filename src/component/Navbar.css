@@ -1,0 +1,91 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 999;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+@media (min-width: 360px) {
+    .nav-container {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-container {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav-container {
+        max-width: 900px;
+    }
+}
+
+.nav-container_division {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.nav-container_division>* {
+    margin: 5px;
+    color: #EC6165;
+}
+
+.bi-spotify {
+    color: #EC6165;
+    ;
+    font-size: 50px;
+}
+
+.ant-input-search>.ant-input-group>.ant-input {
+    border-radius: 150px;
+}
+
+.ant-input-search>.ant-input-group>.ant-input-group-addon:last-child .ant-input-search-button {
+    border-radius: 150px;
+}
+
+.ant-btn {
+    border-radius: 150px;
+    text-align: center;
+    background-color: #f0eaea;
+    color: #EC6165;
+    font-weight: bold;
+    border-color: #EC6165;
+}
+
+.ant-btn>.anticon {
+    vertical-align: 0%;
+    transform: translateY(-1px);
+
+}
+
+.nav-post {
+    border-radius: 10px;
+    text-align: center;
+    font-size: bold;
+}
+
+.text-logo {
+    font-family: 'Sansita', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.bi {
+    font-size: 25px;
+
+}
+
+.logo-reportify {
+    height: 1.5rem;
+}

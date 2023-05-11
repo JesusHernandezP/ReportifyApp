@@ -1,26 +1,63 @@
-import { Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import { PrivateRoutes } from './components/PrivateRoutes'
+import { Route, Routes, Navigate } from 'react-router-dom'
+import { PrivateRoutes } from './component/PrivateRoutes'
+import { createContext, useState } from 'react'
 
-import Index from './views/index'
-import Login from './views/login'
-import Todos from './views/todos'
-import Notifications from './components/Notifications'
+import Navbar from './component/Navbar'
+import Login from './views/Login'
+import Main from './views/Main'
+import PostCreationModal from './views/PostCreationModal'
+import Profile from './views/Profile'
+import Register from './views/Register'
+
+import Toggle from 'react-styled-toggle';
+import styles from './App.module.css'
+
+export const ThemeContext = createContext(null);
 
 function App() {
 
+  const [theme, setTheme] = useState('light');
+
+  const toogleTheme = () => {
+    setTheme((curr) => (curr === 'light' ? 'dark' : 'light'))
+  }
+
   return (
     <>
-      <Navbar />
-      <Notifications />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/login" element={<Login />} />
-
-        <Route element={<PrivateRoutes />}>
-          <Route path="/todos" element={<Todos />} />
-        </Route>
-      </Routes>
+      <ThemeContext.Provider value={{ theme, toogleTheme }}>
+        <div>
+          <div id={theme}>
+            <div className={styles.container}>
+              <Navbar />
+              <div className='themes-switch-bar'>
+                <div className='switch' >
+                  <label> {theme === 'light' ? '' : ''} </label>
+                  <Toggle
+                    width={40}
+                    backgroundColorChecked={'#EC6165'}
+                    height={20}
+                    sliderWidth={12}
+                    sliderHeight={12}
+                    translate={19}
+                    onChange={toogleTheme}
+                    value={theme === 'dark'}
+                  />
+                </div>
+              </div>
+              <Routes>
+                <Route path="/" element={<Main />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/post" element={<PostCreationModal />} />
+                <Route element={<PrivateRoutes />}>
+                </Route>
+                <Route path="*" element={<Navigate to="/" />} />
+              </Routes>
+            </div>
+          </div>
+        </div>
+      </ThemeContext.Provider>
     </>
   )
 }
