@@ -7,7 +7,6 @@ import './Navbar.css'
 
 const PostsMain = ({ posts, getPosts }) => {
   const { post, delete: destroy } = useServer()
-  // const [news, setNews] = useState(posts) //este era uno de los problema!!
 
   const likePostHandler = async (id) => {
     await post({ url: `/news/like/${id}` })
@@ -27,7 +26,7 @@ const PostsMain = ({ posts, getPosts }) => {
   return (
     <>
       {
-        posts.map((new_) => //aquí cambiamos de news.(anterior codigo) a el renombrado posts
+        posts.map((new_) =>
           <PostMain
             key={new_.id}
             news={new_}

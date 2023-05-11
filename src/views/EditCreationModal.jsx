@@ -5,11 +5,10 @@ import React from 'react'
 import '../index.css'
 import ModalPostForm from '../component/ModalPostForm.jsx'
 
-function EditCreationModal({id}) {
+function EditCreationModal({id, handleCancel}) {
   // Ir a buscar el post con ese id y lo guardaremos en la constante post
   // llamar al Modal con el atributo= news={post}
   // editar el método handleSubmit para permitir el cambio en el contenido
-
 
   const { put } = useServer()
   const navigate = useNavigate()
@@ -21,14 +20,10 @@ function EditCreationModal({id}) {
     navigate("/")
   }
 
-  const handleCancel = () => {
-    navigate("/")
-  }
-
   return (
     <>
-      <ModalPostForm handleSubmit={handleSubmit} handleCancel={handleCancel} />
-      {/* <ModalPostForm news={post} handleSubmit={handleSubmit} handleCancel={handleCancel} /> */}
+    {/* news={post} */}
+      <ModalPostForm handleSubmit={handleSubmit} handleCancel={handleCancel}/>
     </>
   )
 }
