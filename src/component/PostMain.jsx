@@ -57,6 +57,7 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes }) => {
               }
               {showingEditModal === true && 
               <EditCreationModal 
+                id={news.id}
                 handleCancel={handleCancel}
               />}
             </div>
