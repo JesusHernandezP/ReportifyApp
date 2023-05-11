@@ -4,30 +4,30 @@
 
 Proyecto final bootcamp powercoders 2023
 
-\##Características
+# Características
 Publicar noticias: permite a los usuarios crear y publicar noticias con contenido multimedia como imágenes y videos.
 Dar like: los usuarios pueden dar "like" a las noticias que les gustan.
 Comentar: los usuarios pueden dejar comentarios en las noticias publicadas por otros usuarios.
 Editar y eliminar noticias: los usuarios pueden editar y eliminar las noticias que han publicado anteriormente.
 
 
-\## Clona este repositorio.
+# Clona este repositorio.
 
 $ cd ReportifyApp-develop
 $ npm install
 $ npm run dev
 
-\## Uso
+# Uso
 
 Para utilizar Reportify App, simplemente abre la aplicación en tu navegador y crea una cuenta de usuario. Una vez que hayas iniciado sesión, podrás publicar noticias, dar "me gusta", editar y eliminar tus propias publicaciones.
 
-\## Participantes
+# Participantes
 
 Adriana Buitriago
 Dulce Gonzales
 Jesús Hernández
 
-\## Contacto
+# Contacto
 
 Si tienes alguna pregunta o comentario sobre Reportify App, no dudes en ponerte en contacto con nosotros a través de nuestros perfiles en GitHub:
 
