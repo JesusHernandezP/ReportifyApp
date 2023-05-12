@@ -5,10 +5,8 @@ import useServer from '../hooks/useServer.js'
 import '../index.css'
 import ModalPostForm from '../component/ModalPostForm.jsx'
 
-function EditCreationModal({id, handleCancel}) {
-  // Ir a buscar el post con ese id y lo guardaremos en la constante post
-  // llamar al Modal con el atributo= news={post}
-  // editar el método handleSubmit para permitir el cambio en el contenido
+function EditCreationModal({id, handleCancel, getPosts}) {
+
   const { patch, get } = useServer()
   const navigate = useNavigate()
 
@@ -27,12 +25,20 @@ function EditCreationModal({id, handleCancel}) {
     e.preventDefault()
     const formData = new FormData(e.target)
     await patch({ url: `/news/${id}`, body: formData, hasImage: true })
-    navigate("/")
+    handleCancel()
+    getPosts()
   }
 
   return (
     <>
-      <ModalPostForm defaultValues={post} handleSubmit={handleSubmit} modalTitle={'Editar post'} handleCancel={handleCancel}/>
+      {post !== undefined &&
+      <ModalPostForm
+        defaultValues={post}
+        handleSubmit={handleSubmit}
+        modalTitle={'Editar post'}
+        handleCancel={handleCancel}
+      />
+    }
     </>
   )
 }

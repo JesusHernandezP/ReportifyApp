@@ -9,7 +9,7 @@ import Card from 'react-bootstrap/Card'
 import './PostsMain.css'
 import './Navbar.css'
 
-const PostMain = ({ photo, title, like, dislike, news, content, deletes }) => {
+const PostMain = ({ photo, title, like, dislike, news, content, deletes, getPosts }) => {
   const { isAuthenticated, user } = useAuth()
   const hasImage = typeof photo === 'string'
   const [showingEditModal, setShowingEditModal] = useState(false)
@@ -60,6 +60,7 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes }) => {
               <EditCreationModal 
                 id={news.id}
                 handleCancel={handleCancel}
+                getPosts={getPosts}
               />}
             </div>
             <div>

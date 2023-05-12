@@ -19,13 +19,12 @@ function ModalPostForm({defaultValues={}, handleSubmit, handleCancel, modalTitle
       name="title"
       required
       placeholder="Título"
-      value={defaultValues.title}
+      defaultValue={defaultValues.title}
     />
     <label>Categoría</label>
     <select className='ant-input css-dev-only-do-not-override-5j1afj'
       name="theme"
-      value={defaultValues.theme}
-      defaultValue=""
+      defaultValue={defaultValues.theme===undefined ? "" : defaultValues.theme}
       style={{
         width: '100%',
       }}
@@ -39,7 +38,7 @@ function ModalPostForm({defaultValues={}, handleSubmit, handleCancel, modalTitle
     <Input.TextArea
       name="content"
       required
-      value={defaultValues.content}
+      defaultValue={defaultValues.content}
       placeholder="¿Sobre qué quieres hablar?"
     />
     <label>Imagen</label>
