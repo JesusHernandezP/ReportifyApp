@@ -36,17 +36,50 @@
   color: #766f6f;
 }
 
-.nav-container_division .bi {
+.style-buttons .bi {
   background-color: #f0eaea;
 
 }
 
-#light .nav-container_division .bi {
+.style-buttons .bi {
   background-color: #EC6165;
   color: #f0eaea;
+  padding: 0.50em;
+
 }
 
-#dark .nav-container_division .bi {
+.style-buttons .bi {
   background-color: #EC6165;
   color: #f0eaea;
+  padding: 0.40em;
+
 }
+
+.style-buttons {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+}
+
+.style-buttons::-webkit-scrollbar {
+  display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .style-buttons {
+    overflow-x: scroll;
+  }
+}
+
+.style-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35em;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+

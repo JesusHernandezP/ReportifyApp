@@ -130,7 +130,7 @@ const CarouselItem = ({ src, alt, title, content, like, dislike, news, deletes }
           <ModalImage src={src} alt={alt} />
           <ModalText>{content}</ModalText>
           <ModalCloseButton onClick={toggleShowModal}><i className="bi bi-x-circle"></i></ModalCloseButton>
-          <div className='nav-container_division'>
+          <div className='style-buttons'>
             <div>
               {isAuthenticated && <Button className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
             </div>

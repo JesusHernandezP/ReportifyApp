@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card'
 import './PostsMain.css'
 import './Navbar.css'
 
-const PostMain = ({ photo, title, like, dislike, news, content, deletes, edit }) => {
+const PostMain = ({ photo, title, like, dislike, news, content, deletes, theme }) => {
   const { isAuthenticated, user } = useAuth()
   const hasImage = typeof photo === 'string'
 
@@ -25,24 +25,23 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes, edit })
     }
   }
 
-  // const handleEditClick = () => {
-  //   edit(news.id)
-  // }
+
 
   return (
     <>
       <Card className='postmain modal-shadow'>
+        <p>{theme}</p>
         {hasImage && <Card.Img className='postmain-img' variant="top" src={`${apiURL}/photos/${photo}`} alt={title} />}
         <Card.Body >
 
           <h1 className='card-title' >
             {title}
           </h1>
-          
+
           <div className="card-text" >
             <ParagraphPost content={content} />
           </div>
-          <div className='nav-container_division'>
+          <div className='style-buttons'>
             <div>
               {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
               {/* {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-pencil" variant="light" onClick={handleEditClick}>Editar</Button>} */}
