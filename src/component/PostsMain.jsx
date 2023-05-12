@@ -9,19 +9,19 @@ const PostsMain = ({ posts, getPosts }) => {
   const { post, delete: destroy } = useServer()
 
   const likePostHandler = async (id) => {
-    await post({ url: `/news/like/${id}` });
-    getPosts();
-  };
+    await post({ url: `/news/like/${id}` })
+    getPosts()
+  }
 
   const dislikePostHandler = async (id) => {
-    await post({ url: `/news/dislike/${id}` });
+    await post({ url: `/news/dislike/${id}` })
     getPosts();
   };
 
   const deleteNewsHandler = async (id) => {
-    await destroy({ url: `/news/${id}` });
+    await destroy({ url: `/news/${id}` })
     getPosts();
-  };
+  }
 
   const handleThemeClick = (theme) => {
     setSelectedTheme(theme);
@@ -67,7 +67,7 @@ const PostsMain = ({ posts, getPosts }) => {
         />
       ))}
     </>
-  );
-};
+  )
+}
 
-export default PostsMain;
+export default PostsMain

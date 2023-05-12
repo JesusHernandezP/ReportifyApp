@@ -1,19 +1,16 @@
-import { Modal, Input, Button, Select } from 'antd'
-import { useState } from 'react'
+import { Modal, Input, Button } from 'antd'
 import Form from 'react-bootstrap/Form'
 
 const themes = ['sports', 'politics', 'economy', 'education', 'society', 'technology', 'culture', 'science', 'gaming', 'medicine']
 
 
-function ModalPostForm({news = {}, handleSubmit, handleCancel}) {
-  const [post] = useState(news)
+function ModalPostForm({defaultValues={}, handleSubmit, handleCancel, modalTitle='Crear post'}) {
 
   return <Modal
-  title='Crear post'
+  title={modalTitle}
   centered
   open
   onCancel={handleCancel}
-  // Ocultar botones del modal sobreescribiendolos con un html vacio: fragment
   footer={<></>}
 >
   <form onSubmit={handleSubmit} className='form-login'>
@@ -22,13 +19,12 @@ function ModalPostForm({news = {}, handleSubmit, handleCancel}) {
       name="title"
       required
       placeholder="Título"
-      value={post.title}
+      defaultValue={defaultValues.title}
     />
     <label>Categoría</label>
     <select className='ant-input css-dev-only-do-not-override-5j1afj'
       name="theme"
-      value={post.theme}
-      defaultValue=""
+      defaultValue={defaultValues.theme===undefined ? "" : defaultValues.theme}
       style={{
         width: '100%',
       }}
@@ -42,7 +38,7 @@ function ModalPostForm({news = {}, handleSubmit, handleCancel}) {
     <Input.TextArea
       name="content"
       required
-      value={post.content}
+      defaultValue={defaultValues.content}
       placeholder="¿Sobre qué quieres hablar?"
     />
     <label>Imagen</label>

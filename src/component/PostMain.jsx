@@ -1,14 +1,18 @@
+import { useState } from "react"
 import { apiURL } from "../config"
 import useAuth from '../hooks/useAuth.js'
 import ParagraphPost from './ParagraphPost'
+import EditCreationModal from '../views/EditCreationModal'
+
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import './PostsMain.css'
 import './Navbar.css'
 
-const PostMain = ({ photo, title, like, dislike, news, content, deletes, theme }) => {
+const PostMain = ({ photo, title, like, dislike, news, content, deletes, getPosts }) => {
   const { isAuthenticated, user } = useAuth()
   const hasImage = typeof photo === 'string'
+  const [showingEditModal, setShowingEditModal] = useState(false)
 
   const handleLikeClick = () => {
     like(news.id)
@@ -18,6 +22,10 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes, theme }
     dislike(news.id)
   }
 
+  const handleEditClick = () => {
+    setShowingEditModal(true)
+  }
+
   const handleDeleteClick = () => {
     const isConfirmed = window.confirm("¿Estás seguro de eliminar este post?")
     if (isConfirmed) {
@@ -25,7 +33,9 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes, theme }
     }
   }
 
-
+  const handleCancel = () => {
+    setShowingEditModal(false)
+  }
 
   return (
     <>
@@ -44,7 +54,15 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes, theme }
           <div className='style-buttons'>
             <div>
               {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
-              {/* {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-pencil" variant="light" onClick={handleEditClick}>Editar</Button>} */}
+              {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-pencil" variant="light" onClick={handleEditClick} > 
+              </Button>
+              }
+              {showingEditModal === true && 
+              <EditCreationModal 
+                id={news.id}
+                handleCancel={handleCancel}
+                getPosts={getPosts}
+              />}
             </div>
             <div>
               <Button className="bi bi-hand-thumbs-down" variant="light" onClick={handleDislikeClick} >{news.dislikes}</Button>
@@ -57,4 +75,4 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes, theme }
   )
 }
 
-export default PostMain;
+export default PostMain
