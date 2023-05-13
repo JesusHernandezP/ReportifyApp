@@ -17,14 +17,14 @@ const CardContainer = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  height: 70%;
+  height: 60%;
   object-fit: cover;
   border-radius: 10px;
   `;
 
 
 const TitleContainer = styled.div`
-  height: 30%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -72,7 +72,7 @@ const ModalTitle = styled.h1`
 
 const ModalImage = styled.img`
   width: 100%;
-  height: 70%;
+  height: 60%;
   object-fit: cover;
   margin-bottom: 10px;
 `;
@@ -96,8 +96,18 @@ const ModalCloseButton = styled.button`
   padding: 0;
 `;
 
-const CarouselItem = ({ src, alt, title, content, like, dislike, news, deletes }) => {
-  const { isAuthenticated } = useAuth()
+const CarouselItem = ({ src, alt, title, content, like, dislike, theme, news, deletes }) => {
+  const { isAuthenticated, user } = useAuth()
+
+
+  const handleLikeClick = () => {
+    like(news.id)
+  }
+
+  const handleDislikeClick = () => {
+    dislike(news.id)
+  }
+
 
   const handleDeleteClick = () => {
     const isConfirmed = window.confirm("¿Estás seguro de eliminar este post?");
@@ -117,6 +127,7 @@ const CarouselItem = ({ src, alt, title, content, like, dislike, news, deletes }
       <CardContainer>
         <Image src={src} alt={alt} />
         <TitleContainer>
+          <p>{theme}</p>
           <Title>{title}</Title>
           {!showModal && (
             <ReadMoreButton onClick={toggleShowModal}>Leer más</ReadMoreButton>
@@ -126,18 +137,20 @@ const CarouselItem = ({ src, alt, title, content, like, dislike, news, deletes }
       </CardContainer>
       {showModal && (
         <ModalContainer>
+          <p>{theme}</p>
+
           <ModalTitle>{title}</ModalTitle>
           <ModalImage src={src} alt={alt} />
           <ModalText>{content}</ModalText>
           <ModalCloseButton onClick={toggleShowModal}><i className="bi bi-x-circle"></i></ModalCloseButton>
           <div className='style-buttons'>
             <div>
-              {isAuthenticated && <Button className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
+              {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
             </div>
-            {/* <div>
-              <Button className="bi bi-hand-thumbs-down" variant="light"></Button>
-              <Button className="bi bi-hand-thumbs-up" variant="light"> </Button>
-            </div> */}
+            <div>
+              <Button className="bi bi-hand-thumbs-down" variant="light" onClick={handleDislikeClick} >{news.dislikes}</Button>
+              <Button className="bi bi-hand-thumbs-up" variant="light" onClick={handleLikeClick} > {news.likes} </Button>
+            </div>
 
           </div>
 

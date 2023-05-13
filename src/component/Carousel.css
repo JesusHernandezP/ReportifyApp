@@ -41,3 +41,8 @@ button.rec.rec-arrow:focus,
 button.rec.rec-arrow:active {
   background-color: #EC6165;
 }
+
+p{
+  font-size: 1em;
+  margin: o !important;
+}

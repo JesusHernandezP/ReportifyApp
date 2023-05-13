@@ -54,15 +54,15 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes, getPost
           <div className='style-buttons'>
             <div>
               {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-trash3" variant="light" onClick={handleDeleteClick} />}
-              {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-pencil" variant="light" onClick={handleEditClick} > 
+              {isAuthenticated && user.id === news.ownerId && <Button className="bi bi-pencil" variant="light" onClick={handleEditClick} >
               </Button>
               }
-              {showingEditModal === true && 
-              <EditCreationModal 
-                id={news.id}
-                handleCancel={handleCancel}
-                getPosts={getPosts}
-              />}
+              {showingEditModal === true &&
+                <EditCreationModal
+                  id={news.id}
+                  handleCancel={handleCancel}
+                  getPosts={getPosts}
+                />}
             </div>
             <div>
               <Button className="bi bi-hand-thumbs-down" variant="light" onClick={handleDislikeClick} >{news.dislikes}</Button>

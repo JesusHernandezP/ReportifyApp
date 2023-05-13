@@ -35,7 +35,7 @@ const PostsMain = ({ posts, getPosts }) => {
   return (
     <>
       <div className="style-buttons">
-         <Button
+        <Button
           className={selectedTheme === null ? 'bi active' : 'bi'}
           variant="light"
           onClick={() => handleThemeClick(null)}
