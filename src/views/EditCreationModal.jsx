@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 import useServer from '../hooks/useServer.js'
@@ -8,7 +7,6 @@ import ModalPostForm from '../component/ModalPostForm.jsx'
 function EditCreationModal({id, handleCancel, getPosts}) {
 
   const { patch, get } = useServer()
-  const navigate = useNavigate()
 
   const [post, setPost] = useState()
 

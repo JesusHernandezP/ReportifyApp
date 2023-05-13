@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
+
 import CarouselComponet from '../component/Carousel'
 import PostsMain from '../component/PostsMain'
 import useServer from '../hooks/useServer'
+import ScrollToTopButton from '../component/ScrollToTopButton'
 
 import './Main.css'
 
@@ -26,7 +28,6 @@ function Main() {
 
   return (
     <>
-      {/* <Themes /> */}
       <h1 className='title-sections-posts'>Noticias del día</h1>
       {posts && <CarouselComponet filteredPosts={trendings} />}
       <h1 className='title-sections-posts'>Tendencias</h1>
@@ -35,6 +36,7 @@ function Main() {
           posts={posts}
           getPosts={getPosts}
         />}
+        <ScrollToTopButton />
     </>
   )
 }

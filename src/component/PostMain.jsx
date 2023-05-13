@@ -9,7 +9,7 @@ import Card from 'react-bootstrap/Card'
 import './PostsMain.css'
 import './Navbar.css'
 
-const PostMain = ({ photo, title, like, dislike, news, content, deletes, getPosts }) => {
+const PostMain = ({ photo, title, like, dislike, news, content, deletes, getPosts, theme }) => {
   const { isAuthenticated, user } = useAuth()
   const hasImage = typeof photo === 'string'
   const [showingEditModal, setShowingEditModal] = useState(false)

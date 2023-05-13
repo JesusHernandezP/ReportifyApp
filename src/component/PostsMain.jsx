@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import PostMain from './PostMain';
 import useServer from '../hooks/useServer'
 import Button from 'react-bootstrap/Button'
-
+import './PostsMain.css'
+import './Navbar.css'
 
 const PostsMain = ({ posts, getPosts }) => {
   const [selectedTheme, setSelectedTheme] = useState(null);
@@ -64,6 +65,7 @@ const PostsMain = ({ posts, getPosts }) => {
           content={new_.content}
           photo={new_.photo}
           theme={new_.theme}
+          getPosts={getPosts}
         />
       ))}
     </>
