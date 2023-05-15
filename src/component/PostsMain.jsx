@@ -41,14 +41,14 @@ const PostsMain = ({ posts, getPosts }) => {
           onClick={() => handleThemeClick(null)}
         >
           Todos
-        </Button>
+        </Button >
         <Button className={selectedTheme === 'politics' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('politics')}>Política</Button>
         <Button className={selectedTheme === 'sports' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('sports')}>Deporte</Button>
         <Button className={selectedTheme === 'culture' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('culture')}>Cultura</Button>
-        <Button className={selectedTheme === 'economy' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('economy')}>Economia</Button>
-        <Button className={selectedTheme === 'education' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('education')}>Educacion</Button>
+        <Button className={selectedTheme === 'economy' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('economy')}>Economía</Button>
+        <Button className={selectedTheme === 'education' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('education')}>Educación</Button>
         <Button className={selectedTheme === 'society' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('society')}>Sociedad</Button>
-        <Button className={selectedTheme === 'technology' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('technology')}>Tecnologia</Button>
+        <Button className={selectedTheme === 'technology' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('technology')}>Tecnología</Button>
         <Button className={selectedTheme === 'science' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('science')}>Ciencia</Button>
         <Button className={selectedTheme === 'gaming' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('gaming')}>Gaming</Button>
         <Button className={selectedTheme === 'medicine' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('medicine')}>Medicina</Button>
