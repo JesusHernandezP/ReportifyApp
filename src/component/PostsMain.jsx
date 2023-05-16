@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import PostMain from './PostMain';
 import useServer from '../hooks/useServer'
 import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form';
+import Dropdown from 'react-bootstrap/Dropdown';
+
 import './PostsMain.css'
 import './Navbar.css'
 
@@ -31,14 +32,14 @@ const PostsMain = ({ posts, getPosts, filteredPosts }) => {
     setSelectedTheme(theme);
   };
 
-  const handleLikeClick = (event) => {
-    const selectedValue = event.target.value;
+  const handleLikeClick = (selectedValue) => {
     if (selectedValue === "1") {
       setSelectedOrder("likes");
     } else if (selectedValue === "2") {
       setSelectedOrder("original");
     }
   };
+
 
   const sortedPosts = [...posts]
     .sort((a, b) => {
@@ -70,13 +71,19 @@ const PostsMain = ({ posts, getPosts, filteredPosts }) => {
         <Button className={selectedTheme === 'gaming' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('gaming')}>Gaming</Button>
         <Button className={selectedTheme === 'medicine' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('medicine')}>Medicina</Button>
       </div>
-      <div className='bg-light'>
-  <Form.Select aria-label="Default select example" onChange={handleLikeClick} className="custom-select">
-    <option>Ordenar por...</option>
-    <option value="1">Más valorados</option>
-    <option value="2">Más recientes</option>
-  </Form.Select>
-</div>
+
+      <div className='dropdown-container'>
+      <Dropdown>
+        <Dropdown.Toggle aria-label="Default select example" variant="light" id="dropdown-basic" className="dropdown-toggle-custom" >
+          Ordenar por...
+        </Dropdown.Toggle>
+        <Dropdown.Menu>
+          <Dropdown.Item value="1" onClick={() => handleLikeClick("1")} className="dropdown-item-custom">Mas valorados</Dropdown.Item>
+          <Dropdown.Item value="2" onClick={() => handleLikeClick("2")} className="dropdown-item-custom">Mas recientes</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+      </div>
+
 
       {sortedPosts.map((new_) => (
         <PostMain

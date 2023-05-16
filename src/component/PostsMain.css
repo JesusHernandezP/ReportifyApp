@@ -36,17 +36,6 @@
   color: #766f6f;
 }
 
-.style-buttons .bi {
-  background-color: #f0eaea;
-
-}
-
-.style-buttons .bi {
-  background-color: #EC6165;
-  color: #f0eaea;
-  padding: 0.50em;
-
-}
 
 .style-buttons .bi {
   background-color: #EC6165;
@@ -54,6 +43,16 @@
   padding: 0.40em;
 
 }
+
+.style-buttons .bi:hover {
+  background-color: #f0eaea;
+  color: #766f6f;
+  padding: 0.40em;
+  border-color: #766f6f;
+}
+
+
+
 
 .style-buttons {
   display: flex;
@@ -83,11 +82,57 @@
   cursor: pointer;
 }
 
-.bg-light {
-  background-color: #f2f2f2;
+
+
+.dropdown-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.custom-select:hover {
-  background-color: #ccc;
-  color: #746262;
+#dropdown-basic {
+  background-color: #f0eaea;
+  color: #766f6f;
+  border-color: #989494;
+}
+
+
+#dropdown-basic:hover {
+  background-color: #f0eaea;
+  color: #766f6f;
+  border-color: #EC6165;
+}
+
+
+.dropdown-toggle-custom {
+  background-color: #f0eaea;
+
+}
+
+
+a:-webkit-any-link,
+a:any-link {
+  cursor: pointer;
+  color: #766f6f;
+}
+
+a:-webkit-any-link:hover,
+a:any-link:hover {
+  cursor: pointer;
+  color: #ec6165;
+}
+
+a:-webkit-any-link:focus,
+a:any-link:focus {
+  cursor: pointer;
+  background-color: #f0eaea;
+}
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+  color: #766f6f !important;
+  background-color: #f0eaea !important;
+  border-color: #766f6f !important;
 }
