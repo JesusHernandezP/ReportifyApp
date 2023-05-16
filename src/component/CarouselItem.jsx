@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 import useAuth from '../hooks/useAuth.js'
 import './PostsMain.css'
 import './Navbar.css'
+import { themeTranslation } from "../constants/index.js"
 
 
 const CardContainer = styled.div`
@@ -131,7 +132,7 @@ const CarouselItem = ({ src, alt, title, content, like, dislike, theme, news, de
       <CardContainer>
         <Image src={src} alt={alt} />
         <TitleContainer>
-          <p>{theme}</p>
+          <p>{themeTranslation[theme]}</p>
           <Title>{title}</Title>
           {!showModal && (
             <ReadMoreButton onClick={toggleShowModal}>Leer más</ReadMoreButton>

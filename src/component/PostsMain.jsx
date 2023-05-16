@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import PostMain from './PostMain';
+import React, { useState } from 'react'
+import PostMain from './PostMain'
 import useServer from '../hooks/useServer'
 import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form';
+import Form from 'react-bootstrap/Form'
+import { themes, themeTranslation } from '../constants'
 import './PostsMain.css'
 import './Navbar.css'
 
@@ -59,17 +60,12 @@ const PostsMain = ({ posts, getPosts, filteredPosts }) => {
           className={selectedTheme === null ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick(null)}>
           Todos
         </Button >
-        <Button className={selectedTheme === 'politics' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('politics')}>Política</Button>
-        <Button className={selectedTheme === 'sports' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('sports')}>Deporte</Button>
-        <Button className={selectedTheme === 'culture' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('culture')}>Cultura</Button>
-        <Button className={selectedTheme === 'economy' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('economy')}>Economía</Button>
-        <Button className={selectedTheme === 'education' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('education')}>Educación</Button>
-        <Button className={selectedTheme === 'society' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('society')}>Sociedad</Button>
-        <Button className={selectedTheme === 'technology' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('technology')}>Tecnología</Button>
-        <Button className={selectedTheme === 'science' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('science')}>Ciencia</Button>
-        <Button className={selectedTheme === 'gaming' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('gaming')}>Gaming</Button>
-        <Button className={selectedTheme === 'medicine' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('medicine')}>Medicina</Button>
-      </div>
+        {themes.map((theme) => {
+          return (
+          <Button className={selectedTheme === theme ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick(theme)}>{themeTranslation[theme]}</Button>
+          )
+        })}
+  </div>
       <div className='bg-light'>
   <Form.Select aria-label="Default select example" onChange={handleLikeClick} className="custom-select">
     <option>Ordenar por...</option>

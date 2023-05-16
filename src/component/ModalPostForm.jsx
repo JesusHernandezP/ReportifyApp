@@ -1,8 +1,6 @@
 import { Modal, Input, Button } from 'antd'
 import Form from 'react-bootstrap/Form'
-
-const themes = ['sports', 'politics', 'economy', 'education', 'society', 'technology', 'culture', 'science', 'gaming', 'medicine']
-
+import { themeTranslation, themes } from '../constants'
 
 function ModalPostForm({defaultValues={}, handleSubmit, handleCancel, modalTitle='Crear post'}) {
 
@@ -31,7 +29,7 @@ function ModalPostForm({defaultValues={}, handleSubmit, handleCancel, modalTitle
     >
       <option value="" selected>Elige categoría</option>
       {
-        themes.map((theme) => <option key={theme} value={theme}>{theme}</option>)
+        themes.map((theme) => <option key={theme} value={theme}>{themeTranslation[theme]}</option>)
       }
     </select>
     <label>Contenido</label>
