@@ -3,6 +3,7 @@ import { apiURL } from "../config"
 import useAuth from '../hooks/useAuth.js'
 import ParagraphPost from './ParagraphPost'
 import EditCreationModal from '../views/EditCreationModal'
+import { themeTranslation } from "../constants"
 
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
@@ -40,7 +41,7 @@ const PostMain = ({ photo, title, like, dislike, news, content, deletes, getPost
   return (
     <>
       <Card className='postmain modal-shadow'>
-        <p>{theme}</p>
+        <p>{themeTranslation[theme]}</p>
         {hasImage && <Card.Img className='postmain-img' variant="top" src={`${apiURL}/photos/${photo}`} alt={title} />}
         <Card.Body >
 

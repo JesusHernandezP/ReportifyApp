@@ -9,41 +9,26 @@ import PostCreationModal from './views/PostCreationModal'
 import Profile from './views/Profile'
 import Register from './views/Register'
 
-import Toggle from 'react-styled-toggle';
 import styles from './App.module.css'
 
-export const ThemeContext = createContext(null);
+export const ThemeContext = createContext(null)
 
 function App() {
 
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('light')
 
-  const toogleTheme = () => {
+  const toggleTheme = () => {
     setTheme((curr) => (curr === 'light' ? 'dark' : 'light'))
   }
 
   return (
     <>
-      <ThemeContext.Provider value={{ theme, toogleTheme }}>
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <div>
           <div id={theme}>
             <div className={styles.container}>
-              <Navbar />
-              <div className='themes-switch-bar'>
-                <div className='switch' >
-                  <label> {theme === 'light' ? '' : ''} </label>
-                  <Toggle
-                    width={40}
-                    backgroundColorChecked={'#EC6165'}
-                    height={20}
-                    sliderWidth={12}
-                    sliderHeight={12}
-                    translate={19}
-                    onChange={toogleTheme}
-                    value={theme === 'dark'}
-                  />
-                </div>
-              </div>
+              <Navbar 
+              onToggleTheme={toggleTheme}/>
               <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/register" element={<Register />} />
