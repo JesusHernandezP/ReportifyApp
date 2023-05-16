@@ -83,3 +83,11 @@
   cursor: pointer;
 }
 
+.bg-light {
+  background-color: #f2f2f2;
+}
+
+.custom-select:hover {
+  background-color: #ccc;
+  color: #746262;
+}

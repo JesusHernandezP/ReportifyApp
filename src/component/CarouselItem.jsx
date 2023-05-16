@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button'
 import useAuth from '../hooks/useAuth.js'
 import './PostsMain.css'
 import './Navbar.css'
+
+
 const CardContainer = styled.div`
 
   width: 250px;
@@ -96,16 +98,18 @@ const ModalCloseButton = styled.button`
   padding: 0;
 `;
 
-const CarouselItem = ({ src, alt, title, content, like, dislike, theme, news, deletes }) => {
+const CarouselItem = ({ src, alt, title, content, like, dislike, theme, news, deletes, getPosts }) => {
   const { isAuthenticated, user } = useAuth()
 
 
   const handleLikeClick = () => {
     like(news.id)
+
   }
 
   const handleDislikeClick = () => {
     dislike(news.id)
+
   }
 
 

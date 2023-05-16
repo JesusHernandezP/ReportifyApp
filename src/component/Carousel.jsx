@@ -5,10 +5,6 @@ import "./Carousel.css"
 import CarouselItem from "./CarouselItem"
 import useServer from '../hooks/useServer'
 
-
-
-
-
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 550, itemsToShow: 2 },
@@ -16,24 +12,24 @@ const breakPoints = [
   { width: 1200, itemsToShow: 4 },
 ]
 
-
-
-function CarouselComponent({ filteredPosts }) {
+function CarouselComponent({ filteredPosts, getPosts }) {
   const { post, delete: destroy } = useServer()
-
 
   const likePostHandler = async (id) => {
     await post({ url: `/news/like/${id}` })
+    getPosts()
+
   }
 
   const dislikePostHandler = async (id) => {
     await post({ url: `/news/dislike/${id}` })
-  };
+    getPosts()
+
+  }
 
   const deleteNewsHandler = async (id) => {
     await destroy({ url: `/news/${id}` })
   }
-
 
   return (
     <>
@@ -52,6 +48,7 @@ function CarouselComponent({ filteredPosts }) {
               deletes={deleteNewsHandler}
               like={likePostHandler}
               dislike={dislikePostHandler}
+              getPosts={getPosts}
 
             />
           ))}
