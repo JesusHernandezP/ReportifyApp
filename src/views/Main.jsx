@@ -29,7 +29,9 @@ function Main() {
   return (
     <>
       <h1 className='title-sections-posts'>Noticias del día</h1>
-      {posts && <CarouselComponet filteredPosts={trendings} />}
+      {posts && <CarouselComponet filteredPosts={trendings} 
+          getPosts={getPosts}
+          />}
       <h1 className='title-sections-posts'>Tendencias</h1>
       {posts &&
         <PostsMain

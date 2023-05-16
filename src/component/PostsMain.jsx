@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import PostMain from './PostMain';
 import useServer from '../hooks/useServer'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form';
 import './PostsMain.css'
 import './Navbar.css'
 
-const PostsMain = ({ posts, getPosts }) => {
-  const [selectedTheme, setSelectedTheme] = useState(null);
+const PostsMain = ({ posts, getPosts, filteredPosts }) => {
+  const [selectedTheme, setSelectedTheme] = useState(null)
+  const [selectedOrder, setSelectedOrder] = useState(null)
+
   const { post, delete: destroy } = useServer()
 
   const likePostHandler = async (id) => {
@@ -26,20 +29,34 @@ const PostsMain = ({ posts, getPosts }) => {
 
   const handleThemeClick = (theme) => {
     setSelectedTheme(theme);
-  }
+  };
+
+  const handleLikeClick = (event) => {
+    const selectedValue = event.target.value;
+    if (selectedValue === "1") {
+      setSelectedOrder("likes");
+    } else if (selectedValue === "2") {
+      setSelectedOrder("original");
+    }
+  };
 
   const sortedPosts = [...posts]
-    .sort((a, b) => b.likes - a.likes)
+    .sort((a, b) => {
+      if (selectedOrder === "likes") {
+        return b.likes - a.likes;
+      } else if (selectedOrder === "original") {
+        return posts.indexOf(a) - posts.indexOf(b);
+      }
+
+      return 0;
+    })
     .filter((post) => !selectedTheme || post.theme === selectedTheme);
 
   return (
     <>
       <div className="style-buttons">
         <Button
-          className={selectedTheme === null ? 'bi active' : 'bi'}
-          variant="light"
-          onClick={() => handleThemeClick(null)}
-        >
+          className={selectedTheme === null ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick(null)}>
           Todos
         </Button >
         <Button className={selectedTheme === 'politics' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('politics')}>Política</Button>
@@ -53,6 +70,13 @@ const PostsMain = ({ posts, getPosts }) => {
         <Button className={selectedTheme === 'gaming' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('gaming')}>Gaming</Button>
         <Button className={selectedTheme === 'medicine' ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick('medicine')}>Medicina</Button>
       </div>
+      <div className='bg-light'>
+  <Form.Select aria-label="Default select example" onChange={handleLikeClick} className="custom-select">
+    <option>Ordenar por...</option>
+    <option value="1">Más valorados</option>
+    <option value="2">Más recientes</option>
+  </Form.Select>
+</div>
 
       {sortedPosts.map((new_) => (
         <PostMain
