@@ -8,6 +8,7 @@
 
 .profile-body>.ant-avatar {
     margin: 20px;
+    background-color: blueviolet;
 }
 
 .profile-description-title {
@@ -25,4 +26,28 @@
     line-height: 1.5714285714285714;
     word-break: break-word;
     overflow-wrap: break-word;
+}
+
+.profile-description {
+    padding-top: 0px;
+}
+
+
+.hidden-form {
+    display: none;
+}
+
+.camera-button{
+    background: #f0eaea;
+    border-radius: 200px;
+    border: thin solid #EC6165;
+    transform: translate(143%, -59px);
+    cursor: pointer;
+    color: #EC6165;
+}
+
+.bi-camera{
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
 }
