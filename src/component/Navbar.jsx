@@ -5,10 +5,11 @@ import { apiURL } from '../config.js'
 
 import useAuth from '../hooks/useAuth.js'
 import CreatePostButton from './CreatePostButton.jsx'
+import ThemeSwitch from './ThemeSwitch.jsx'
 
 import './Navbar.css'
 
-const Navbar = () => {
+const Navbar = ({onToggleTheme}) => {
   const { isAuthenticated, user } = useAuth()
 
   const navigate = useNavigate()
@@ -21,11 +22,11 @@ const Navbar = () => {
     <>
       <div className='nav-container'>
         <div className='nav-container_division'>
-          {/* <i className="bi bi-spotify"></i><p className='text-logo' >Reportify</p> */}
           <img src={'./logo-reportify.svg'} alt='logo' className='logo-reportify' />
           <p className='text-logo' >Reportify</p>
         </div>
         <div className='nav-container_division'>
+        <ThemeSwitch onChange={onToggleTheme}/>
           {isAuthenticated && <CreatePostButton />}
           {!isAuthenticated && <Button type="default" shape="round" icon={<UserOutlined />} onClick={handleClick}>
             Iniciar sesión
