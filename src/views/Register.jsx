@@ -55,7 +55,7 @@ function Register() {
         />
         <Form.Group controlId="formFilesm" className="mb-3">
           <Form.Label></Form.Label>
-          <Form.Control className='upload-file' type="file" name="photo"
+          <Form.Control className='upload-file' type="file" name="avatar"
             accept="image/*" size="sm" />
         </Form.Group>
         <div className='ant-modal-footer'>
