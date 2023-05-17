@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
+    
   },
   "dependencies": {
     "@popperjs/core": "^2.11.7",
