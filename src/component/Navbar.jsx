@@ -23,7 +23,7 @@ const Navbar = ({onToggleTheme}) => {
       <div className='nav-container'>
         <div className='nav-container_division'>
           <img src={'./logo-reportify.svg'} alt='logo' className='logo-reportify' />
-          <p className='text-logo' >Reportify</p>
+          <img src={'./logo-reportify-text.svg'} alt='logo-text' className='logo-reportify' />
         </div>
         <div className='nav-container_division'>
         <ThemeSwitch onChange={onToggleTheme}/>
