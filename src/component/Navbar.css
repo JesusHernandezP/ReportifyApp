@@ -20,9 +20,16 @@
     }
 }
 
+
 @media (min-width: 1024px) {
     .nav-container {
         max-width: 900px;
+    }
+}
+
+@media (max-width: 450px) {
+    .logo-reportify-text {
+        display: none;
     }
 }
 
@@ -75,17 +82,15 @@
     font-size: bold;
 }
 
-.text-logo {
-    font-family: 'Sansita', sans-serif;
-    font-weight: 800;
-    font-style: italic;
-}
-
 .bi {
     font-size: 25px;
 
 }
 
 .logo-reportify {
+    height: 1.5rem;
+}
+
+.logo-reportify-text {
     height: 1.5rem;
 }
