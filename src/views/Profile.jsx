@@ -5,6 +5,8 @@ import { apiURL } from '../config.js'
 import useServer from '../hooks/useServer.js'
 import { Modal, Button, Avatar } from 'antd'
 import Form from 'react-bootstrap/Form'
+import { useEffect, useState } from 'react'
+import PostsMain from '../component/PostsMain'
 
 import './Profile.css'
 
@@ -17,10 +19,15 @@ const DescriptionItem = ({ label, children }) => {
   )
 }
 
-function Perfil() {
+function Perfil({ news }) {
+
   const { isAuthenticated, logout, user } = useAuth()
   const navigate = useNavigate()
-  const { put } = useServer()
+  const { put, get } = useServer()
+  const [posts, setPosts] = useState([])
+  const [trendings, setTrendings] = useState([])
+
+
 
   const handleLogout = () => {
     logout()
@@ -47,18 +54,31 @@ function Perfil() {
     inputUpload.current.click()
   }
 
+
+  const getPosts = async () => {
+    const { data } = await get({ url: "/news" })
+    const sortedPosts = data.data.sort((new_a, new_b) => -new_a.createdAt.localeCompare(new_b.createdAt))
+  
+    const sortedTrendings = sortedPosts.slice(0, 6)
+    const restOfPosts = sortedPosts.slice(6)
+  
+    
+    const ownerPosts = restOfPosts.filter(post => post.ownerId === user.id)
+  
+    setTrendings(sortedTrendings)
+    setPosts(ownerPosts)
+  }
+  
+  useEffect(() => {
+    getPosts()
+  }, [])
   return (
     <>
-      <div className='darktheme'>
-        <Modal
-          title='Perfil'
-          centered
-          open
-          onCancel={handleClick}
-          // Ocultar botones del modal sobreescribiendolos con un html vacio: fragment
-          footer={<></>}
-        >
+      <div className='profile-container'>
+      
           <div className='profile-body'>
+          <i className="bi bi-x-lg close" onClick={handleClick}></i>
+          <h2>Perfil</h2>
             <Avatar src={`${apiURL}/avatars/${user?.avatar}`} size={200} />
             <button onClick={onClickCamera} className='camera-button'><i className="bi bi-camera"></i>
             </button>
@@ -79,11 +99,16 @@ function Perfil() {
               <br />
               <DescriptionItem label="Registro">{user?.createdAt}</DescriptionItem>
             </div>
-          </div>
-          <div className='ant-modal-footer'>
+            <div className='ant-modal-footer'>
             {isAuthenticated && <Button type="primary" htmlType="submit" onClick={handleLogout}>Cerrar sesión</Button>}
           </div>
-        </Modal>
+          </div>
+          <div className='profile-posts'>
+            { posts && (
+              <PostsMain posts={posts} getPosts={getPosts} />
+            )}
+          </div>
+          
       </div>
     </>
   )

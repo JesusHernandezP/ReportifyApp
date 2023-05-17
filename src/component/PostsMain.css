@@ -44,6 +44,16 @@
 
 }
 
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+  color: #766f6f !important;
+  background-color: #f0eaea !important;
+  border-color: #766f6f !important;
+}
+
 .style-buttons .bi:hover {
   background-color: #f0eaea;
   color: #766f6f;
@@ -70,7 +80,14 @@
 @media screen and (max-width: 768px) {
   .style-buttons {
     overflow-x: scroll;
+    
   }
+
+  .dropdown-container {
+      display: flex;
+      justify-content: flex-end;
+  }
+
 }
 
 .style-buttons {
@@ -82,12 +99,13 @@
   cursor: pointer;
 }
 
-
-
-.dropdown-container {
-  display: flex;
-  justify-content: flex-end;
+div .style-buttons{
+  padding: 0;
+  padding-bottom: 10px;
 }
+
+
+
 
 #dropdown-basic {
   background-color: #f0eaea;
@@ -127,12 +145,3 @@ a:any-link:focus {
   background-color: #f0eaea;
 }
 
-.btn-check:checked+.btn,
-.btn.active,
-.btn.show,
-.btn:first-child:active,
-:not(.btn-check)+.btn:active {
-  color: #766f6f !important;
-  background-color: #f0eaea !important;
-  border-color: #766f6f !important;
-}

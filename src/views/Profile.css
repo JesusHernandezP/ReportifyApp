@@ -3,6 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: thin solid #ccc4c4;
+    margin: 30px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgb(210, 209, 209);
+    padding: 30px;
 }
 
 
@@ -30,6 +35,8 @@
 
 .profile-description {
     padding-top: 0px;
+    margin-bottom: 30px;
+    font-weight: bold;
 }
 
 
@@ -50,4 +57,16 @@
     margin: 0;
     padding: 0;
     font-size: 1.5em;
+}
+
+.profile-container h2{
+    text-align: center;
+}
+
+.profile-body .close{
+    display:inline-block;
+    position:relative;
+    right:0px;
+    cursor: pointer;
+    transform: translate(1500%, -5px);
 }
