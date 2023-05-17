@@ -14,7 +14,7 @@ Editar y eliminar noticias: los usuarios pueden editar y eliminar las noticias q
 
 1. Clonar el repo
    ```sh
-   git clone https://github.com/JesusHernandezP/ReportifyApp
+   git clone https://github.com/JesusHernandezP/reportifyapp
    ```
 2. Instalación
    ```sh
@@ -46,6 +46,10 @@ https://github.com/AdrianaBuitrago
 https://github.com/DulceG13
 <br />
 https://github.com/JesusHernandezP
+
+# Demo
+
+https://reportifyproject.netlify.app
 
 <p align="right">(<a href="#readme-top">Subir</a>)</p>
 
