@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import useServer from '../hooks/useServer.js'
 import '../index.css'
-import ModalPostForm from '../component/ModalPostForm.jsx'
+import ModalPostForm from './ModalPostForm.jsx'
 
 function EditCreationModal({id, handleCancel, getPosts}) {
 

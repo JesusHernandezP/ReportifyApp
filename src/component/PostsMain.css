@@ -80,12 +80,12 @@
 @media screen and (max-width: 768px) {
   .style-buttons {
     overflow-x: scroll;
-    
+
   }
 
   .dropdown-container {
-      display: flex;
-      justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
   }
 
 }
@@ -99,7 +99,7 @@
   cursor: pointer;
 }
 
-div .style-buttons{
+div .style-buttons {
   padding: 0;
   padding-bottom: 10px;
 }
@@ -144,4 +144,3 @@ a:any-link:focus {
   cursor: pointer;
   background-color: #f0eaea;
 }
-

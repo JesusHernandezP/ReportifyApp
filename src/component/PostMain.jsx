@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { apiURL } from "../config"
+import { themeTranslation } from "../constants"
+
 import useAuth from '../hooks/useAuth.js'
 import ParagraphPost from './ParagraphPost'
-import EditCreationModal from '../views/EditCreationModal'
-import { themeTranslation } from "../constants"
+import EditCreationModal from './EditCreationModal'
 
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'

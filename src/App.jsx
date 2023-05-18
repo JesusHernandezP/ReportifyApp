@@ -5,7 +5,7 @@ import { createContext, useState } from 'react'
 import Navbar from './component/Navbar'
 import Login from './views/Login'
 import Main from './views/Main'
-import PostCreationModal from './views/PostCreationModal'
+import PostCreationModal from './component/PostCreationModal'
 import Profile from './views/Profile'
 import Register from './views/Register'
 

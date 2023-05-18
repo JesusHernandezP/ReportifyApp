@@ -33,7 +33,6 @@ function useServer() {
     patch: ({ url, body, hasImage }) => httpService({ method: 'PATCH', url, token, body, hasImage }).then(handleResponse),
     put: ({ url, body, hasImage }) => httpService({ method: 'PUT', url, token, body, hasImage }).then(handleResponse),
     delete: ({ url }) => httpService({ method: 'DELETE', url, token }).then(handleResponse),
-    // put: ({ url, body, hasImage }) => httpService({ method: 'PUT', url, token, body, hasImage }).then(handleResponse),
   }
 }
 export default useServer

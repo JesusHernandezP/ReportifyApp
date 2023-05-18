@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { themes, themeTranslation } from '../constants'
 import PostMain from './PostMain'
 import useServer from '../hooks/useServer'
+
 import Button from 'react-bootstrap/Button'
-import { themes, themeTranslation } from '../constants'
 import Dropdown from 'react-bootstrap/Dropdown';
+
+
 import './PostsMain.css'
 import './Navbar.css'
 
@@ -62,20 +65,20 @@ const PostsMain = ({ posts, getPosts, filteredPosts }) => {
         </Button >
         {themes.map((theme) => {
           return (
-          <Button className={selectedTheme === theme ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick(theme)}>{themeTranslation[theme]}</Button>
+            <Button className={selectedTheme === theme ? 'bi active' : 'bi'} variant="light" onClick={() => handleThemeClick(theme)}>{themeTranslation[theme]}</Button>
           )
         })}
-  </div>
-  <div className='dropdown-container'>
-      <Dropdown>
-        <Dropdown.Toggle aria-label="Default select example" variant="light" id="dropdown-basic" className="dropdown-toggle-custom" >
-          Ordenar por...
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item value="1" onClick={() => handleLikeClick("1")} className="dropdown-item-custom">Mas valorados</Dropdown.Item>
-          <Dropdown.Item value="2" onClick={() => handleLikeClick("2")} className="dropdown-item-custom">Mas recientes</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+      </div>
+      <div className='dropdown-container'>
+        <Dropdown>
+          <Dropdown.Toggle aria-label="Default select example" variant="light" id="dropdown-basic" className="dropdown-toggle-custom" >
+            Ordenar por...
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item value="1" onClick={() => handleLikeClick("1")} className="dropdown-item-custom">Mas valorados</Dropdown.Item>
+            <Dropdown.Item value="2" onClick={() => handleLikeClick("2")} className="dropdown-item-custom">Mas recientes</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
 
       {sortedPosts.map((new_) => (

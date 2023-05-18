@@ -13,7 +13,6 @@ import useAuth from '../hooks/useAuth'
 
 function Register() {
   const { post } = useServer()
-  const { token } = useAuth()
   const navigate = useNavigate()
 
   const handleSubmit = async e => {

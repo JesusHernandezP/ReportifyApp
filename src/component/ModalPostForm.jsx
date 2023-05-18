@@ -1,6 +1,7 @@
+import { themeTranslation, themes } from '../constants'
+
 import { Modal, Input, Button } from 'antd'
 import Form from 'react-bootstrap/Form'
-import { themeTranslation, themes } from '../constants'
 
 function ModalPostForm({defaultValues={}, handleSubmit, handleCancel, modalTitle='Crear post'}) {
 

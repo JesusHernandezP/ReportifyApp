@@ -2,8 +2,9 @@ import { useNavigate } from 'react-router-dom'
 
 import useServer from '../hooks/useServer.js'
 import React from 'react'
+
 import '../index.css'
-import ModalPostForm from '../component/ModalPostForm.jsx'
+import ModalPostForm from './ModalPostForm.jsx'
 
 function PostCreationModal() {
 
